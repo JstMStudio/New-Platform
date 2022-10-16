@@ -633,6 +633,43 @@ padding-right: 20px;
   </div>
 </div>
 
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+    <h1>Download App</h1>
+    <p>Welcome to JstMStudio App Download page. We currently provide multiple app across multiple platforms so users could download our app onto their device locally. </p>
+    <br>
+    <hr>
+    <br>
+    <h2>Windows</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Mac</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Linux</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Android</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>IOS</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+  </div>
+</div>
+
 <div id="myNav6" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
   <div class="overlay-content">
@@ -723,6 +760,14 @@ for (i = 0; i < coll.length; i++) {
     <h1>Status</h1>
     <br>
     <iframe src="https://status.onefutureunifiedteam.tk" style="width:100%;height:2890px;"></iframe>
+  </div>
+</div>
+
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+    <h1>Store</h1>
+    <p></p>
   </div>
 </div>
 
@@ -980,11 +1025,13 @@ Facebook is the current main social media platform of JstMStudio. We post conten
 <br>
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav2()" id="projects">Projects</div>
 <br>
-<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav5()" id="app">App (Unfinish)</div>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav5()" id="app">App</div>
 <br>
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav3()" id="news">News</div>
 <br>
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav7()" id="status">Status</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav8()" id="store">Store</div>
 <br>
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;"><a href="https://jstmstudio.substack.com">Blog</a></div>
 <br>
@@ -1063,6 +1110,14 @@ function openNav7() {
 
 function closeNav7() {
   document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
 }
 
 function openNav9() {
