@@ -469,6 +469,141 @@ padding-right: 20px;
   opacity: 1;
   right: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: purple;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible2 {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible2:hover {
+  background-color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
     </style>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -1006,6 +1141,87 @@ for (i = 0; i < coll.length; i++) {
   </div>
 </div>
 
+<div id="myNav10" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav10()">&times;</a>
+  <div class="overlay-content">
+    <h1>Profile</h1>
+      <p>JstMStudio Profile is a web-based social-networking site. Users could create and read posts made by content creator from all over the world. You could use JstMStudio Profile for free, with less restriction and most important of all, without any ads too.</p>
+      <p>JstMStudio Profile is totally open source for everyone to study and view. You could also contribute to the project too. It is currently coded using HTML, CSS and JavaScript and licensed under MIT. JstMStudio Profile is a privacy friendly platform too. We do not share users' information to any third party and we tried our best to track as less data as possible. We would like to return user back to their own hand.</p>
+      <p>JstMStudio Profile is a place that respect everyone freedom of speech. If you could have freedom of speech in real life, you should have it on the internet too so we would like to make this happen. You could post about anything here except for illegal or NSFW stuff.</p>
+      <br>
+      <hr>
+      <br>
+        <h2>Profile Search</h2>
+      <p>Welcome to JstMStudio Profile Search! A place to search for profile in JstMStudio Profile. A place to find and know more about each profile in JstMStudio. </p>
+      <br>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for profile username" title="Type in a name">
+<ul id="myUL">
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+	<li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+</ul>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+<br>
+<hr>
+<br>
+<h2>Sign Up</h2>
+      <p>Everyone could now sign up for a writer account on JstMStudio Profile to create a profile and write post. Writer account could have a profile, edit their own profile, create post, use plugins on their post and etc. Writer account will have total freedom on their profile and posts too. If you are interested, you could sign up and apply by filling up the form below, it is open for everyone. By submitting, all application will be reviewed without 7 business day by JstMStudio members.</p>
+      <br>
+      <button class="button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdlaiVNGbMk8Rlfdz7zsUeXTD0gNuJ2VXEnjAyK9Ss8Rs4vrA/viewform?fbzx=6439158439518808056" style="color:yellow;"><span>Sign Up Here </span></a></button>
+  </div>
+</div>
+
 <h1><i class='bx bx-info-circle'></i> About Us</h1>
 <p>JstMStudio is a small studio founded by Jst Tan. JstMStudio is focused on many things, from music, story writing, website development and much more. JstMStudio is a small remote indie studio that focuses on many things to build a better future. </p>
 <br>
@@ -1046,6 +1262,8 @@ Facebook is the current main social media platform of JstMStudio. We post conten
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav1()" id="donation">Donation</div>
 <br>
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav6()" id="partner">Partner</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav10()" id="profile">Profile</div>
 <br>
 <script>
 function openNav() {
@@ -1126,6 +1344,14 @@ function openNav9() {
 
 function closeNav9() {
   document.getElementById("myNav9").style.width = "0%";
+}
+
+function openNav10() {
+  document.getElementById("myNav10").style.width = "100%";
+}
+
+function closeNav10() {
+  document.getElementById("myNav10").style.width = "0%";
 }
 </script>
 <br><br>
