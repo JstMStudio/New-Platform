@@ -1,1 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>Documentation</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+.collapsible {
+  background-color: #f1f1f1;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: red;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+body {
+  background: #E4E9F7;
+  }
+  
+.button2 {
+float:left;
+background-color: black;
+  color: red;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  background-color: yellow;
+  color: green;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+}
+
+.active, .collapsible2:hover {
+  background-color: green;
+  color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  text-align: center;
+  color: green;
+}
+
+body {
+  color:red;
+}
+.dictionary {
+  color: blue;
+  max-width: 400px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+.txtBox {
+  appearance: none;
+  -webkit-appearance:none;
+  font-size:16px;
+  padding: 15px;
+  width:100%;
+}
+.submit-btn {
+  appearance: none;
+  -webkit-appearance:none;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: grey;
+  color: #fff;
+  font-size: 15px;
+  height: 100%;
+}
+form {
+  position: relative;
+}
+.search-result{
+  padding:20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+.logo {
+  overflow: hidden;
+  background-color: purple;
+  text-align:center;
+  color: yellow;
+  padding:18px;
+  font-weight: bold;
+}
+
+.logo h1 {
+  float: center;
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  }
+  
+.collapsible3 {
+background: #cce5ff;
+  color: darkblue;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 8px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  width:95%;
+  margin: 15px;
+}
+
+.content3 {
+background-color: #cce5ff;
+  color: darkblue;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  margin: 15px;
+  text-align: center;
+}
+
+.dictionary {
+  color: blue;
+  max-width: 400px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+.txtBox {
+  appearance: none;
+  -webkit-appearance:none;
+  font-size:16px;
+  padding: 15px;
+  width:100%;
+}
+.submit-btn {
+  appearance: none;
+  -webkit-appearance:none;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: grey;
+  color: #fff;
+  font-size: 15px;
+  height: 100%;
+}
+form {
+  position: relative;
+}
+.search-result{
+  padding:20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">JstMStudio</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip">Home</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">About</span>
+       </a>
+       <span class="tooltip">About</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-square'></i>
+         <span class="links_name">Documentation</span>
+       </a>
+       <span class="tooltip">Documentation</span>
+     </li>
+     <li>
+     <li>
+       <a href="project.html">
+         <i class='bx bxs-briefcase-alt-2'></i>
+         <span class="links_name">Project</span>
+       </a>
+       <span class="tooltip">Project</span>
+     </li>
+     <li>
+       <a href="client.html">
+        <i class='bx bx-user'></i>
+         <span class="links_name">Client</span>
+       </a>
+       <span class="tooltip">Client</span>
+     </li>
+     <li>
+       <a href="web-app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">Web App</span>
+       </a>
+       <span class="tooltip">Web App</span>
+     </li>
+      <li>
+       <a href="api.html">
+         <i class='bx bx-extension'></i>
+         <span class="links_name">API</span>
+       </a>
+       <span class="tooltip">API</span>
+     </li>
+     <li>
+       <a href="store.html">
+         <i class='bx bx-store-alt'></i>
+         <span class="links_name">Store</span>
+       </a>
+       <span class="tooltip">Store</span>
+     </li>
+     <li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<br>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>About</h1>
+<p>JstMStudio is a small studio founded by Jst Tan. JstMStudio is focused on many things, from music, story writing, website development and much more. JstMStudio is a small remote indie studio that focuses on many things to build a better future. </p>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+    <h1>Contact</h1>
+    <p>Wanted to contact JstMStudio? The team are currently providing multiple ways for everyone to contact the team. Please contact us for important stuff like support, feedback, suggestion and bugs report and not non-important content like spam. We are an small team so we might be busy causing some late reply from the team so please be patient. We also only reply during our official business hours.</p>
+    <br>
+    <hr>
+    <br>
+    <h1>Official Contact Information<h1>
+    <br>
+      <h3><a href="https://m.me/106374745315761">Messenger</a></h3>
+      <p>We provided a Messenger contact services for all Facebook users to contact JstMStudio Developer Team. You could contact us directly on Messenger.</p>
+      <br>
+      <h3><a href="https://twitter.com/messages/compose?recipient_id=1496024914431602690">Twitter</a></h3>
+      <p>For those that use Twitter, JstMStudio also provide a contact services on Twitter too. We also active there too.</p>
+
+  </div>
+</div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+	<h1>Contributing To JstMStudio</h1>
+<p>There are many stuff you could help and contribute to JstMStudio projects and help out the twam. Each and every of your help and contribution to our projects is appreciate by us no matter if it just a little typo or an error by the team.</p>
+<br>
+<hr>
+<br>
+<h2>Reporting Bugs</h2>
+<p>One way to contributing to the project without technical knowledge is to report bugs to the team. If you found a bugs on our website or software, please create a Github issue or email us and report it. It would help us a lot by improving our software so everyone could use it smoother.<br><br>If you could, you could also help us to fixed reported bugs when we not yet fixed the bugs. It would certainly help the team a lot through for saving times and efforts in finding bugs. After finish programming, you could submit a pull request for one of our volunteer to approve and deploy it too. </p>
+<br>
+<hr>
+<br>
+<h2>Adding content onto JstMStudio software</h2>
+<p>You could contribute to the project by adding some contents onto our software. You could submit sites or projects onto our search engine, adding videos, music and book onto our content library for everyone to enjoy and etc.</p>
+<br>
+<hr>
+<br>
+<h2>Codes</h2>
+<p>If you a developer, you could also help us to improve our software like improving our UI, helping developing and built our upcoming new features and project with the team and etc. You could also help and contribute to create more functions for our current services too. </p>
+  </div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>Donate</h1>
+<p>JstMStudio is funded by people like you. We do not sell any user data, spam your screen with ads or lock stuff in paywall. We don't and we think it annoying. We are funded via selling websites and donation. If you would like to support the project, please donate a bucks or two to us. It might mean less to you but it mean a lot to us. <br><br>
+We currently provide two methods for everyone to help, support and donate to us. You could donate to us via <a href="https://www.buymeacoffee.com/jestonjst">Buy Me A Coffee</a> and <a href="https://ko-fi.com/R6R8BLGHG">Ko-Fi</a>. You could support us by donating one-time or monthly too. 
+    </p>
+      <br><br>
+      <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jestonjst" data-color="#40DCA5" data-emoji=""  data-font="Lato" data-text="Buy me a drink" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+      <br><br>
+      <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#28e032', 'R6R8BLGHG');kofiwidget2.draw();</script> 
+  </div>
+</div>
+
+<div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay-content">
+<h1>Frequently Asked Question</h1>
+<p>There are many frequently asked question by the JstMStudio community. We would explain each and all of the question here. There might be a chances that your question that you been looking be answered directly here too. All answers had been written by the team too. </p>
+<br>
+<hr>
+<br>
+<button type="button" class="collapsible2"><h2>Why JstMStudio exist?</h2></button>
+<div class="content2">
+  <p>JstMStudio was founded by Jst Tan. JstMStudio was meant to sell websites for a margin of the price offered by competitor. </p>
+</div>
+<button type="button" class="collapsible2"><h2>How does JstMStudio monetised and funded?</h2></button>
+<div class="content2">
+  <p>JstMStudio is monetised with a tons of privacy-friendly ways like donation, sponsorship, static ads and etc. We are largely funded by donation made by the community and selling websites we built to our clients and customers. We do not and have no intention to lock any of our features provided by us behind paywall nor selling any user data. </p>
+</div>
+<button type="button" class="collapsible2"><h2>How To Pronounce JstMStudio?</h2></button>
+<div class="content2">
+  <p>Please listen to the audio files provided by the team with the audio player below to heard how to pronounce JstMStudio. The audio was generated via a text to speech (TTS) software and not voiced by any of the team.</p>
+  <audio controls>
+  <source src="pronounce.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+    </div>
+    <script>
+    var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+<h1>JstMStudio Help Articles</h1>
+  <p style="text-align:center;"><strong>A place to get help articles and error codes answered. There are many help articles codes provided and used by JstMStudio. Please search for your error codes in the search bar to looks for the information about it. </strong></p>
+  <br><br>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Codes</th>
+    </tr>
+    <tr>
+      <td>Account Banned</td>
+      <td>13841</td>
+    </tr>
+    <tr>
+      <td>Account Deleted</td>
+      <td>67381</td>
+    </tr>
+    <tr>
+      <td>Account Disabled</td>
+      <td>89651</td>
+    </tr>
+    <tr>
+      <td>Account Not To Be Found</td>
+      <td>10915</td>
+    </tr>
+    <tr>
+      <td>Adjusting Donation</td>
+      <td>52107</td>
+    </tr>
+    <tr>
+      <td>Didn't COPPA required each software to be 13?</td>
+      <td>98106</td>
+    </tr>
+    <tr>
+      <td>What Does Donation Do?</td>
+      <td>61029</td>
+    </tr>
+    <tr>
+      <td>Embed</td>
+      <td>92657</td>
+    </tr>
+    <tr>
+      <td>How Could I Donate?</td>
+      <td>78526</td>
+    </tr>
+      <tr>
+      <td>How Old Is It Required To Use JstMStudio Projects?</td>
+      <td>23195</td>
+    </tr>
+    <tr>
+      <td>Payment Processor</td>
+      <td>89103</td>
+    </tr>
+  </table>
+  <br><br>
+<form class="searchForm">
+<input type="search" class="txtBox">
+<input type="submit" class="submit-btn" value="submit">
+</form>
+ <div class="search-result">
+<h2 class="search-word"></h2>
+<p class="description" style="text-align:center"></p>
+  </div>
+ <script>
+const txtBox = document.querySelector(".txtBox");
+const form = document.querySelector(".searchForm");
+const searchWord = document.querySelector(".search-word");
+const description = document.querySelector(".description");
+const dictionaryJson =
+  "https://en.jstmstudio.tk/articles.json";
+function searchDict(e) {
+  e.preventDefault();
+  fetch(dictionaryJson)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      e.preventDefault;
+      let word = txtBox.value;
+      console.log(txtBox.value);
+      let searchKeyword = word.toUpperCase();
+      Object.keys(data).forEach(function(key) {
+        if (key === searchKeyword) {
+          searchWord.innerHTML = searchKeyword;
+          if(searchKeyword === data[key]){
+            description.innerHTML = "Not found";
+          }
+          else{
+             description.innerHTML = data[key];
+          }
+          
+          console.log(data[key]);
+        }
+      });
+    });
+}
+
+form.addEventListener("submit", searchDict);
+
+_.find(allmCar, (mCar) => /XYZ/.test(mCar.value));
+</script>
+  </div>
+</div>
+
+<div id="myNav6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
+  <div class="overlay-content">
+    <div class="logo">
+<h1>JstMStudio Forum</h1>
+<p>JstMStudio Forum is the official forum software for all users, fans and viewer of JstMStudio. JstMStudio Forum is a forum software developed solely by JstMStudio. A place to ask for help, give feedback, report bugs and etc to JstMStudio.</p>
+</div>
+<br>
+<div style="background-color: green;color: yellow;text-align:left;width:40%;padding:4px;">
+<p><strong><a href="/Forum/index.html" style="color:yellow;"><i class='bx bx-home' ></i> JstMStudio</a></strong></p>
+</div>
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h1 style="text-align:center;">Announcements</h1>
+<p style="font-size:20px;" id="announcements"></p>
+</div>
+
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h3 style="font-size:25px;text-align:center;">Important</h3>
+<p></p>
+
+<strong>
+<button type="button" class="collapsible3"><div class="list">
+<i class='bx bxs-megaphone' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> Announcements <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place to get the official announcements of JstMStudio. A place to get the latest official announcements from the team. </p>
+<iframe src="forum/announcements.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-news' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> News <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place to get the latest news about JstMStudio. A place to get the latest news about the team like new product, new works, new events and etc.</p>
+<iframe src="forum/news.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bxs-megaphone' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> Updates <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p style="font-size:14px;">A place to get the latest updates about JstMStudio. A place to get the latest product, project, software and show updates directly from the team.</p>
+<iframe src="forum/updates.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+</div>
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h3 style="font-size:25px;text-align:center;">Support</h3>
+<p></p>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-support' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> Support <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place to ask for support about anything related to JstMStudio. A place to ask for support and help from the JstMStudio community and support team.</p>
+<iframe src="forum/support.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-bulb' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> Feedback <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place to give feedback to JstMStudio. A place to drop your feedback ideas to the team.</p>
+<iframe src="forum/feedback.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bxs-bug' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> Bugs Report <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place to report bugs to JstMStudio so it could be fixed as soon as possible by the team. A place to report and label bugs.</p>
+<iframe src="forum/bugs-report.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+</div>
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h3 style="font-size:25px;text-align:center;">Discussion</h3>
+<p></p>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-chat' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> General <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place to discuss about JstMStudio via our forum. A place to discuss about anything related to the team, like our work, stories, software, platform and etc. </p>
+<iframe src="forum/general.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-book-content' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> Content <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place to share contents that is currently available inside JstMStudio platforms. A place to share and discuss about contents available on our official platform.</p>
+<iframe src="forum/content.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-chat' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> Off Topic <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>A place discuss non-related to the team, JstMStudio. A place to discuss anything that is non-related to JstMStudio like gaming and etc.</p>
+<iframe src="forum/off-topic.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+</div>
+<script src="announcement.js"></script>
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.display === "block") {
+      content3.style.display = "none";
+    } else {
+      content3.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<h1>JstMStudio Documentation</h1>
+<p>Hi! Welcome to JstMStudio Documentation! A place to get some helpful articles and everything you needed to use, contribute to the project and etc proudly written by our team. You could find many useful articles here that might help you with your question. Please look through all articles here before contacting us for support. We might redirect you back here.</p>
+
+<br>
+<hr>
+<br>
+<h2>Articles</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav()" id="about">About</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav1()" id="contact">Contact</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav2()" id="contributing">Contributing</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav3()" id="donation">Donation</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav4()" id="faq">FAQ</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav5()" id="helparticles">Help Articles</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav6()" id="forum">Forum</div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+  <h1>Themes</h1>
+<p>You could customise the themes of JstMStudio into a colour that you prefer. Select and choose from the color set below to make JstMStudio UI into your color preference.</p>
+<br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+  </script>
+
+</body>
+</html>
