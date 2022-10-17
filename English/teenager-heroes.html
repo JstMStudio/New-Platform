@@ -11,7 +11,7 @@
   gtag('config', 'G-ZM4LK5K0LJ');
 </script>
     <link rel="stylesheet" href="style.css">
-    <title>Workplace</title>
+    <title>Teenager Heroes</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -369,6 +369,28 @@ padding-right: 20px;
   text-align: left;
   color: blue;
 }
+
+.collapsible3 {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content3 {
+  padding: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: yellow;
+  text-align: left;
+  color: blue;
+}
     </style>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -524,12 +546,13 @@ for (i = 0; i < coll.length; i++) {
 <p>Teenager Heroes book series contains many awesome locations, developed and built by Teenager Heroes team. All locations listed here are the primary locations premiered in many seasons of Teenager Heroes. We contains a list of all locations in Teenager Heroes here.</p>
 <br>
 <div style="border-width:3px;border-color:red;border-style:solid;">
-<button class="collapsible2"><h3>Perle</h3></button>
-<div class="content2">
-<p style="text-align:center;">Perle is the hometown of Li Hui and Hu Jie, where they grew up. Perle is an advanced city. Perle is the main city in Teenager Heroes Season 1. Perle featured the best, cleanest environment. Perle is set in a place in the future.</p>
+  <button type="button" class="collapsible3"><h2>Perle</h2></button>
+<div class="content3">
+<div style="padding:16px;">
+<p>Perle is the hometown of Li Hui and Hu Jie, where they grew up. Perle is an advanced city. Perle is the main city in Teenager Heroes Season 1. Perle featured the best, cleanest environment. Perle is set in a place in the future.</p>
 <br>
-  <h3 style="text-align:center;">Places</h3>
-  <br>
+<h3 style="text-align:center;">Perle</h3>
+<br>
   <li>VRzoo: VRzoo is a zoo in Perle. It is a virtual reality zoo for visitors to see animals in the zoo using virtual reality.</li>
   <br>
   <li>VRmuseum: VRmuseum is a big museum in Perle. It is a virtual reality museum for everyone to visit the entire museum without walking and visiting everything on display using virtual reality.</li>
@@ -545,21 +568,23 @@ for (i = 0; i < coll.length; i++) {
   <li>VRbank: Perle also has a bank too. VRbank lets everyone save money in the bank inside the virtual reality world. VRbank also lets everyone save money in the virtual reality bank too.</li>
   <br>
   <li>Peaceful Central（宁中）: Peaceful Central is the neighborhood where the twins home are and lives. Peaceful Central is a wonderful and clean neighborhood.</li>
-</div>
-</div>
+  <br>
+  </div>
+  </div>
+  </div>
 
 <script>
-var coll = document.getElementsByClassName("collapsible2");
+var coll = document.getElementsByClassName("collapsible3");
 var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var content2 = this.nextElementSibling;
-    if (content2.style.maxHeight){
-      content2.style.maxHeight = null;
+    var content3 = this.nextElementSibling;
+    if (content3.style.maxHeight){
+      content3.style.maxHeight = null;
     } else {
-      content2.style.maxHeight = content2.scrollHeight + "px";
+      content3.style.maxHeight = content3.scrollHeight + "px";
     } 
   });
 }
@@ -627,6 +652,11 @@ for (i = 0; i < coll.length; i++) {
 <br>
 <h1>Teenager Heroes</h1>
 <p>In 2100, there are two teenage Chinese twins heroes, named Li Hui and Hu Jie with their parents in Perle out for an adventure to protect their mighty city! Teenager Heroes is a Science Fiction and Adventure book series, a book series focused around the futures of science and adventures. The series featured the main characters, Li Hui and Hu Jie, the Chinese twins off in an awesome adventure in their city, Perle. Teenager Heroes is written and created by Jst Tan, distributed by JstMStudio into many various platforms.</p>
+<br>
+<p>Teenager Heroes book series is currently available to be read on multiple platforms published officially by us, JstMStudio. Please read Teenager Heroes book series below legally:</p>
+<br>
+<li>JstMStudio</li>
+<li>Wattpad</li>
 <br>
 <hr>
 <br>
