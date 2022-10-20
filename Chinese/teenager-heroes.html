@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>少年英雄</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+  
+.button2 {
+float:left;
+background-color: black;
+  color: blue;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:blue;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content2 {
+  padding: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: yellow;
+  text-align: left;
+  color: blue;
+}
+
+.collapsible3 {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content3 {
+  padding: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: yellow;
+  text-align: left;
+  color: blue;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Jst 多功能工作室</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">主页</span>
+        </a>
+         <span class="tooltip">主页</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">信息</span>
+       </a>
+       <span class="tooltip">信息</span>
+     </li>
+     <li>
+     <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">客户</span>
+       </a>
+       <span class="tooltip">客户</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">文档</span>
+       </a>
+       <span class="tooltip">文档</span>
+     </li>
+     <li>
+       <a href="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">网络应用</span>
+       </a>
+       <span class="tooltip">网络应用</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>字符</h1>
+<p>少年英雄系列丛书以许多故事和季节的许多角色为特色。少年英雄系列丛书包含由少年英雄团队开发的许多令人敬畏的设计角色。此处列出了我们所有《少年英雄》故事中的所有角色：</p>
+<br><br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>虎杰</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+<p>虎杰，《少年英雄》中勇敢而快速的英雄。李辉的弟弟。</p>
+  <li>姓名：虎杰</li>
+  <br>
+<li>性别：男</li>
+<br>
+<li>年龄：14</li>
+<br>
+<li>种族：华人</li>
+<br>
+<li>职业：英雄</li>
+<br>
+<li>个性：</li>
+<li>他很勇敢。遇到麻烦他保护妹妹，也敢于面对顽皮的小人。</li>
+<li>他做事也很快，但等待时很不耐烦。</li>
+<li>俏皮，做重要事情的时候也很顽皮。 </li>
+<li>很有趣，他喜欢逗别人笑，尤其是他的妹妹。</li>
+<br>
+<li>弱点：</li>
+<li>不耐烦，他大部分时间都很不耐烦，等不及别人了。</li>
+<br>
+<li>权力：</li>
+  <li>速度
+  <li>跑步，他可以在很短的时间内从 A 地快速跑到 B 地。他可以跑得快如闪电。 </li>
+  <li>龙卷风，他可以跑得很快，在一个小区域内制造一个小龙卷风，会产生强风。 </li>
+  <li>能源发电机，他可以利用他的速度产生电能，可以恢复一个停电的建筑物。</li>
+  <br>
+<li>小工具：</li>
+<li>盾牌，他可以躲在盾牌后面保护自己免受敌人和恶棍的攻击。<​​/li>
+</div>
+</div>
+</div>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>丽惠</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+  <p>虎杰的姐姐丽惠。 《少年英雄》中害羞但聪明的英雄。 </p>
+    <li>姓名：丽惠</li>
+    <br>
+    <li>性别：女性</li>
+    <br>
+    <li>年龄：14</li>
+    <br>
+    <li>种族：华人</li>
+    <br>
+  <li>职业：英雄</li>
+  <br>
+  <li>个性：</li>
+    <li>丽惠很聪明，她可以轻松解决任何难题。</li>
+    <li>丽惠也很害羞，她害怕遇到的大多数人。</li>
+    <li>又甜又细心，照顾弟弟也能小心翼翼。</li>
+  <br>
+  <li>弱点：</li>
+    <li>害羞，她害怕面对大多数敌人。她很容易被可怕的敌人吓跑。</li>
+<br>
+<li>电源</li>
+    <li>技术</li>
+<li>计算，她可以做一些计算，比如设置一台计算机等。她可以设置一台新计算机来做她需要的事情。</li>
+<li>黑客，她可以侵入其他技术基础设施，使其无法访问或不安全的软件。</li>
+  <br>
+<li>小工具</li>
+<li>机器人，她有 2 个机器人随时陪伴着她，可以帮助搬运东西、保护她等等。她可以对机器人进行编程，让她做任何她需要的事情。</li>
+</div>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+      content2.style.maxHeight = content2.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+  <h1>地点</h1>
+<p>《少年英雄》系列丛书包含许多很棒的地点，由《少年英雄》团队开发和建造。此处列出的所有地点都是《少年英雄》多季首播的主要地点。我们在此处包含了《少年英雄》中所有位置的列表。</p>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+  <button type="button" class="collapsible3"><h2>Perle</h2></button>
+<div class="content3">
+<div style="padding:16px;">
+<p>珀尔是丽惠和虎杰的故乡，他们长大的地方。珀尔是一座先进的城市。 Perle 是《少年英雄》第 1 季的主要城市。Perle 拥有最好、最干净的环境。 Perle 被设定在未来的某个地方。</p>
+<br>
+<h3 style="text-align:center;">Perle</h3>
+<br>
+  <li>VRzoo：VRzoo 是 Perle 的一个动物园。它是一个虚拟现实动物园，游客可以使用虚拟现实技术在动物园里看到动物。</li>
+  <br>
+  <li>VRmuseum：VRmuseum 是 Perle 的一座大型博物馆。这是一个虚拟现实博物馆，每个人都无需步行即可参观整个博物馆，并使用虚拟现实参观展出的所有物品。</li>
+  <br>
+  <li>VRmall：VRmall 是 Perle 的大型购物中心。这是一个供大家参观和购买东西的虚拟现实商城。游客可以使用 VR 访问虚拟现实商城购买商品。</li>
+  <br>
+  <li>森林：Perle 也有一片巨型森林。 Perle 森林种植了多种树木，从蓝莓到香蕉。大型森林也有助于保持环境清洁。</li>
+  <br>
+  <li>VRschool：Perle 也有一所学校。 Perle 孩子可以到学校学习虚拟现实。 Perle 为学生的学习提供了最好的技术。</li>
+  <br>
+  <li>VRcinema：Perle 也有面向所有公民的电影院。 Perle 影院让所有观众在虚拟现实中观看电影。观看者可以与家人和朋友一起在 VRcinema 上观看电影。</li>
+  <br>
+  <li>VRbank：Perle 也有一家银行。 VRbank 让每个人都可以在虚拟现实世界中的银行里存钱。 VRbank 还让每个人都可以在虚拟现实银行中存钱。</li>
+  <br>
+  <li>宁中：宁中是双胞胎的家和生活的街区。 宁中是一个美妙而干净的社区。</​​li>
+  <br>
+  </div>
+  </div>
+  </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.maxHeight){
+      content3.style.maxHeight = null;
+    } else {
+      content3.style.maxHeight = content3.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </div>
+  </div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>车辆</h1>
+<p>少年英雄系列丛书也包含许多很棒的车辆！少年英雄系列丛书展示了少年英雄团队为少年英雄系列丛书中的角色开发的许多令人敬畏的车辆。 </p>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>悬浮车</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+<p>Hover Car 是丽惠和虎杰拥有的交通工具，作为一种出行方式。它可以在城市周围飞行，甚至可以飞到外太空。悬浮车是李辉和胡杰 11 岁时发明的。</p>
+<br>
+<p>Hover Car 可以潜入水下并飞向太空。它可以帮助李辉和胡杰在城河中潜入水下，发现并阻止恶棍。 Hover Car 为 Li Hui 和 Hu Jie 提供了许多很棒的功能和能力。下面列出了所有功能：</p>
+<br>
+<li>飞行：Hover Car 可以在 Perle 周围飞行，将李辉和胡杰带到任何他们想去的地方。</li>
+<br>
+<li>潜艇：Hover Car 也可以像潜艇一样潜入水下。悬浮车可以将李辉和胡杰带到水下最深处。</li>
+<br>
+<li>速度：Hover Car 可以在天空、水下和陆地上以超快的速度将李辉和胡杰送到任何地方。</li>
+<br>
+</div>
+</div>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+      content2.style.maxHeight = content2.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>故事</h1>
+<p>《少年英雄》系列丛书包含大量精彩有趣的书籍故事，由《少年英雄》团队撰写。 《少年英雄》的每个故事都以中国双胞胎丽惠和虎杰为主角，展开了一场激动人心的冒险。 每个故事的标准阅读时间也预计在 21-30 分钟左右。 你也可以在这里阅读少年英雄的所有故事。</p>
+   <br>
+   <小时>
+   <br>
+   <h2>第 1 季</h2>
+   <p>第一季是少年英雄的第一季。 第 1 季的主角是虎杰和丽惠在他们的家乡 Perle。 </p>
+   <br>
+   <h4>没有可用的故事</h4>
+  </div>
+</div>
+
+<br>
+<h1>少年英雄</h1>
+<p>在 2100 年，有两个中国少年双胞胎英雄李辉和胡杰和他们的父母在珀尔外出冒险，以保护他们强大的城市！ 《少年英雄》是一部科幻与冒险系列丛书，该丛书围绕科学与冒险的未来展开。该系列以主角李辉和胡杰为主角，这对中国双胞胎在他们的城市 Perle 进行了一次精彩的冒险。 少年英雄由 Jst Tan 编写和创建，由Jst 多功能工作室分发到许多不同的平台。</p>
+<br>
+<p>少年英雄系列丛书目前可在我们JstMStudio官方发布的多个平台上阅读。请合法阅读以下少年英雄系列丛书：</p>
+<br>
+<li>Jst 多功能工作室</li>
+<li>Wattpad</li>
+<br>
+<小时>
+<br>
+<h1>新闻</h1>
+<p>欢迎来到少年英雄新闻！一个新闻页面，获取有关少年英雄的最新消息！一个获取少年英雄最新消息的地方，从新的情节到新的赛季，都聚集在这里供您阅读！在此处查看与《少年英雄》相关的最新消息。</p>
+<br>
+<hr style="width:60%;margin-left:auto;margin-right:auto;">
+<br>
+<h2>所有新闻</h2>
+<br>
+<h3>很遗憾，目前没有任何消息。 </h3>
+<br>
+<小时>
+<br>
+<h2>故事素材</h2>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav()" id="character">字符 <i class='bx bx-door-open'></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav1()" id="location">位置 <i class='bx bx-location-plus' ></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav2()" id="vehicles">车辆 <i class='bx bxs-car'></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav3()" id="story">故事<i class='bx bxs-book'></i></div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+<h1>主题</h1>
+<p>您可以将Jst 多功能工作室的主题自定义为您喜欢的颜色。 从下面的颜色集中选择并选择，以使Jst 多功能工作室 UI 成为您的颜色偏好。</p>
+    <br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+  </script>
+
+</body>
+</html>
