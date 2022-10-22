@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>{{Community Name}}</title>
+    <style>
+body {
+text-align: center;
+color: blue;
+font-weight: bold;
+}
+
+.collapsible {
+  background-color: yellow;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <br>
+<h1>{{Community Name}} <!--- Please replace {{Community Name}} with your own community real name ---></h1>
+<p>{{Community Description}} <!--- Please replace {{Community Description}} for information about your community in JstMStudio Community --></p>
+<li><i class='bx bx-location-plus'></i> {{Location Name}} <!--- Please replace {{Location Name}} with the location of your community --> </li>
+<li><i class='bx bx-group' ></i> {{Types}} <!--- Please replace {{Types}} with the type of your community. ---></li>
+<br>
+<hr>
+<br>
+<h2>Group Region</h2>
+<p>JstMStudio Community currently has multiple group region for each and all groups. All of this region is made and used for important items directly from the group admins.</p>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Rules <i class='bx bxs-down-arrow' ></i></h1></button>
+<div class="content">
+<p>Rules is guidelines that is made by this group to keep this group a safe and clean environment for everyone. Rules is made to moderate and maintain this group so it is tightly enforced in this entire group. Please follow all of the rules listed below for this group.</p><br>
+<li>{{Rules Title}}<br>{{Rules Description}}</li><br>
+<li>{{Rules Title}}<br>{{Rules Description}}</li><br>
+<li>{{Rules Title}}<br>{{Rules Description}}</li>
+<!--- Please replace {{Rules Title}} for the title of the rule and {{Rules Description}} for the description and additional info about the rule. --->
+<br>
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Announcements <i class='bx bxs-down-arrow' ></i></h1></button>
+<div class="content">
+<p>A place to get all announcements related to this community directly from community admistration. A place to get news from the community too, directly from group administration and management. 
+<br><br>
+<h2>All Announcements</h2>
+<br>
+<h3>Demo</h3><!--- Replace "Demo" with announcement title --->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><!--- Replace text with the text for the announcements --->
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Posts <i class='bx bxs-down-arrow' ></i></h1></button>
+<div class="content">
+<p>a</p><!--- Replace this section with the code to Github Discussion for this community generated from Giscus. --->
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+
+</body>
+</html>
