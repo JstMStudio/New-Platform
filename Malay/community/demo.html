@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>{{Nama komuniti}}</title>
+    <style>
+body {
+text-align: center;
+color: blue;
+font-weight: bold;
+}
+
+.collapsible {
+  background-color: yellow;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <br>
+<h1>{{Nama Komuniti}} <!--- Sila gantikan {{Nama Komuniti}} dengan nama sebenar komuniti anda sendiri ---></h1>
+<p>{{Deskripsi Komuniti}} <!--- Sila gantikan {{Deskripsi Komuniti}} untuk mendapatkan maklumat tentang komuniti anda dalam Komuniti JstMStudio --></p>
+<li><i class='bx bx-location-plus'></i> {{Location Name}} <!--- Sila gantikan {{Location Name}} dengan lokasi komuniti anda --> </ li>
+<li><i class='bx bx-group' ></i> {{Types}} <!--- Sila gantikan {{Types}} dengan jenis komuniti anda. ---></li>
+<br>
+<hr>
+<br>
+<h2>Wilayah Kumpulan</h2>
+<p>Komuniti JstMStudio pada masa ini mempunyai berbilang rantau kumpulan untuk setiap dan semua kumpulan. Semua wilayah ini dibuat dan digunakan untuk item penting terus daripada pentadbir kumpulan.</p>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Peraturan <i class='bx bxs-down-arrow' ></i></h1></ butang>
+<div class="content">
+<p>Peraturan ialah garis panduan yang dibuat oleh kumpulan ini untuk memastikan kumpulan ini sebuah persekitaran yang selamat dan bersih untuk semua orang. Peraturan dibuat untuk menyederhanakan dan mengekalkan kumpulan ini supaya ia dikuatkuasakan dengan ketat dalam keseluruhan kumpulan ini. Sila ikuti semua peraturan yang disenaraikan di bawah untuk kumpulan ini.</p><br>
+<li>{{Peraturan Tajuk}}<br>{{Peraturan Perihalan}}</li><br>
+<li>{{Peraturan Tajuk}}<br>{{Peraturan Perihalan}}</li><br>
+<li>{{Peraturan Tajuk}}<br>{{Peraturan Perihalan}}</li>
+<!--- Sila gantikan {{Rules Title}} untuk tajuk peraturan dan {{Rules Description}} untuk penerangan dan maklumat tambahan tentang peraturan. --->
+<br>
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Pengumuman <i class='bx bxs-down-arrow' ></i></h1></ butang>
+<div class="content">
+<p>Tempat untuk mendapatkan semua pengumuman yang berkaitan dengan komuniti ini secara langsung daripada penerimaan komuniti. Tempat untuk mendapatkan berita daripada komuniti juga, terus daripada pentadbiran dan pengurusan kumpulan.
+<br><br>
+<h2>Semua Pengumuman</h2>
+<br>
+<h3>Demo</h3><!--- Gantikan "Demo" dengan tajuk pengumuman --->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utk enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><!--- Gantikan teks dengan teks untuk pengumuman --->
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Siaran <i class='bx bxs-down-arrow' ></i></h1></ butang>
+<div class="content">
+<p>a</p><!--- Gantikan bahagian ini dengan kod kepada Perbincangan Github untuk komuniti ini yang dijana daripada Giscus. --->
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+
+</body>
+</html>
