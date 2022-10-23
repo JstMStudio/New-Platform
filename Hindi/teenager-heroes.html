@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>Teenager Heroes</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+  
+.button2 {
+float:left;
+background-color: black;
+  color: blue;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:blue;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content2 {
+  padding: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: yellow;
+  text-align: left;
+  color: blue;
+}
+
+.collapsible3 {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content3 {
+  padding: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: yellow;
+  text-align: left;
+  color: blue;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">JstMStudio</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">होम</span>
+        </a>
+         <span class="tooltip">होम</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">इसके बारे में</span>
+       </a>
+       <span class="tooltip">इसके बारे में</span>
+     </li>
+      <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">क्लाइंट</span>
+       </a>
+       <span class="tooltip">क्लाइंट</span>
+     </li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">दस्तावेज़ीकरण</span>
+       </a>
+       <span class="tooltip">दस्तावेज़ीकरण</span>
+     </li>
+     <li>
+       <a ref="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">वेब ऐप</span>
+       </a>
+       <span class="tooltip">वेब ऐप</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>अक्षर</h1>
+<p>किशोर नायकों की पुस्तक श्रृंखला में कई कहानियों और सीज़न में कई पात्रों को दिखाया गया है। टीनएजर हीरोज बुक सीरीज़ में टीनएजर हीरोज टीम द्वारा विकसित कई भयानक डिज़ाइन किए गए चरित्र हैं। टीनएजर हीरोज की सभी कहानियों में हमारे सभी पात्र यहां सूचीबद्ध हैं:</p>
+<br><br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>हू जी（虎杰）</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+<p>हू जी, टीनएजर हीरोज में एक बहादुर और तेज नायक। ली हुई का छोटा भाई।</p>
+  <li>नाम: हू जी</li>
+  <br>
+<li>लिंग: पुरुष</li>
+<br>
+<li>आयु: 14</li>
+<br>
+<li>जातीयता: चीनी</li>
+<br>
+<li>व्यवसाय: नायक</li>
+<br>
+<li>व्यक्तित्व: </li>
+<li>वह बहादुर है। मुसीबत आने पर उसने अपनी बहन की रक्षा की और शरारती खलनायकों का सामना करने का साहस भी किया।</li>
+<li>वह काम करने में भी तेज है लेकिन प्रतीक्षा में बहुत अधीर है।</li>
+<li>चंचल, महत्वपूर्ण चीजें करते समय वह चंचल हो सकता है। </li>
+<li>मजेदार, वह हर किसी को हंसाना पसंद करता है, खासकर अपनी बहन को।</li>
+<br>
+<li>कमजोरी:</li>
+<li>अधीर, वह ज्यादातर समय अधीर रहता है और दूसरों की प्रतीक्षा नहीं कर सकता।</li>
+<br>
+<li>पावर:</li>
+  <li>गति
+  <li>दौड़ते हुए, वह स्थान A से स्थान B तक बहुत कम समय में बहुत तेजी से दौड़ सकता था। वह बिजली की तरह तेज दौड़ सकता था। </li>
+  <li>बवंडर, वह एक छोटे से क्षेत्र के अंदर एक छोटा बवंडर बनाने के लिए बहुत तेज दौड़ सकता था जो तेज हवाएं बनाएगा। </li>
+  <li>ऊर्जा जनरेटर, वह अपनी गति का उपयोग करके विद्युत ऊर्जा उत्पन्न कर सकता है जो बिजली के निर्माण को बहाल कर सकता है।</li>
+  <br>
+<li>गैजेट:</li>
+<li>ढाल, वह अपनी ढाल के पीछे छिपकर दुश्मन और खलनायक के हमले से खुद को बचा सकता था।</li>
+</div>
+</div>
+</div>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>ली हुई （丽惠）</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+  <p>ली हुई, हू जी की बड़ी बहन। टीनएजर हीरोज में एक शर्मीला लेकिन स्मार्ट हीरो। </p>
+    <li>नाम: ली हुई</li>
+    <br>
+    <li>लिंग: महिला</li>
+    <br>
+    <li>आयु: 14</li>
+    <br>
+    <li>जातीयता: चीनी</li>
+    <br>
+  <li>व्यवसाय: नायक</li>
+  <br>
+  <li>व्यक्तित्व:</li>
+    <li>ली हुई स्मार्ट है, वह किसी भी कठिन समस्या को आसानी से हल कर लेती है।</li>
+    <li>ली हुई भी शर्मीली है, वह उन लोगों से डरती है जिनसे वह मिलती है।</li>
+    <li>प्यारी और सावधान, वह अपने छोटे भाई की देखभाल करने में सावधानी बरत सकती है।</li>
+  <br>
+  <li>कमजोरी:</li>
+    <li>शर्मीली, वह ज्यादातर दुश्मनों का सामना करने से डरती है। वह डरावने दुश्मनों से आसानी से डर जाती है।</li>
+<br>
+<li>पावर</li>
+    <li>प्रौद्योगिकी</li>
+<li>कम्प्यूटिंग, वह कुछ कंप्यूटिंग कर सकती थी जैसे कंप्यूटर स्थापित करना, आदि। वह अपनी ज़रूरत की चीज़ों को करने के लिए एक नया कंप्यूटर स्थापित कर सकती थी।</li>
+<li>हैकिंग, वह अन्य प्रौद्योगिकी अवसंरचना में हैक कर सकती थी और इसे दुर्गम या असुरक्षित सॉफ़्टवेयर बना सकती थी।</li>
+  <br>
+<li>गैजेट</li>
+<li>बॉट्स, उसके साथ हर समय 2 बॉट होते हैं जो सामान ले जाने, उसकी रक्षा करने और आदि में मदद कर सकते हैं। वह बॉट्स को जो कुछ भी चाहिए उसे करने के लिए प्रोग्राम कर सकती है।</li>
+</div>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+      content2.style.maxHeight = content2.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+<h1>स्थान</h1>
+<p>किशोर नायकों की पुस्तक श्रृंखला में कई भयानक स्थान हैं, जिन्हें टीनएजर हीरोज टीम द्वारा विकसित और निर्मित किया गया है। यहां सूचीबद्ध सभी स्थान टीनएजर हीरोज के कई सीज़न में प्रीमियर किए गए प्राथमिक स्थान हैं। हमारे पास यहां टीनएजर हीरोज के सभी स्थानों की सूची है।</p>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+  <button type="button" class="collapsible3"><h2>Perle</h2></button>
+<div class="content3">
+<div style="padding:16px;">
+<p>पर्ले ली हुई और हू जी का गृहनगर है, जहां वे बड़े हुए थे। पर्ले एक उन्नत शहर है। टीनएजर हीरोज सीजन 1 में पेर्ले मुख्य शहर है। पेर्ले ने सबसे अच्छा, स्वच्छ वातावरण दिखाया। Perle भविष्य में एक स्थान पर सेट है।</p>
+<br>
+<h3 style="text-align:center;">पर्ले</h3>
+<br>
+  <li>VRzoo: VRzoo Perle में एक चिड़ियाघर है। यह आगंतुकों के लिए आभासी वास्तविकता का उपयोग करके चिड़ियाघर में जानवरों को देखने के लिए एक आभासी वास्तविकता चिड़ियाघर है।</li>
+  <br>
+  <li>VRmuseum: VRmuseum Perle में एक बड़ा संग्रहालय है। यह एक आभासी वास्तविकता संग्रहालय है, जिसमें सभी लोग बिना टहले और आभासी वास्तविकता का उपयोग करके प्रदर्शन पर सब कुछ देखे बिना पूरे संग्रहालय का दौरा कर सकते हैं।</li>
+  <br>
+  <li>VRmall: VRmall, Perle में एक बड़ा शॉपिंग मॉल है। यह हर किसी के लिए सामान खरीदने और खरीदने के लिए एक वर्चुअल रियलिटी मॉल है। आगंतुक वर्चुअल रियलिटी मॉल में सामान खरीदने के लिए VR का उपयोग कर सकते हैं।</li>
+  <br>
+  <li>वन: पेर्ले में एक विशाल वन भी है। पेर्ले के जंगल में ब्लूबेरी से लेकर केले तक कई तरह के पेड़ उगते हैं। विशाल वन पर्यावरण को भी स्वच्छ रखने में मदद करता है।</li>
+  <br>
+  <li>VRschool: Perle में एक स्कूल भी है। आभासी वास्तविकता में सीखने के लिए पर्ले बच्चे स्कूल जा सकते थे। Perle छात्रों को अध्ययन करने के लिए सर्वोत्तम तकनीक प्रदान करता है।</li>
+  <br>
+  <li>VRसिनेमा: Perle में सभी नागरिकों के लिए भी एक सिनेमा है। पर्ले सिनेमा सभी दर्शकों को आभासी वास्तविकता में फिल्म देखने की सुविधा देता है। दर्शक अपने परिवार और दोस्तों के साथ VRसिनेमा पर फिल्में देख सकते हैं।</li>
+  <br>
+  <li>VRbank: Perle का एक बैंक भी है। VRbank वर्चुअल रियलिटी की दुनिया में सभी को बैंक में पैसे बचाने की सुविधा देता है। VRbank वर्चुअल रियलिटी बैंक में भी सभी को पैसे बचाने की सुविधा देता है।</li>
+  <br>
+  <li>शांतिपूर्ण केंद्र（宁中）: शांतिपूर्ण मध्य वह पड़ोस है जहां जुड़वा बच्चे रहते हैं और रहते हैं। शांतिपूर्ण सेंट्रल एक अद्भुत और स्वच्छ पड़ोस है।</li>
+  <br>
+  </div>
+  </div>
+  </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.maxHeight){
+      content3.style.maxHeight = null;
+    } else {
+      content3.style.maxHeight = content3.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </div>
+  </div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>वाहन</h1>
+<p>किशोर नायकों की पुस्तक श्रृंखला में कई शानदार वाहन भी हैं! टीनएजर हीरोज बुक सीरीज़ में टीनएजर हीरोज की टीम द्वारा टीनएजर हीरोज बुक सीरीज़ के पात्रों के लिए विकसित कई भयानक वाहन शामिल हैं। </p>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>कार होवर करें</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+<p>होवर कार, ली हुई और हू जी के स्वामित्व वाला एक वाहन है, जो घूमने के रास्ते के रूप में है। यह शहर के चारों ओर और यहां तक ​​कि बाहरी अंतरिक्ष में भी उड़ सकता है। हॉवर कार का आविष्कार ली हुई और हू जी ने 11 साल की उम्र में किया था।</p>
+<br>
+<p>होवर कार पानी के भीतर जा सकती है और अंतरिक्ष में उड़ सकती है। यह ली हुई और हू जी को खलनायकों को खोजने और रोकने के लिए शहर की नदी में पानी के नीचे जाने में मदद कर सकता है। होवर कार ली हुई और हू जी के लिए कई शानदार सुविधाएं और क्षमताएं प्रदान करती है। सभी सुविधाएं नीचे सूचीबद्ध हैं:</p>
+<br>
+<li>उड़ान: होवर कार पेर्ले के चारों ओर उड़ सकती है, ली हुई और हू जी को अपनी इच्छानुसार किसी भी स्थान पर ला सकती है।</li>
+<br>
+<li>पनडुब्बी: होवर कार पनडुब्बी की तरह पानी के भीतर भी जा सकती है। होवर कार ली हुई और हू जी को पानी के भीतर सबसे गहरे स्थान पर ला सकती है।</li>
+<br>
+<li>गति: ली हुई और हू जी को कहीं भी पहुंचाने के लिए होवर कार आकाश, पानी के भीतर और जमीन पर बहुत तेजी से जा सकती है।</li>
+<br>
+</div>
+</div>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+      content2.style.maxHeight = content2.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>कहानी</h1>
+<p>किशोर नायकों की पुस्तक श्रृंखला में टीनएजर हीरोज टीम द्वारा लिखित कई अद्भुत और रोचक पुस्तक कहानियां हैं। टीनएजर हीरोज की हर कहानी में चीनी जुड़वां बच्चों ली हुई और हू जी को रोमांचक कारनामों पर चलते हुए दिखाया गया है। प्रत्येक कहानी लगभग 21-30 मिनट के मानक पढ़ने के समय की भी उम्मीद की जाती है। आप यहां टीनएजर हीरोज की सभी कहानियां भी पढ़ सकते हैं।</p>
+   <br>
+   <घंटा>
+   <br>
+   <h2>सीजन 1</h2>
+   <p>सीजन 1 टीनएजर हीरोज का पहला सीजन है। सीज़न 1 में हू जी और ली हुई अपने गृहनगर, पेर्ले में दिखाई देंगे। </p>
+   <br>
+   <h4>कोई कहानी उपलब्ध नहीं है</h4>
+  </div>
+</div>
+
+<br>
+<h1>किशोर नायक</h1>
+<p>2100 में, दो किशोर चीनी जुड़वां नायक हैं, जिनका नाम ली हुई और हू जी है, जो अपने माता-पिता के साथ पर्ले में अपने शक्तिशाली शहर की रक्षा के लिए एक साहसिक कार्य के लिए निकले हैं! टीनएजर हीरोज एक साइंस फिक्शन और एडवेंचर पुस्तक श्रृंखला है, जो विज्ञान और रोमांच के भविष्य पर केंद्रित एक पुस्तक श्रृंखला है। श्रृंखला में मुख्य पात्र, ली हुई और हू जी, चीनी जुड़वाँ बच्चे अपने शहर, पेर्ले में एक भयानक साहसिक कार्य में शामिल थे। टीनएजर हीरोज को Jst टैन द्वारा लिखा और बनाया गया है, जिसे JstMStudio द्वारा कई विभिन्न प्लेटफार्मों में वितरित किया गया है।</p>
+<br>
+<p>किशोर नायकों की पुस्तक श्रृंखला वर्तमान में हमारे द्वारा आधिकारिक रूप से प्रकाशित कई प्लेटफार्मों पर पढ़ने के लिए उपलब्ध है, JstMStudio। कृपया नीचे दी गई किशोरी नायकों की पुस्तक श्रृंखला को कानूनी रूप से पढ़ें:</p>
+<br>
+<li>JstMStudio</li>
+<li>वाटपैड</li>
+<br>
+<hr>
+<br>
+<h1>समाचार</h1>
+<p>टीनएजर हीरोज न्यूज में आपका स्वागत है! किशोर नायकों के बारे में नवीनतम समाचार प्राप्त करने के लिए एक समाचार पृष्ठ! किशोर नायकों के बारे में नवीनतम समाचार प्राप्त करने का स्थान, नए एपिसोड से लेकर नए सीज़न तक, सभी यहां आपके पढ़ने के लिए एकत्र हुए हैं! टीनएजर हीरोज से जुड़ी ताजा खबरें यहां देखें।</p>
+<br>
+<hr style="width:60%;margin-left:auto;margin-right:auto;">
+<br>
+<h2>सभी समाचार</h2>
+<br>
+<h3>दुर्भाग्य से, वर्तमान में कोई समाचार उपलब्ध नहीं है। </h3>
+<br>
+<hr>
+<br>
+<h2>कहानी सामग्री</h2>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav ()" id="character">चरित्र <i class='bx bx-door-open'></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav1()" id="location">स्थान <i class='bx bx-location-plus'></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav2()" id="vehicles">वाहन <i class='bx bxs-car'></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav3()" id="story">कहानी <i class='bx bxs-book'></i></div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+  <h1>Themes</h1>
+<p>You could customise the themes of JstMStudio into a colour that you prefer. Select and choose from the color set below to make JstMStudio UI into your color preference.</p><br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+  </script>
+
+</body>
+</html>
