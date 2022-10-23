@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>{{اسم المجتمع}}</title>
+    <style>
+body {
+text-align: center;
+color: blue;
+font-weight: bold;
+}
+
+.collapsible {
+  background-color: yellow;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <br>
+<h1> {{Community Name}} <!--- الرجاء استبدال {{Community Name}} بالاسم الحقيقي للمجتمع ---> </h1>
+<p> {{Community Description}} <!--- يُرجى استبدال {{Community Description}} للحصول على معلومات حول مجتمعك في مجتمع JstMStudio ---> </p>
+<li> <i class = 'bx bx-location-plus'> </i> {{Location Name}} <!--- الرجاء استبدال {{Location Name}} ---> </li>
+<li> <i class = 'bx bx-group'> </i> {{Types}} <!--- الرجاء استبدال {{Types}} بنوع منتداك. ---> </li>
+<br>
+<hr>
+<br>
+<h2> منطقة المجموعة </ h2>
+<p> يشتمل مجتمع JstMStudio حاليًا على منطقة مجموعة متعددة لكل المجموعات. تم إنشاء كل هذه المنطقة واستخدامها للعناصر المهمة مباشرةً من مسؤولي المجموعة. </ p>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">قواعد <i class='bx bxs-down-arrow' ></i></h1></button>
+<div class="content">
+<p> القواعد عبارة عن إرشادات وضعتها هذه المجموعة للحفاظ على هذه المجموعة بيئة آمنة ونظيفة للجميع. تم وضع قواعد للإشراف على هذه المجموعة والحفاظ عليها بحيث يتم فرضها بإحكام في هذه المجموعة بأكملها. يرجى اتباع جميع القواعد المذكورة أدناه لهذه المجموعة. </ p> <br>
+<li> {{Rules Title}} <br> {{Rules Description}} </li> <br>
+<li> {{Rules Title}} <br> {{Rules Description}} </li> <br>
+<li> {{Rules Title}} <br> {{Rules Description}} </li>
+<!--- الرجاء استبدال {{Rules Title}} بعنوان القاعدة و {{وصف القواعد}} للوصف والمعلومات الإضافية حول القاعدة. --->
+<br>
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">الإعلانات <i class='bx bxs-down-arrow' ></i></h1></button>
+<div class="content">
+<p> مكان للحصول على جميع الإعلانات المتعلقة بهذا المجتمع مباشرة من تسجيل المجتمع. مكان للحصول على الأخبار من المجتمع أيضًا ، مباشرةً من إدارة المجموعة وإدارتها.</p>
+<br> <br>
+<h2> كافة الإعلانات </ h2>
+<br>
+<h3> عرض توضيحي </h3> <! --- استبدل "Demo" بعنوان الإعلان --->
+   <p> Lorem ipsum dolor sit amet، consectetur adipisicing elit، sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam، quis nostrud training ullamco labouris nisi ut aliquip ex eacommo dueat. </p> <! --- استبدال النص بالنص الخاص بالإعلانات --->
+</p>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">المشاركات <i class='bx bxs-down-arrow' ></i></h1></button>
+<div class="content">
+<p>a</p><! --- استبدل هذا القسم برمز Github Discussion لهذا المجتمع الذي تم إنشاؤه من Giscus. --->
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+
+</body>
+</html>
