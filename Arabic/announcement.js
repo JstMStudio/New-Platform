@@ -1,1 +1,1 @@
-document.getElementById("announcements").innerHTML = "Nenhum anúncio";
+document.getElementById("announcements").innerHTML = "لا توجد إعلانات";
