@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>Teenager Heroes</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+  
+.button2 {
+float:left;
+background-color: black;
+  color: blue;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:blue;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content2 {
+  padding: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: yellow;
+  text-align: left;
+  color: blue;
+}
+
+.collapsible3 {
+  background-color: yellow;
+  color: blue;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content3 {
+  padding: 0px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: yellow;
+  text-align: left;
+  color: blue;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+  <body>
+    
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">JstMStudio</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Início</span>
+        </a>
+         <span class="tooltip">Início</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">Sobre</span>
+       </a>
+       <span class="tooltip">Sobre</span>
+     </li>
+     <li>
+     <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">Cliente</span>
+       </a>
+       <span class="tooltip">Cliente</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">Documentação</span>
+       </a>
+       <span class="tooltip">Documentação</span>
+     </li>
+     <li>
+       <a href="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">Aplicativo da Web</span>
+       </a>
+       <span class="tooltip">Aplicativo da Web</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>Personagens</h1>
+<p>A série de livros Teenager Heroes apresentou muitos personagens em muitas histórias e temporadas. A série de livros Teenager Heroes contém muitos personagens incríveis desenvolvidos pela equipe Teenager Heroes. Todos os nossos personagens em todas as histórias de Teenager Heroes estão listados aqui:</p>
+<br><br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>Hu Jie（虎杰）</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+<p>Hu Jie, um herói corajoso e rápido em Teenager Heroes. O irmão mais novo de Li Hui.</p>
+  <li>Nome: Hu Jie</li>
+  <br>
+<li>Sexo: Masculino</li>
+<br>
+<li>Idade: 14</li>
+<br>
+<li>Etnia: chinês</li>
+<br>
+<li>Ocupação: Heróis</li>
+<br>
+<li>Personalidade: </li>
+<li>Ele é corajoso. Ele protegia sua irmã quando encontravam problemas e também ousava enfrentar vilões travessos.</li>
+<li>Ele também é rápido em fazer coisas, mas muito impaciente em esperar.</li>
+<li>Jogador, ele pode ser brincalhão ao fazer coisas importantes. </li>
+<li>Engraçado, ele adora fazer todo mundo rir, especialmente sua irmã.</li>
+<br>
+<li>Fraqueza:</li>
+<li>Impaciente, ele é impaciente a maior parte do tempo e não pode esperar pelos outros.</li>
+<br>
+<li>Potência:</li>
+  <li>Velocidade
+  <li>Correndo, ele pode correr muito rápido do local A para o local B em um curto espaço de tempo. Ele podia correr tão rápido quanto um relâmpago. </li>
+  <li>Tornado, ele poderia correr muito rápido para criar um pequeno tornado dentro de uma pequena área que criaria ventos fortes. </li>
+  <li>Gerador de energia, ele poderia gerar energia elétrica usando sua velocidade, o que poderia restaurar um prédio sem energia.</li>
+  <br>
+<li>Dispositivo:</li>
+<li>Escudo, ele poderia se proteger de ataques de inimigos e vilões se escondendo atrás de seu escudo.</li>
+</div>
+</div>
+</div>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>Li Hui （丽惠）</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+  <p>Li Hui, a irmã mais velha de Hu Jie. Um herói tímido, mas inteligente, em Teenager Heroes. </p>
+    <li>Nome: Li Hui</li>
+    <br>
+    <li>Sexo: Feminino</li>
+    <br>
+    <li>Idade: 14</li>
+    <br>
+    <li>Etnia: chinês</li>
+    <br>
+  <li>Ocupação: Heróis</li>
+  <br>
+  <li>Personalidade:</li>
+    <li>Li Hui é inteligente, resolve facilmente qualquer problema difícil.</li>
+    <li>Li Hui também é tímida, tem medo da maioria das pessoas que conhece.</li>
+    <li>Doce e cuidadosa, ela poderia ser cuidadosa ao cuidar de seu irmão mais novo.</li>
+  <br>
+  <li>Fraqueza:</li>
+    <li>Tímida, ela tem medo de enfrentar a maioria dos inimigos. Ela facilmente se assusta com inimigos assustadores.</li>
+<br>
+<li>Poder</li>
+    <li>Tecnologia</li>
+<li>Computação, ela pode fazer algumas coisas, como configurar um computador etc. Ela pode configurar um novo computador para fazer as coisas de que precisa.</li>
+<li>Hackeando, ela poderia invadir outra infraestrutura de tecnologia e torná-la um software inacessível ou inseguro.</li>
+  <br>
+<li>Dispositivo</li>
+<li>Bots, ela tem 2 bots que a acompanham o tempo todo que podem ajudar a carregar coisas, defendê-la e etc. Ela pode programar os bots para fazer o que ela precisar.</li>
+</div>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+      content2.style.maxHeight = content2.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+  <h1>Locais</h1>
+<p>A série de livros Teenager Heroes contém muitos locais incríveis, desenvolvidos e construídos pela equipe Teenager Heroes. Todos os locais listados aqui são os principais estreados em muitas temporadas de Teenager Heroes. Nós contém uma lista de todos os locais em Teenager Heroes aqui.</p>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+  <button type="button" class="collapsible3"><h2>Perle</h2></button>
+<div class="content3">
+<div style="padding:16px;">
+<p>Perle é a cidade natal de Li Hui e Hu Jie, onde eles cresceram. Perle é uma cidade avançada. Perle é a principal cidade da Temporada 1 de Teenager Heroes. Perle apresentou o melhor e mais limpo ambiente. Perle está definido em um lugar no futuro.</p>
+<br>
+<h3 style="text-align:center;">Perle</h3>
+<br>
+  <li>VRzoo: VRzoo é um zoológico em Perle. É um zoológico de realidade virtual para os visitantes verem animais no zoológico usando a realidade virtual.</li>
+  <br>
+  <li>VRmuseum: VRmuseum é um grande museu em Perle. É um museu de realidade virtual para que todos possam visitar todo o museu sem andar e visitar tudo em exibição usando a realidade virtual.</li>
+  <br>
+  <li>VRmall: VRmall é um mega shopping center em Perle. É um shopping de realidade virtual para todos visitarem e comprarem coisas. Os visitantes podem usar a RV para visitar o shopping de realidade virtual e comprar coisas.</li>
+  <br>
+  <li>Floresta: Perle também tem uma mega floresta. A floresta de Perle cultiva muitos tipos de árvores, de mirtilos a bananas. A mega floresta também ajuda a manter o meio ambiente limpo.</li>
+  <br>
+  <li>VRschool: Perle também tem uma escola. As crianças Perle podiam frequentar a escola para aprender em realidade virtual. A Perle oferece a melhor tecnologia para os alunos estudarem.</li>
+  <br>
+  <li>VRcinema: Perle também tem cinema para todos os cidadãos. O cinema Perle permite que todos os espectadores assistam a um filme em realidade virtual. Os espectadores podem assistir a filmes no VRcinema com sua família e amigos.</li>
+  <br>
+  <li>VRbank: Perle também tem um banco. O VRbank permite que todos economizem dinheiro no banco dentro do mundo da realidade virtual. O VRbank também permite que todos economizem dinheiro no banco de realidade virtual.</li>
+  <br>
+  <li>Peaceful Central（宁中）: Peaceful Central é o bairro onde os gêmeos moram e moram. O Peaceful Central é um bairro maravilhoso e limpo.</li>
+  <br>
+  </div>
+  </div>
+  </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.maxHeight){
+      content3.style.maxHeight = null;
+    } else {
+      content3.style.maxHeight = content3.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </div>
+  </div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>Veículos</h1>
+<p>A série de livros Teenager Heroes também contém muitos veículos incríveis! A série de livros Teenager Heroes apresentou muitos veículos incríveis desenvolvidos pela equipe Teenager Heroes para personagens da série de livros Teenager Heroes. </p>
+<br>
+<div style="border-width:3px;border-color:red;border-style:solid;">
+<button class="collapsible2"><h3>Carro flutuante</h3></button>
+<div class="content2">
+<div style="padding:16px;">
+<p>Hover Car é um veículo de propriedade de Li Hui e Hu Jie como meio de locomoção. Poderia voar ao redor da cidade e até mesmo para o espaço sideral. O Hover Car foi inventado por Li Hui e Hu Jie quando eles tinham 11 anos.</p>
+<br>
+<p>Hover Car pode ir debaixo d'água e voar para o espaço. Poderia ajudar Li Hui e Hu Jie a mergulhar no rio da cidade para descobrir e parar os vilões. O Hover Car oferece muitos recursos e habilidades incríveis para Li Hui e Hu Jie. Todos os recursos estão listados abaixo:</p>
+<br>
+<li>Voando: o Hover Car pode voar por Perle, levando Li Hui e Hu Jie para qualquer lugar que quiserem.</li>
+<br>
+<li>Submarino: o carro flutuante também pode ficar submerso como um submarino. O carro flutuante poderia levar Li Hui e Hu Jie ao lugar mais profundo debaixo d'água.</li>
+<br>
+<li>Velocidade: o carro flutuante pode ir super rápido no céu, debaixo d'água e em terra para levar Li Hui e Hu Jie para qualquer lugar.</li>
+<br>
+</div>
+</div>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+      content2.style.maxHeight = content2.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>História</h1>
+<p>A série de livros Teenager Heroes contém muitas histórias de livros incríveis e interessantes, escritas pela equipe Teenager Heroes. Cada história de Teenager Heroes apresentou os gêmeos chineses, Li Hui e Hu Jie, em aventuras emocionantes. Cada história é esperada em torno de 21 a 30 minutos de tempo de leitura padrão também. Você também pode ler todas as histórias de heróis adolescentes aqui.</p>
+   <br>
+   <hr>
+   <br>
+   <h2>1ª temporada</h2>
+   <p>A primeira temporada é a primeira temporada de Teenager Heroes. A primeira temporada contará com Hu Jie e Li Hui em sua cidade natal, Perle. </p>
+   <br>
+   <h4>Nenhuma história disponível</h4>
+  </div>
+</div>
+
+<br>
+<h1>Heróis adolescentes</h1>
+<p>Em 2100, há dois heróis gêmeos chineses adolescentes, chamados Li Hui e Hu Jie, com seus pais em Perle em uma aventura para proteger sua poderosa cidade! Teenager Heroes é uma série de livros de ficção científica e aventura, uma série de livros focada no futuro da ciência e das aventuras. A série apresentava os personagens principais, Li Hui e Hu Jie, os gêmeos chineses em uma incrível aventura em sua cidade, Perle. Teenager Heroes foi escrito e criado por Jst Tan, distribuído por JstMStudio em várias plataformas.</p>
+<br>
+<p>A série de livros Teenager Heroes está atualmente disponível para ser lida em várias plataformas publicadas oficialmente por nós, JstMStudio. Leia a série de livros Teenager Heroes abaixo legalmente:</p>
+<br>
+<li>JstMStudio</li>
+<li>Wattpad</li>
+<br>
+<hr>
+<br>
+<h1>Notícias</h1>
+<p>Bem-vindo às notícias do Teenager Heroes! Uma página de notícias para obter as últimas notícias sobre os heróis adolescentes! Um lugar para obter as últimas notícias sobre Teenager Heroes, de novos episódios a nova temporada, todos estão reunidos aqui para você ler! Confira as últimas notícias relacionadas a Teenager Heroes aqui.</p>
+<br>
+<hr style="width:60%;margin-left:auto;margin-right:auto;">
+<br>
+<h2>Todas as notícias</h2>
+<br>
+<h3>Infelizmente, nenhuma notícia está disponível no momento. </h3>
+<br>
+<hr>
+<br>
+<h2>Materiais da história</h2>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav()" id="character">Personagem <i class='bx bx-door-open'></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav1()" id="location">Local <i class='bx bx-location-plus' ></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav2()" id="vehicles">Veículos <i class='bx bxs-car'></i></div>
+<br>
+<div style="font-size:30px;background-color:#37f93e;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;border-width:3px;border-color:blue;" onclick="openNav3()" id="story">História <i class='bx bxs-book'></i></div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+<h1>Temas</h1>
+<p>Você pode personalizar os temas do JstMStudio em uma cor de sua preferência. Selecione e escolha a partir do conjunto de cores abaixo para tornar a interface do usuário do JstMStudio em sua preferência de cor.</p>
+    <br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+  </script>
+
+</body>
+</html>
