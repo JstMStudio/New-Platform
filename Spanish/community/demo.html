@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>{{Community Name}}</title>
+    <style>
+body {
+text-align: center;
+color: blue;
+font-weight: bold;
+}
+
+.collapsible {
+  background-color: yellow;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <br>
+<h1>{{Nombre de la comunidad}} <!--- Reemplace {{Nombre de la comunidad}} con el nombre real de su propia comunidad ---></h1>
+<p>{{Community Description}} <!--- Reemplace {{Community Description}} para obtener información sobre su comunidad en JstMStudio Community --></p>
+<li><i class='bx bx-ubicación-plus'></i> {{Nombre de la ubicación}} <!--- Reemplace {{Nombre de la ubicación}} con la ubicación de su comunidad --> </ li>
+<li><i class='bx bx-group' ></i> {{Tipos}} <!--- Reemplace {{Tipos}} con el tipo de su comunidad. ---></li>
+<br>
+<hr>
+<br>
+<h2>Región del grupo</h2>
+<p>JstMStudio Community actualmente tiene varias regiones de grupo para todos y cada uno de los grupos. Toda esta región está hecha y utilizada para elementos importantes directamente de los administradores del grupo.</p>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Reglas <i class='bx bxs-down-arrow' ></i></h1></ botón>
+<div clase="content">
+<p>Las reglas son pautas hechas por este grupo para mantener este grupo como un entorno seguro y limpio para todos. Las reglas están hechas para moderar y mantener este grupo, por lo que se aplican estrictamente en todo este grupo. Siga todas las reglas que se enumeran a continuación para este grupo.</p><br>
+<li>{{Título de las reglas}}<br>{{Descripción de las reglas}}</li><br>
+<li>{{Título de las reglas}}<br>{{Descripción de las reglas}}</li><br>
+<li>{{Título de las reglas}}<br>{{Descripción de las reglas}}</li>
+<!--- Reemplace {{Rules Title}} por el título de la regla y {{Rules Description}} por la descripción y la información adicional sobre la regla. --->
+<br>
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Anuncios <i class='bx bxs-down-arrow' ></i></h1></ botón>
+<div clase="content">
+<p>Un lugar para obtener todos los anuncios relacionados con esta comunidad directamente desde la administración de la comunidad. Un lugar para recibir noticias de la comunidad también, directamente desde la administración y gestión del grupo.
+<br><br>
+<h2>Todos los anuncios</h2>
+<br>
+<h3>Demostración</h3><!--- Reemplace "Demostración" con el título del anuncio --->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><!--- Reemplazar texto con el texto de los anuncios --->
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Publicaciones <i class='bx bxs-down-arrow' ></i></h1></ botón>
+<div clase="content">
+<p>a</p><!--- Reemplace esta sección con el código de discusión de Github para esta comunidad generado desde Giscus. --->
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+
+</body>
+</html>
