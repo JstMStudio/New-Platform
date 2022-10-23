@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>{{Gemeenschaps naam}}</title>
+    <style>
+body {
+text-align: center;
+color: blue;
+font-weight: bold;
+}
+
+.collapsible {
+  background-color: yellow;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <br>
+<h1>{{Gemeenschaps naam}} <!--- Vervang {{Community Name}} door de echte naam van uw eigen community ---></h1>
+<p>{{Community Description}} <!--- Vervang {{Community Description}} voor informatie over je community in JstMStudio Community --></p>
+<li><i class='bx bx-location-plus'></i> {{Location Name}} <!--- Vervang {{Location Name}} door de locatie van uw community --> </ li>
+<li><i class='bx bx-group' ></i> {{Types}} <!--- Vervang {{Types}} door het type van uw community. ---></li>
+<br>
+<hr>
+<br>
+<h2>Groepsregio</h2>
+<p>JstMStudio Community heeft momenteel meerdere groepsregio's voor alle groepen. Deze hele regio is gemaakt en gebruikt voor belangrijke items rechtstreeks van de groepsbeheerders.</p>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Regels <i class='bx bxs-down-arrow' ></i></h1></ knop>
+<div class="content">
+<p>Regels zijn richtlijnen die door deze groep zijn opgesteld om deze groep voor iedereen een veilige en schone omgeving te houden. Er zijn regels gemaakt om deze groep te modereren en te onderhouden, zodat deze streng wordt gehandhaafd in deze hele groep. Volg alle onderstaande regels voor deze groep.</p><br>
+<li>{{Rules Title}}<br>{{Rules Description}}</li><br>
+<li>{{Rules Title}}<br>{{Rules Description}}</li><br>
+<li>{{Rules Title}}<br>{{Rules Description}}</li>
+<!--- Vervang {{Rules Title}} voor de titel van de regel en {{Rules Description}} voor de beschrijving en aanvullende informatie over de regel. --->
+<br>
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Aankondigingen <i class='bx bxs-down-arrow' ></i></h1></ knop>
+<div class="content">
+<p>Een plek om alle aankondigingen met betrekking tot deze community rechtstreeks van de communityadmistration te krijgen. Een plek om ook nieuws uit de gemeenschap te krijgen, rechtstreeks van de administratie en het management van de groep.
+<br><br>
+<h2>Alle aankondigingen</h2>
+<br>
+<h3>Demo</h3><!--- Vervang "Demo" door de aankondigingstitel --->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><!--- Vervang tekst door de tekst voor de aankondigingen --->
+</div>
+<br><br>
+<button type="button" class="collapsible"><h1 style="font-size:16px;">Berichten <i class='bx bxs-down-arrow' ></i></h1></ knop>
+<div class="content">
+<p>a</p><!--- Vervang deze sectie door de code voor Github Discussion voor deze community gegenereerd door Giscus. --->
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+
+</body>
+</html>
