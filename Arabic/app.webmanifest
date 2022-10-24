@@ -1,0 +1,20 @@
+{
+"short_name": "JstMStudio",
+"name": "JstMStudio App",
+"icons": [
+  {
+    "src": "../JstMStudio_192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "../JstMStudio_512x512.png"
+    "sizes": "512x512",
+    "type": "image/png",
+  }
+],
+  "start_url": "home.html?source=pwa", 
+  "display": "fullscreen",
+  "background_color": "#E4E9F7",
+  "theme_color": "#07bfc6"
+}  
