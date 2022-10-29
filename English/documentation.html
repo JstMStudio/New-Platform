@@ -541,6 +541,30 @@ td, th {
   text-align: center;
   padding: 8px;
 }
+
+.collapsible3 {
+  background-color: blue;
+  color: yellow;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible3:hover {
+  background-color: green;
+}
+
+.content3 {
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+  background-color: green;
+  text-align: center;
+  color: yellow;
+}
     </style>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -1005,6 +1029,43 @@ for (i = 0; i < coll.length; i++) {
   </div>
 </div>
 
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+  <h1>API</h1>
+<p>JstMStudio provided a lot of services and features inside our platform software, JstMStudio App Platform. JstMStudio API is an Application Programming Interface for JstMStudio App Platform that provide support for all developer to implement services like in JstMStudio App Platform into their website without developing the features themselves for totally free of charge with no fees. It is built for everyone to use and not for earning money from users like developer and website owner.</p>
+<p>JstMStudio API is an open source API ( Application Programming Interface ). Everyone could view, read and study all of JstMStudio API source codes on our official Github repository. JstMStudio API is built using HTML, CSS and vanilla JavaScript unlike any traditional API too and licensed under AGPL 3.0.</p>
+<button type="button" class="collapsible3">Open Collapsible</button>
+<div class="content3">
+  <p></p>
+</div>
+<button type="button" class="collapsible3">Open Collapsible</button>
+<div class="content3">
+  <p></p>
+</div>
+<button type="button" class="collapsible3">Open Collapsible</button>
+<div class="content3">
+  <p></p>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.display === "block") {
+      content3.style.display = "none";
+    } else {
+      content3.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+</div>
+
 <h1>JstMStudio Documentation</h1>
 <p>Hi! Welcome to JstMStudio Documentation! A place to get some helpful articles and everything you needed to use, contribute to the project and etc proudly written by our team. You could find many useful articles here that might help you with your question. Please look through all articles here before contacting us for support. We might redirect you back here.</p>
 
@@ -1028,6 +1089,8 @@ for (i = 0; i < coll.length; i++) {
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav6()" id="forum">Forum</div>
 <br>
 <div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav7()" id="profile">Profile Extension</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav8()" id="api">API</div>
 <br>
 <script>
 function openNav() {
@@ -1092,6 +1155,14 @@ function openNav7() {
 
 function closeNav7() {
   document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
 }
 </script>
 <br><br>
