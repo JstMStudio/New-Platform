@@ -11,7 +11,7 @@
   gtag('config', 'G-ZM4LK5K0LJ');
 </script>
     <link rel="manifest" href="app.webmanifest" />
-  <title></title>
+  <title>Main Page</title>
   <link rel="icon" type="image/x-icon" href="../JstMStudio.png">
 <style>
 body {
@@ -120,19 +120,45 @@ html {
 }
 
 .button {
+  border-radius: 4px;
+  background-color: #f4511e;
   border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
+  color: yellow;
   text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
   cursor: pointer;
-  width: 100%;
+  margin: 5px;
+  border-color: green;
+  border-style: solid;
+  border-width: 8px;
 }
 
-.button:hover {
-  background-color: #555;
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 </style>
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> 
@@ -159,15 +185,19 @@ html {
 <hr style="border-color:yellow;">
 <br>
 <h2>Pay What You Needs</h2>
-<p>Only pay for the courses you needs and wants. You </p>
+<p>Only pay for the courses you needs and wants. You could paid for the course you actualy needs, want and read and not for anything else. You paid per course not for a monthly subscription. </p>
 <br>
 <hr style="border-color:yellow;">
 <br>
 <h2>Professional Courses</h2>
+<p>All of the course in JstMStudio Course is made professionally. All course here is made professionally for everyone to enjoy after buying the course. All course is being written by professional with at least a year in the field. </p>
 <br>
 <hr style="border-color:yellow;">
 <br>
 <h2>All Courses <i class='bx bxs-caret-right-circle'></i></h2>
+<p>We offered many courses in multiple field in JstMStudio Course program. You could buy any course in any field per your preference. All of them is a one-time fees and you can keep it for lifetime.</p>
+<a href="course.html" style="text-decoration:none;font-color:yellow;"><button class="button"><span>All Course Here </span></button></a>
+
 </div>
 
 <script>
