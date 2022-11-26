@@ -14,10 +14,9 @@
     "type": "image/png",
   }
 ],
-  "start_url": "home.html?source=pwa", 
+  "start_url": "index.html", 
   "display": "fullscreen",
   "background_color": "#E4E9F7",
   "theme_color": "#07bfc6",
   "scope": "index.html",
-  "start_url": "index.html"
 }  
