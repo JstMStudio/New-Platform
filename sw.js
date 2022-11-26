@@ -8,7 +8,7 @@ var APP_PREFIX = 'jstmstudio';
 // you need to change this version (version_01, version_02…). 
 // If you don't change the version, the service worker will give your
 // users the old files!
-var VERSION = 'version_569a5334c2da805a323ceb937c062d6e17e68567';
+var VERSION = 'version_dd760393b64b200f529c85c6c5afb6c0e4abcd8d';
  
 // The files to make available for offline use. make sure to add 
 // others to this list
