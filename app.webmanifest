@@ -1,6 +1,7 @@
 {
 "short_name": "JstMStudio",
 "name": "JstMStudio App",
+"description": "A mulipurpose indie studio based in Malaysia.",
 "icons": [
   {
     "src": "../JstMStudio_192x192.png",
@@ -16,5 +17,7 @@
   "start_url": "home.html?source=pwa", 
   "display": "fullscreen",
   "background_color": "#E4E9F7",
-  "theme_color": "#07bfc6"
+  "theme_color": "#07bfc6",
+  "scope": "index.html",
+  "start_url": "index.html"
 }  
