@@ -604,6 +604,68 @@ padding-right: 20px;
   text-align:center;
   color: yellow;
 }
+
+/* Directory Content */
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible:hover {
+  background-color: yellow;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
     </style>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -902,7 +964,208 @@ for (i = 0; i < coll.length; i++) {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
   <div class="overlay-content">
     <h1>Store</h1>
-    <p></p>
+    <p>JstMStudio is a small team based in Malaysia. JstMStudio is focused in many stuffs from website development to writing story. JstMStudio is founded from a group of young friends with an interest in technology.</p>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h1>Services</h1>
+  <p>JstMStudio currently provided many various services. Some are provided for free while some are paid according to your plans with us. All services provided by JstMStudio are included in the premium plans. We will add more services to our plans in the future too.</p>
+  <br>
+<hr style="width:80%;margin:auto;">
+<br>
+  <h2>Web Design & Development</h2>
+  <p>We provide web development services in all of our plans. We will built your website for you with your preference. We do not use Wordpress or any site builders to built any of our websites. All codes is hand written by us per your preference.<br><br>We offered unlimited edits and changes to your websites too. We will customise it with unlimited changes to suit your preference and your needs no matter which plans you choosen.</p>
+  <br>
+<hr style="width:80%;margin:auto;">
+<br>
+  <h2>Business Profile Management</h2>
+  <p>We also helped you to manage your Google, Yahoo and Bing business profile to keep it up to date with your needs and preference. We will also provide support for everything on those business profile too. We will also do monthly updates like posting and etc too depending on your plans.</p>
+    <br>
+<hr style="width:80%;margin:auto;">
+<br>
+   <h2>Course Program</h2>
+   <p>JstMStudio Course is a multi-type high quality paid course program offered by JstMStudio for learners to attend courses and learn things that are in their interest for a fraction of the price from our competitor. All courses provided are of a high quality for our customers.
+<p>We provide multiple types of courses ranging from multiple indistries like programming and much more. You could check out all courses below. More courses will be added soon.</p>
+   <br>
+   <hr>
+   <br>
+   <h2>Items Directory</h2>
+   <p></p>
+   <br>
+   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for items!" title="Type in a name">
+<ul id="myUL">
+<li><button type="button" class="collapsible">Github Pages Hosting</button>
+<div class="content">
+<p>JstMStudio provide free hosting for everyone including developers in the world via JstMStudio Hosting. Users could request for a free hosting site with JstMStudio.</p>
+<ul style="text-align:left;">
+<li><strong>FREE</strong></li>
+<li>10GB Bandwidth</li>
+    <li>1GB Storage</li>
+    <li>Free 500MB backup storage</li>
+    <li>Free Technical Support</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Vercel Hosting</button>
+<div class="content">
+<p>JstMStudio currently provide free hosting for everyone in the world to host their websites using our services. This plan includes hosting on Vercel. </p>
+<ul style="text-align:left;">
+<li><strong>FREE</strong></li>
+<li>5GB Bandwidth</li>
+<li>1GB Storage</li>
+<li>Free 500MB backup storage</li>
+<li>Free Technical Support</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Premium Hosting</button>
+<div class="content">
+<p>JstMStudio offer free hosting for everyoone to host their websites for free using our hosting. Premium Hosting is a special type of hosting plan that will require approval from JstMStudio to join and use.</p>
+<ul style="text-align:left;">
+<li><strong>FREE</strong></li>
+<li>1GB Storage</li>
+<li>100GB Bandwidth</li>
+<li>500MB Backup Storage</li>
+<li>Free Technical Support</li>
+<li>Free Issues Tab</li>
+<li>Free Discussion Tab</li>
+<li>Free Projects Tab</li>
+<li>Free Wiki</li>
+<li>Free Insight</li>
+<li>Custom Domains Supported</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Themes</button>
+<div class="content">
+<p>JstMStudio sell a theme configure for our clients and users. JstMStudio Themes configure let client users to change the web pages themes to the color they preferred. We currently provide 9 configurations in this material.</p>
+<ul>
+<li style="text-align:left;">Price: $30</li>
+<li style="text-align:left;">Delivery Time: 48 hours</li>
+<li style="text-align:left;"><a href="materials/themes.html" style="color:yellow;">Demo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Animated Color Hyperlink Button</button>
+<div class="content">
+  <p>JstMStudio also sell a hyperlink button that contains color change and unique animation during hover over the button. Clients could add this to their website hyperlinks by vjust $20. </p>
+  <ul>
+  <li style="text-align:left;">Price: $20</li>
+<li style="text-align:left;">Delivery Time: 48 hours</li>
+<li style="text-align:left;"><a href="materials/animated-color-hyperlink-button.html" style="color:yellow;">Demo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Search Filter With Description</button>
+<div class="content">
+  <p>JstMStudio sell a search filter from a list of items containing description for each and all items in the entire list. JstMStudio search filter only search for the name or title for the items making it more accurate. You could have it on your website for just $20.</p>
+  <ul style="text-align:left;">
+    <li style="text-align:left;">Price: $20</li>
+<li style="text-align:left;">Delivery Time: 48 hours</li>
+<li style="text-align:left;"><a href="materials/search-filter-with-description.html" style="color:yellow;">Demo</a></li>
+  </ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Basic Website</button>
+<div class="content">
+<p>JstMStudio currently offer a basic website with 5 pages for a one-time fees of <strong>$60</strong>. JstMStudio basic website will come with free unlimited customisation and changes before buying and a free 1 month support for all matters after the website being bought. </p>
+<ul style="text-align:left;">
+<li>$60 (One Time Payment)</li>
+<li>5 Pages</li>
+<li>Free Support (1 month)</li>
+<li>Free Customisation</li>
+<li>Unlimited Changes</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Premium Website</button>
+<div class="content">
+<p>JstMStudio currently offer a premium website with 5 pages for a monthly fees of <strong>$100</strong>. JstMStudio premium website will come with hosting provided and maintained for you, unlimited lifetime maintainence updates, free support services for you and 5GB storage for you with 1GB backup. </p>
+<ul style="text-align:left;">
+<li>$100 / month</li>
+<li>5 pages</li>
+<li>Hosting Included</li>
+<li>Unlimited Lifetime Maintainence Updates</li>
+<li>Free Support</li>
+<li>5GB Storage (1GB Backup)</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Newsletter Ads</button>
+<div class="content">
+<p>JstMStudio Newsletter Ads is an ads that will be displayed on newsletter send to all subscribers of the newsletter. Your ads will be directly available in their mailbox. JstMStudio Newsletter Ads cost $50 for each new email (no matter how many subscribers). </p>
+<ul style="text-align:left;">
+<li>$50</li>
+<li>Permanent</li>
+<li>Newsletter Ads</li>
+<li>Display in Email</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Display Ads</button>
+<div class="content">
+<p>JstMStudio Display Ads is a type of ads that is displayed on websites and web apps, which could reach audience on desktop, laptop and mobile phone. This type of ads will cost $100 for each 1000 thousand views.</p> 
+<ul style="text-align:left;">
+<li>$100 / 1k views</li>
+<li>1000 Views</li>
+<li>Display Ads</li>
+<li>Photo Only</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Mobile Ads</button>
+<div class="content">
+<p>JstMStudio Mobile Ads is a type of ads that is displayed on mobile phone via mobile app on Android, Apple and other operating system. With this ads format, you could reach customers directly on their phone. Each 1000 views will cost $200 and all media files are supported.</p>
+<ul style="text-align:left;">
+<li>$200 / 1k views</li>
+<li>1000 Views</li>
+<li>Mobile Ads</li>
+<li>All Media Files Supported</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Video Ads</button>
+<div class="content">
+<p>JstMStudio Video Ads is a type of ads that is displayed and played in a video format, with or without sound. Each 1k views of your video ads would cost $150. This ads format is required to be in video only.</p>
+<ul style="text-align:left;">
+<li>$150 / 1K views</li>
+      <li>1000 views</li>
+      <li>Video Ads</li>
+      <li>Display in Video</li>
+      <li>Video only</li>
+</ul>
+</div></li>
+</ul>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
   </div>
 </div>
 
