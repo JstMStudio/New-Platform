@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>De nobis</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+.collapsible {
+  background-color: #f1f1f1;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: red;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+.body {
+  background: #E4E9F7;
+  }
+  
+.button2 {
+float:left;
+background-color: black;
+  color: red;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  cursor: pointer;
+  outline: none; 
+  font-size:30px;
+  background-color:cyan;
+  width:100%;
+  text-align:center;
+  color:purple;
+  padding:10px;
+  font-weight: bold;
+  border-style: solid;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: cyan;
+  color: purple;
+  font-weight: bold;
+  text-align:center;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 350px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: purple;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible2 {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible2:hover {
+  background-color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+
+/* Directory Content */
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible:hover {
+  background-color: yellow;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">JstMStudio</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip">Home</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">De nobis</span>
+       </a>
+       <span class="tooltip">De nobis</span>
+     </li>
+     <li>
+     <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">Client</span>
+       </a>
+       <span class="tooltip">Client</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">Documentation</span>
+       </a>
+       <span class="tooltip">Documentation</span>
+     </li>
+     <li>
+       <a href="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">Web App</span>
+       </a>
+       <span class="tooltip">Web App</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<br>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>Communitas</h1>
+     <p>Grata JstMStudio Community! JstMStudio multas communitates officiales habet per multas rationes suggestus website sicut Revolt.chat et Guilded. JstMStudio communitatis in praesenti bene conservata et moderata est a speciali manipulo et nunc omnibus nostris utentibus, clientibus et alits.<br><br>JstMStudio communitatis locus est omnibus et usoris JstMStudio colligendi circa et hangout et pro usuario. subsidium petere, cimices nuntiare et feedback dare. </p>
+     <hr>
+     <h2>Revolt</h2>
+     <p>JstMStudio currently agunt et conservant officialem servitorem bigae in nostro tumultuario servo. Users JstMStudio Revolt Servorum iungere potuerunt cum nostro communitati hangout iungere, subsidium petere, opiniones praebere, cimices nuntiare et cum baculo confabulari. Poteris etiam de JstMStudio quoque officialis denuntiatio. Potuisti iungere nostrum <a href="https://app.revolt.chat/invite/cPgxVqY4" style="color:red;">Revolt hic servo</a>.</p>
+     <hr>
+     <h2>Guiled</h2>
+     <p>JstMStudio quoque operantur et servam quoque officialem Guild. Users possunt iungere JstMStudio Servo Guilded ad hangout communitati nostrae iungere, subsidium petere, tesseram creare, opiniones dare, cimices referre, cum quadrigis discutere. Etiam officialem nuncium JstMStudio quoque obtinere potes.</p>
+    <iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2FWErNJm8E&size=large" width="553" height="262" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+<h1>Donationem</h1>
+     <p>JstMStudio multis modis et modis funditur, frequentissima donatione et postea, ads vectigal ex pagina nostra. Nos hodie non vendimus et omnia usoris fundamentalis notitia collegimus ad conservandum locum ita donatio via est ad vectigal bigae, immo $1 vel $5, multum tamen refert ad nos. Singula centra in turma directe vel indirecte adhibeantur.
+     <hr>
+     <h2>Eme Capulum</h2>
+     <p>JstMStudio currently has paginas Coffee eme Me pro omnibus eligendum est ut menstrua vel semel tantum nobis donata sint. Etiam in paginis nostris epistulas publicas nobis quoque relinquere potuistis. Eme Me Coffee nunc accusare 5% mercedibus pro unaquaque donatione sic tantum 95% omnium donationum et menstruorum membrorum recipimus. This page is owned by Jst Tan, CEO and shareholder of JstMStudio. </p>
+     <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jestonjst" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Eme bibere" data-outline-color="#000000" data-font-color="#000000 " data-coffee-color="#ffffff" ></script>
+     <br>
+     <hr>
+     <h2>Ko-Fi</h2>
+     <p>JstMStudio etiam paginae Ko-Fi etiam nunc operatur pro omnibus qui nos vel menstruam vel per menstruam donationem in Ko-Fi quoque donare malunt. Epistulam publicam nobis etiam in paginis nostris Ko-Fi relinquere potuistis. Ko-Fi nunc accusant 5% mercedibus pro singulis donationis menstruae ideo tantum 95% omnium membrorum menstruorum accipimus dum donationis tempus C% est. Haec pagina possidetur ab Jst Tan, CEO et JstMStudio particeps.</p>
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#28e059', 'R6R8BLGHG');kofiwidget2.draw();</script> 
+  </div>
+</div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>Projecta</h1>
+<p>JstMStudio nunc multa incepta ab omnibus nostris infantibus iugis evoluta est. Omnes nostrae inceptae actuose a suis singulis iugis infantis nunc conservantur. Pro omnibus et singulis nostris inceptio, sis preme in puga pyga infra ad propositum speciale de eo cognoscendi. Tota inceptiva hic solum ab JstMStudio producitur et dotatae ab omnibus proventibus studiorum rivo velut libri venditionis, donationis et multo amplius.</p>
+<br>
+<a href="teenager-heroes.html"><button class="button"><span>Teenager Heroes </span></button></a>
+<a href="app.html#infohq"><button class="button"><span>InfoHQ </span></button></a>
+<a href="app.html"><button class="button"><span>JstMStudio Platform </span></button></a>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>News</h1>
+     <p>Salvete JstMStudio nuntiorum! Locus nuntiorum ut omnia nuntia, sicut nuntia, updates et etc de JstMStudio. Accipe omnia recentissimi nuntii officialis JstMStudio hic.</p>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay-content">
+<h1>Team</h1>
+     <p>JstMStudio aute multos equos pueriles habet. Praesens nostrum pelagus puerilis turma nostra Web Development team. JstMStudio nunc duos infantes equos, ipsum interretialem et Studiorum animationem habet.</p>
+     <br>
+     <hr>
+     <br>
+     <div style="color: green;">
+     <h2>Progressio interreti</h2>
+     <p>JstMStudio Developer Team possidetur et plene conservatur ab JstMStudio. JstMStudio Developer Team subsidiaria JstMStudio est. JstMStudio Developer Team creo websites, app, programmata et ludos pro clientibus et clientibus nostris pariter cum nonnullis pro biga nostra, JstMStudio.</p>
+     <h3>Service</h3>
+     <ul style="text-align:center;">
+     <li>Vestibulum Development</li>
+     <li>Vestibulum Sustentacionem</li>
+     <li>Vendo</li>
+     </ul>
+     <br>
+     <h3>Opera</h3>
+     <ul style="text-align:center;">
+     <li>InfoHQ</li>
+     <li>Schola Coding</li>
+     <li>JstMStudio App</li>
+     </ul>
+     <br>
+     <h3>Staff</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan est conditor, CEO of JstMStudio. Jst Tan elit plumbea JstMStudio. Jst Tan est peritus 2 annorum interretialis elit post 2020. Jst Tan est elit principalis post omnes paginas et luctus JstMStudio.</li>
+     </ul>
+     </div>
+     <br>
+     <hr>
+     <br>
+     <div style="color: blue;">
+     <h2> Animationis Studio</h2>
+     <p>JstMStudio Animationis Studio possidetur et plene conservatur ab JstMStudio. JstMStudio Animationis Studio subsidiaria JstMStudio. JstMStudio Animationis Studio multa officia clientibus et clientibus nostris praebuit. JstMStudio Animationis Studio minoris pretii obtulit tum quaelibet alia societates productivae nimis ut clientes et clientes nostri muneris utendo cost possent incidere.</p>
+     <h3>Service</h3>
+     <ul style="text-align:center;">
+     <li>Logo Cogitans</li>
+     <li>Poster designans</li>
+     <li>Scribere Post</li>
+     </ul>
+     <br>
+     <h3>Opera</h3>
+     <ul style="text-align:center;">
+     <li>Teenager Heroes</li>
+     </ul>
+     <br>
+     <h3>Staff</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan est conditor, CEO of JstMStudio. Jst tanU est narratio scriptoris et vide editorum in JstMStudio. Jst Tan etiam auctor et exsecutiva scriptor Teenager Heroum libri series. </li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+<h1>App</h1>
+     <p>Grata JstMStudio App Download pagina. Praesto nobis sunt multa app per multa suggesta, ut utentes nostri app onto machinam suam localiter capere possent. </p>
+    <br>
+    <hr>
+    <br>
+    <h2>Windows</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Mac</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Linux</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Android</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>IOS</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+  </div>
+</div>
+
+<div id="myNav6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
+  <div class="overlay-content">
+<h1>Socius</h1>
+     <p>JstMStudio Socius Programma est programmatis JstMStudio particeps officialis. Propositum est quod consors consors singulis et societatis trans mundi. Rationem programma qua membrum bigas repraesentant. JstMStudio Socius Programma omnibus praesto est adhibere. JstMStudio Socium Programma est propositum, quod turmam propiorem et amicabilem nostrae communitati officialis et fans efficiat.</p>
+<br>
+<i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+<p>JstMStudio Socius Programma quaedam praecipua requisita sunt aute. Omnia requisita hic recensita stricte urgeantur et exigis ut haec omnia occurrant antequam JstMStudio Socium Programma applicando vel coniungendo. Omnes requisita nostra infra recensentur:</p>
+<ul>
+     <li>C sectatores saltem habent in una e instrumentis socialibus tuis. </li>
+     <li>Agens in 1++ sectatores socialis instrumentorum communicationis socialis. </li>
+     <li>Accipe et sequere debes nostrae Communitatis rationes ac Terms Of Services. </li>
+     <li>Activa in nostra communitate officiali. </li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Benefits <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>JstMStudio Socium Programma applicando et iungendo, multa beneficia singulis sociis JstMStudio comparavimus. Grati sumus omnibus et singulis socium ad propositum nostrum coniungendum et multa beneficia sociis nostris paravimus. Plura beneficia adiciamus ad coniungendum in proximo quoque futuro Socium Programma nostrum. Omnia beneficia infra enumerantur:</p>
+<ul>
+     <li>Prior Support</li>
+     <li>Frequenter Shoutout</li>
+   <li>Praecipua Enumeratio</li>
+   <li>Et multo magis!</li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Applicare <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>JstMStudio Socius Programma est particeps programmatis cuius JstMStudio particeps est cum singulis vel iugis. In promptu est apertum pro omnibus subscribere. Si interest in JstMStudio Partner Programma, et omnia requisita occurreris et omnibus terminis JstMStudio Partner Programmatis consentis, pro JstMStudio Partner Programma adhibere potes, implendo Formam Google infra provisam. Quaelibet applicatio ad JstMStudio Socium Programma recensetur per casum casum ab JstMStudio. Quaeso animadvertere baculum nostrum ius esse approbandi vel negandi nulli applicationi ad Socium Programma sine causa.</p>
+   <br><br>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBPTvkmrfmuCC4f4JnzmMSQ27xS0lY5sFrGUbLAcuwNVnRWA/viewform?embedded=true" width="100%" height="1930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+<br><br>
+<button type="button" class="collapsible2">List <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>Avete indicem omnium socii JstMStudio! Plura de omnibus et singulis JstMStudio Socii locum cognoscendi. Locus ut omnes socii JstMStudio.</p><br>
+<input type="text" id="myInput" onkeyup="myFunction5()" placeholder="Search for partners" title="Type in a name">
+<ul id="myUL">
+  
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p></div></li>
+</ul>
+<br>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav7()">&times;</a>
+  <div class="overlay-content">
+    <h1>Status</h1>
+    <br>
+    <iframe src="https://status.jstmstudio.tk" style="width:100%;height:2890px;"></iframe>
+  </div>
+</div>
+
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+    <h1>Store</h1>
+<p>JstMStudio parva manipulus fundatur in Malaysia. JstMStudio in multis rebus e evolutione paginae scribendae historia tenditur. JstMStudio fundatur e coetu iuvenum amicorum cum cura technicae artis.</p>
+     <br>
+     <br>
+     <hr>
+     <br>
+     <h1>Service</h1>
+   <p>JstMStudio nunc multa opera varia praebebat. Quaedam gratis providentur dum aliqua secundum consilia tua nobiscum solvuntur. Omnia officia ab JstMStudio provisum in consiliis praemiis comprehenduntur. Plura officia consiliis nostris in futuro quoque addemus.</p>
+   <br>
+<hr style="width:80%; margin:auto;">
+<br>
+   <h2> Web Design & Development</h2>
+   <p>Res progressus operas in omnibus consiliis nostris praebemus. Faciemus website tuum pro te cum preference. Wordpress non utimur nec edificantes situm aliquem nostrum interretialem ad aedificandum. Omnes codices a nobis manu scripta sunt per tuam potius.<br><br> emendationes infinitas mutationesque etiam in paginas tuas oftulimus. Nos mos eam infinitis mutationibus ad optionem tuam accommodare ac necessitates tuas utcumque quas elegeris disponemus.</p>
+   <br>
+<hr style="width:80%; margin:auto;">
+<br>
+   <h2>Business Profile Management</h2>
+   <p>Adivimus etiam te ad Google, Yahoo et Bing negotium profile ad custodiendum ad diem cum tuis necessitatibus et praetulit. Etiam subsidia omnibus in illis negotiis profano quoque praestabimus. Nos quoque updates menstruis sicut dispositis et etc etiam in consiliis tuis pendentes faciemus.</p>
+     <br>
+<hr style="width:80%; margin:auto;">
+<br>
+    <h2>Cursus Programmatis</h2>
+    <p>JstMStudio Cursus est multi-typus qualis summus honos curriculi programmatis ab JstMStudio proponitur discentibus cursus intendere et discere ea quae in usuris sunt pro fractione pretii a competitore nostro. Omnes cursus provisi sunt magnae qualitatis nostris clientibus.
+<p>Plura genera plurium indistrorum sicut programmandi et multo plura genera curriculorum praebemus. Omnes cursus infra reprehendo potuisti. Plures cursus mox adicientur. Omnes cursus unum tempus emolumenta ab JstMStudio ad vivos accessus et renovationes ad cursum proprium obiciunt. Feoda tantum tibi vita concessit aditum ad cursum quem solvisti. </p>
+    <br>
+    <hr>
+    <br>
+    <h2>Items Directory</h2>
+    <p></p>
+    <br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for items!" title="Type in nomine">
+<ul id="myUL">
+<li><button type="button" class="collapsible">Github Paginae Hosting</button>
+<div class="content">
+<p>JstMStudio gratis obnoxius omnibus inclusis in mundo per JstMStudio Hosting. Users petere potuerunt liberum locum hospitum cum JstMStudio.</p>
+<ul style="text-align:left;">
+<li><strong>FREE</strong></li>
+<li>10GB Bandwidth</li>
+     <li>1GB Repono</li>
+     <li>Fre 500MB tergum repono</li>
+     <li>Free Technical Support</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Vercel Hosting</button>
+<div class="content">
+<p>JstMStudio currently praebent gratis obnoxii omnibus in mundo ut eorum websites hospitio nostris officiis utantur. Hoc consilium in Vercel obnoxius includit. </p>
+<ul style="text-align:left;">
+<li><strong>FREE</strong></li>
+<li>5GB Bandwidth</li>
+<li>1GB Repono</li>
+<li>Fre 500MB tergum repono</li>
+<li>Free Technical Support</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Premium Hosting</button>
+<div class="content">
+<p>JstMStudio gratis obnoxius quisque pro omnibus dat ut suas websites hospitio gratis utendo nostro obnoxio. Premium Hosting speciale genus consilii obnoxii est quod approbationem ab JstMStudio ad iungendum et usum requiret.</p>
+<ul style="text-align:left;">
+<li><strong>FREE</strong></li>
+<li>1GB Repono</li>
+<li>100GB Bandwidth</li>
+<li>500MB Tergum Repono</li>
+<li>Free Technical Support</li>
+<li>Free Proventus Tab</li>
+<li>Free Discussion Tab</li>
+<li>Procepta gratuita Tab</li>
+<li>Free Wiki</li>
+<li>Free Inspectus</li>
+<li>Custom Domains Supported</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Themes</button>
+<div class="content">
+<p>JstMStudio thema configurare vendit pro clientibus et usoribus nostris. JstMStudio Themes configurant clientes utentes mutare paginas themata colori mallent. Nunc nobis 9 figurationes in hac materia praebent.</p>
+<ul>
+<li style="text-align:left;">Price: $30</li>
+<li style="text-align:left;">Delivery Time: 48 horas</li>
+<li style="text-align:left;"><a href="materials/themes.html" style="color:yellow;">Demo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Animated Color Hyperlink Button</button>
+<div class="content">
+   <p>JstMStudio etiam tesseram hyperlink vende quae colorem habet mutationem ac singularem animationem in globulo volitans. Clientes hoc suis nexibus hyperlinks addere poterant ab vjust $20. </p>
+   <ul>
+   <li style="text-align:left;">Price: $20</li>
+<li style="text-align:left;">Delivery Time: 48 horas</li>
+<li style="text-align:left;"><a href="materials/animated-color-hyperlink-button.html" style="color:yellow;">Demo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Quaerere Filter Cum Descriptione</button>
+<div class="content">
+   <p>JstMStudio investigationis colum vende ex indice rerum quae descriptionem continet pro omnibus et singulis elementis in universo indice. JstMStudio colum quaerendi solum nomen vel titulum quaere de omissa accuratiore faciendo. Potuisti eam habere in pagina tua pro sicut $20.</p>
+   <ul style="text-align:left;">
+     <li style="text-align:left;">Price: $20</li>
+<li style="text-align:left;">Delivery Time: 48 horas</li>
+<li style="text-align:left;"><a href="materials/search-filter-with-description.html" style="color:yellow;">Demo</a></li>
+   </ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Basic Website</button>
+<div class="content">
+<p>JstMStudio currently praebent fundamentalem locum cum 5 paginis pro uno tempore mercedibus <strong>$60</strong>. JstMStudio website fundamentalis veniet cum gratuita customizatione et mutationibus ante emptionem ac liberum 1 mensis subsidium pro omnibus rebus post locum emptis. </p>
+<ul style="text-align:left;">
+<li> $ LX (Unus tempus solvendi</li>
+<li>5 Paginae</li>
+<li>Free Support (1 mensis</li>
+<li>Free Customisation</li>
+<li>Infinitus Mutationes</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Premium Website</button>
+<div class="content">
+<p>JstMStudio in praesenti praebetur paginae premium pro 5 paginis pro menstrua feodis <strong>$100</strong>. JstMStudio website premium adveniet cum hosting proviso et conservato pro te, infinita vita conservationis updates, gratuita opera pro te et 5GB reposita pro te cum 1GB tergum. </p>
+<ul style="text-align:left;">
+<li>$100 / mensis</li>
+<li>5 paginae</li>
+<li>Hosting Comprehendo</li>
+<li>Infinitus vitae sustentationem Updates</li>
+<li>Free Support</li>
+<li>5GB Repono (1GB Tergum</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Newsletter Ads</button>
+<div class="content">
+<p>JstMStudio Newsletter Ads est praeconium quae in tabella tabellariorum mittendorum omnibus signatoribus nummarias ostendetur. Praeconia tua recta in mailbox eorum praesto erunt. JstMStudio Newsletter Ads $50 pro singulis inscriptionem novam constant (utcumque multi signatores). </p>
+<ul style="text-align:left;">
+<li>$50</li>
+<li>Permanens</li>
+<li>Newsletter Ads</li>
+<li>Proponere in electronica</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Display Ads</button>
+<div class="content">
+<p>JstMStudio Propono Ads genus est additionum quae in websites et applis interretialibus ostenditur, quae audientiam in escritorio, laptop et telephonio mobile attingere potuerunt. Hoc genus additorum $ 100 pro unaquaque 1000 milia sententiarum periculo constabit.</p>
+<ul style="text-align:left;">
+<li>$100 / 1k sententias</li>
+<li>1000 Visiones</li>
+<li>Display Ads</li>
+<li>Photo Tantum</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Mobile Ads</button>
+<div class="content">
+<p>JstMStudio Ads mobiles genus adscriptionum est quae in telephonio mobile per app mobile in Android, Apple et in alia systemate operante monstratur. Cum hac praeconiorum forma, clientes protinus in telephono suo attingere potes. Singulae 1000 sententiae constant $ 200 et omnia instrumenta instrumentorum sustentantur.</p>
+<ul style="text-align:left;">
+<li>$200 / 1k views</li>
+<li>1000 Visiones</li>
+<li>Mobile Ads</li>
+<li>Omnes Tabulae Mediae suffulta</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Video Ads</button>
+<div class="content">
+<p>JstMStudio Video Ads est genus additorum quae in forma video cum vel sine sono exponuntur. Singulae 1k opiniones de video proscriptionibus tuis constant $150. Haec ads forma requiritur ut in video tantum.</p>
+<ul style="text-align:left;">
+<li>$150 / 1K sententias</li>
+       <li>1000 sententiae</li>
+       <li>Vide Ads</li>
+       <li>Display in Video</li>
+       <li>Video tantum</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Incipere HTML (Cursus</button>
+<div class="content">
+<p>Hic ordo cursus docebit discentes primum tempus ut incipias ab coding in HTML5, novissimam versionem HTML. Haec cursus in summa gratuita <strong>$20</strong> pro 4 cursus. </p>
+<ul style="text-align:left;">
+<li>inducere ad HTML</li>
+       <li>Forma HTML</li>
+       <li>Edores pro HTML</li>
+       <li> Elementa HTML</li>
+</ul>
+</div></li>
+
+</ul>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+  </div>
+</div>
+
+<div id="myNav9" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav9()">&times;</a>
+  <div class="overlay-content">
+<h1>Termini</h1>
+<p>Salvete JstMStudio! Nunc in pagina vocabula JstMStudio es, quae condiciones officiorum, secreti consilii et normarum communitatis continet. Teneris intelligere et consentire omnibus et singulis officiis nostris ad utendum nostris officiis ac websites. Omnes termini hic provisi et recensiti valent ad singulas paginas, app, ludos et cetera. Haec verba nimis stricte urgentur.</p>
+<p>Semper ad upgrading et mutationibus nostris programmata, app, website et ludos facimus. Haec verba quae hic proponuntur mutandi tempus subsicivum servandi ad recentissimas programmatis, app, locum et ludos, sine ullis notis, si opus fuerit, licet plerumque per dies VII praemonere volumus.</p>
+<li>Novissima renovata: 3 Septembris 2022</li>
+<li>Efficax Date: 18 Septembris 2022</li>
+<h2> Introductio</h2>
+<p>JstMStudio est parva indicis manipulus, qui maxime in multis versari potest, a historia scribentis usque ad progressionem interretialem. Nos maxime paginas et incepta elaboravimus. Velimus websites pro omnibus amicitiam secreti futuri melioris construere.</p>
+<h2>Contactus Nobis</h2>
+<p>Libenter nos contact si aliquas quaestiones adiectis haberes vel plus requirebat de terminis nostris, websites, app, programmatibus, ludis, inceptis et quadrigis. Etsi semper occupati sumus, operam dabimus ut quam primum tibi respondeamus. Quaeso, nos protinus per email officialem nostram contactum (<a href="mailto:jstmstudio@gmail.com">jstmstudio@gmail.com</a>).
+<br>
+<hr>
+<br>
+<h1>Termini Officii</h1>
+<p>Grata JstMStudio Officiorum Termini! Omnes termini hic recensiti ad omnes incepta et paginas nostras applicantur. Haec verba proponimus de obligationibus nostris legalibus inter se et has serio accipias. JstMStudio cavetur ut sine warantia vel reatu nullo usui ad officia nostra pertineat.</p>
+<h3>Definition</h3>
+<ul style="text-align:left;">
+   <li>Termini: Omnes hae termini intra Termini Officii nostri</li>
+   <li>TE: Significamus vos, usores officiorum nostrorum et paginarum.</li>
+   <li>JstMStudio: Turma (nos, us, nostrum, situs, officia</li>
+</ul>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Rationes</h2>
+   <p>Cum rationem signetis apud nos, omnes actiones in ratione vestra responsales es sive in officiis nostris sive intra tertiam partem muneris. Teneris ad rationem tuam secretiorem informationem tuam, sed non limitatam ad rationem tuam per tuas machinis accedendo. Sine XLVIII horis nos certiorem facere debeas, ut sciamus cuiusquam rupturae securitatis, vel cuiuslibet non legitimi rationis usum. Rationem tuam vendere, transferre vel licentiare non sine scripto nostro consensu consensisti.</p>
+
+   <p>Scribendo rationem officii nostri et paginarum, vos estis <strong>requisita</strong> ut saltem <strong>13 annorum</strong> vel supra minimum aetatis digitalis consensu in patria tua. . Si usus vel paginas nostras sub minima aetate visitas, contra leges nostras et leges patriae directe est. Si consensum parentum haberes et cum parentibus tuis omnium actionum onlinerum tuarum vestigia stricte custodias, necesse est ut saltem per 7 annos nostris officiis quoque utaris.</p>
+
+   <p>Pro conservator officiorum, Tea Una Future Unita, iura etiam habent accessum tuum ad nostros paginas et officia statim terminanda vel debilitanda, nulla praevia notitia vel Rusticis et cum vel sine ulla causa, non inclusis sed non limitata. ad contritionem Termini Officiorum et Communitatis pretium. Hoc ius conceditur ut situs noster certus sit tutus et securus.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Contents</h2>
+<p>Nostra websites et officia permitto tibi ut videos/books/music/artes, recensiones, commentarium, chat et cetera communicares. Tu igitur reus es pro omnibus contentis, quos communicasti et uploaded per paginas et officia nostra. Teneris habere ius contentum communicandi quod communicasti nec cum quibusvis aliis librariis repugnare. Omnes usores contenti uploaded et communicati sunt licentiati sub Communia Creative CC BY-NC-SA 3.0. Non licet contenta communicare quae non possumus nec permittere aliqua contenta illicita per nostrum locum et communitatem communicari. Omnia illicita contenta hic communicanda sunt. Omnia contenta quae infra recensita sunt non licet:</p>
+<ul style="text-align:left;">
+   <li> Medicamenta</li>
+   <li>tela</li>
+   <li>Acking, crepuit vel distributio software piratae</li>
+   <li> Cheats</li>
+   <li>Res vel auto</li>
+   <li>Virus</li>
+   <li>Autilis Usus Copyright Items</li>
+   <li>Sex</li>
+</ul>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Coniunctum Websites</h2>
+<p>Posuimus cum aliis sitibus coniungi quod non regimur vel operati sumus per turmas quae praesto sint et in nostris websites recensentur. Cum tertiam partem nexus situs intraveris, ad tertiam partem operas et paginas redigenda eris. Vehementer te monuimus ut eorum secreta consilia ac condiciones prius legeres antequam in suis websites uterentur. Non habemus ullam curam in ullius eorum contentorums, consilia secreta et exercitia in suis paginis quae in nostra potestate non sunt.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Iure utamur Nostra Websites</h2>
+<p>JstMStudio multa officia ac websites per omnia incepta nostra praebebat. Usum tuum ad omnia officia nostra per omnia incepta nostra permisimus et concessimus, sed servitia nostra ac websites iura non sunt. Incepta et officia cum vel sine notis vel consentientibus intermittere, mutare ac permanere.</p>
+<p>JstMStudio juris habuimus inactivandi et denegandi accessum vestrum ad omnia vel omnia officia nostra cum vel sine ullis causis. Despectus aliquorum membrorum nostrorum baculi rationem vestram inactivare possit pro actione vestra ad omnia membra nostra baculi defendenda. JstMStudio baculi homines sunt qui facta, powered, JstMStudio conservant, ita ut pro labore suo revereri mereantur, et nos quasi ab injuriis tueamur. Nos quoque ius tenemus negandi iura vestra participandi cuilibet e programmatibus nostris hosted vel nobiscum communicante.</p>
+<p>JstMStudio etiam habet ius tuum situm terminare ab obsequiis nostris obnoxius quolibet tempore velimus, vel sine ullis de causis, cum rationem facere solere. Ius servicium nostrum sine praevia vel praevia nota reservamus. </p>
+  
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Copyright</h2>
+<p>JstMStudio proprietatis librariae omnes et singulos observant. Si credis nos vel aliquem ius tuum in nostro loco, programmate, officia violare et te ex US, vehementer te hortor ut nos quam primum certiorem facias. Contentum librariae quamprimum ex nostro situ removebimus et id in publico non expedit. Monuerunt etiam usores ad iacturam infringendam ac aliquem accessum ad officia nostra terminare posse, si praeiudicium librae repetere.</p>
+<p>Si falsum esse librariam credis, nobis calculi noticiam mitte, exemplum in originali societati mittemus illis ut reponatur contentus detracto vel inactivare in XIIII diebus. Nisi dominus librariae actionem petit ut iudicium contra provisorem, membrum vel usorem, contentum remotum restitui possit vel accessus ad eum restituatur, in diebus XIIII negotiis vel plus post acceptum dictionum. Ad omnia libraria propositi, pete nobis per email.</p>
+<p>Nos quoque non permittimus aliqua contenta esse in nostro loco sub quibusvis et omnibus adiunctis uploaded. Non permittimus, nec aliqua praeiudicio librariae contenta in nostro situ admittimus. Omnia contenta iuris dictioni concedi debent creatori antequam in nostrum locum imposuisti et hospitem. Website hosted per nos non debet continere aliqua contenta warez, ius proprietatis et illegalis comprehendere nexus vel redirectiones ad Copyright material hosted in 3 factionis websites / opes. Non distributio materiarum librariorum, imaginum vel warezium nullis adiunctis facimus. Omnia contenta in situ tuo iura habere debent ut eam in tuo situ divulgent. </p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Iura proprietas</h2>
+<p> Omnia iura, titulum, nomen, consilium, usuram, vulgo servitutem materialem possidentur ab JstMStudio et socio nostro. Agnosces et consentis te iura possessionis non acquirere quoties vis ex materia servitii nostri eximendi. Pactum est quod nullam partem societatum non vendatis sine nostro consensu et a nostro aperto fonte licentiam sequi debeatis. Constat etiam te nullam partem dominii non petere utendo servitiis nostris vel accessu servitiis nostris in nostro loco. All rights reserved to our team. Dum pro Teenager Heroum, nunc amet Teenager Heroum creator, Jst Tan et manipulus. Teenager Heroum omnia iura ab auctore et scriptoribus reservata sunt.</p>
+<br>
+<hr>
+<br>
+<h1>Consilium secretum</h1>
+<p>In JstMStudio, pervia e nostris websites, app, programmatibus et inceptis, una praecipuorum prioritatum nostrarum est secretum hospitum et utentium. Hoc documentum Privacy Policy singula genera notitiarum quae ab JstMStudio collecta et descripta sunt continet et quomodo illo utebamur.</p>
+
+<p>Hoc Privacy Policy tantum ad nostras online actiones sicut eventus applicat et valet ad visitatores et usores nostros in websites, apps et programmata quoad informationes quas in JstMStudio communicaverunt et/vel collect. Hoc consilium non convenit cuilibet informationi offline collectae vel per canales praeter hoc website.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2> Informationes collectas</h2>
+<p>Percontationes personales quas rogaris providere, causasque cur rogaris ut id nobis praebeas, tunc et tempora declarabuntur tibi cum rogamus te ut tua personalia notitia praebeas.</p. >
+
+<p>Si visitas nos, colligemus locum tuum, pagina nomen, tempora, patriam, urbem, linguas, genus fabrica, genus navigatri, IP et ISP. Omnes notitiae collectae haud usquam indiscretae sunt.</p>
+
+<p>Si nos directe contact, adiectis accipiamus information de te ut nomen tuum, inscriptio electronica, numerus telephonicus, contenta nuntii et/vel attachiamenta nobis mittere potes, et alia quaevis informationes nobis praebere volueris.</p>
+
+<p>Quando rationem descripsi, petere licet pro informationibus contactus tuis, additis etiam ut nomen, nomen societatis, inscriptio, inscriptio, inscriptio, numerus telephonicus.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Quomodo Informationis utimur</h2>
+<p>JstMStudio notitias variis modis collegimus dum secreti utentes tuentur, inter quas ad:</p>
+<ul style="text-align:left;">
+<li>Provide, operare, ac conserva nostros pagina et officia</li>
+<li>Porro, personalize, et paginas nostras et officia ampliare</li>
+<li>Inspice et resolve quomodo nostris websites et officiis uteris</li>
+<li>Evolvere novos fructus, officia, lineamenta, ac functiones</li>
+<li> Communicare tecum, vel per se vel per unum e nostris sociis, incluso pro servitio emptori, ut tibi praebeas updates et alias informationes ad paginas et officia pertinentes, et ad proposita venalia et provehenda</li>
+<li>Mittam tibi emails pro updates et etc</li>
+<li>Invenire et prohibere fraudem in officiis nostris ac pagina</li>
+</ul>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2> Lima Stipes</h2>
+<p>JstMStudio regulam sequitur regulam utendi stipes lima. Haec files stipes visitatores cum websites, programmata, app et officia visitant. Omnes societates obnoxiae, nulla re soluta aut gratis obnoxius hoc faciunt et pars est officia analyticorum obnoxiorum. Delationes per tabellas stipes collectas includunt interrete protocollum (IP) inscriptionum, genus navigandi, servitii Internet Providentem (ISP), diem tempusque notae, referendo/exitus paginas, machinas genus, locum et numerum clicks fortasse. Hae non cum aliqua informatione per se identificabiles coniunguntur. Propositum percontationum est trends examinare, administrare locum, motus utentium sequi in situ, vestigia paginarum, programmatis, app et usus usus, et notitias demographicas colligere.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Crustulae et Beacons telae</h2>
+<p>Sicut alio loco, JstMStudio etiam utitur 'crustulum'. Haec crustula ad informationem recondere inter optiones et informationes visitatores adhibentur, ac paginae in pagina quam visitator accesserat vel visitavit. Celeritatem augebit etiam paginas et officia oneratorum nostrorum. Indicium ad optimize usum utentium usus est, in consuetudine et personali interretiali nostra pagina contenti secundum visitatores' navigandi genus et/vel alia indicia.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Socium nostrum Advertising</h2>
+<p>Aliquae proscriptiones in nostris websites et officiis uti possunt crustula et radios interretiales. Socii nostri vendendi infra inscripti sunt. Quisque vendo socii nostri suas res secretas et condiciones pro suis consiliis in usoris datas habent. Ad faciliorem accessum, subiungimus cum suis secretis Politiae infra ut te visitare et cognosce de eorum usuum terminis cum usoris notitiis. Hoc indicem consulere licet infra cautum ut Consilium Privacy pro singulis sociis vendendi JstMStudio invenias.</p>
+<p>Tertia pars ad servers vel ad retiacula technologias utitur sicut crustula, JavaScript, aut Beacons interretiales, qui in suis cuiusque tabulae et nexus sunt, qui apparent in JstMStudio officia et websites, quae directe ad navigatorem usorum mittuntur. Ipso facto IP oratio tua cum incidit. Hae technologiae adhibentur ad efficaciam vendendi stipendiorum suarum metiendi et/vel ad personale contentus vendo quod vides in paginis quas invisas. Nota JstMStudio nullum aditum habere vel potestatem super his crustulas quae a proscriptionibus tertiae partis adhibentur.</p>
+<ul style="text-align:left;">
+<li><a href="https://propellerads.com/privacy/">Propellerads</a></li>
+</ul>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Tertia Factio Privacy Policy</h2>
+<p>JstMStudio Privacy Policy aliis proscriptiones vel websites non applicat. Ita te monemus ut de re publica secretorum harum tertia-partium ad ministrantium magis magisque referendo consulas. Includere potest eorum instituta et instructiones quomodo optet quasdam optiones.</p>
+
+<p>Inactivandi crustulas eligere potes per optiones singulos navigatri tui. Ut accuratiorem informationem de crustulum administratione cum certis interretialibus navigantibus scias, apud navigatores proprias paginas inveniri potest.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>CCPA Secretum Iura (Mea personalis Data non vende</h2>
+<p>Sub CCPA legibus et inter alia iura, California usores iura nunc habent:</p>
+<ul style="text-align:left;">
+<li>Rogo ut nos personalis notitias consumptorias collectas detegamus praedicamenta et certa fragmenta personalium notitiarum quae negotium de consumers collegit.</li>
+
+<li>Petere ut nullas notitias personales de uso consumpto delemus quod negotium collegit.</li>
+</ul>
+<p>Si petis a JstMStudio, unum mensem tibi respondendi habemus. Si quid horum iurium tibi in California consumerent concesso exercere velis, nobis protinus scribe.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>GDPR Data Protectionis iura</h2>
+<p>Si in zona GDPR efficax es, JstMStudio fac ut probe noveris omnia iura tutelae datae tuae in UE zonis concessa. Omnis usor competit sequenti data tutelae iura:</p>
+<ul style="text-align:left;">
+<li>Ius adeundi – Habes ius petendi exemplaria a data personali tuo. Munus parvum tibi imputare licet pro his officiis.</li>
+<li>Ius rectificationis - Ius est petendi ut aliquas informationes emendamus quas collegimus te credere minus diligens esse. Etiam ius habes petendi ut informationes quas credis mutilas perficias.</li>
+<li>Ius rasurae – Habes ius petendi ut personales notitias tuas sub certis condicionibus deleas.</li>
+<li>Ius processus restringere – Habes ius petendi ut processus cuiuslibet et omnium personalium notitiarum tuarum restringamus, certis condicionibus discussis.</li>
+<li>Ius recusandi processui – Habes ius obiciendi processui nostro cuiuslibet et omnium notitiarum personalium, sub certis conditionibus tecum agitatis.</li>
+<li>Ius data portabilitatis – Ius est petendi ut notitias quas ad aliam ordinationem collegimus vel ad te directe sub certis condicionibus transferamus.</li>
+</ul>
+<p>Si equos rogaveris, unum mensem tempus habemus ut tibi respondeamus. Si quid horum iurium exercere velis, nobis protinus pete.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Liberi Informationum</h2>
+<p>Alia pars prioritatis JstMStudio tutelam puerorum addit dum late hodie interrete utens. Parentes tutoresque hortamur ut observent, participent,/vel monitorem ac activitates suas dirigant.</p>
+<p>JstMStudio intendit providere penitus omni homini in omnibus aetatibus, etiam pueris in universo mundo. Si puer tuus uteris nostris officiis ac websites, opera eorum monitor quaeso. Si puer tuus interest in officiis nostris, puerum tuum utere ut liberorum versionis nostrae pagina quae monitorem cotidianum team et non indagare notitia pueri tui.</p>
+<p>JstMStudio nullas informationes personales identifiables scienter colligit ex parvulis sub aetate 13. Si cogitas puerum tuum huiusmodi informationes in nostro loco praebuisse, vehementer te hortamur ut statim nos tangas ac operam dabimus. ut tales informationes ex monumentis nostris prompte removeant. Si interesse in nostro loco et officiis, liberum contactus nos senties et consensum parentum da pro puero tuo ut nostris officiis ac websites utaris. Vehementer monemus te ut monitorem et participem actionis tuae puerilis in nostris websites et officiis, si consenseris ut puerum tuum ad officia nostra utere.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Tertii Services</h2>
+<p>Praeter ads officia, JstMStudio etiam in tertia parte aliqua officia et app in nostris websites et officiis utuntur. Omnes partes tertiae in nostro loco positae infra enumerantur.</p>
+<ul style="text-align:left;">
+<li>Google Analytics</li>
+<li>Google Coegi</li>
+<li>Substack</li>
+<li>Boxicon</li>
+<li>Statcounter</li>
+<li>Cloudflare</li>
+<li>VideoSDK</li>
+</ul>
+<hr>
+<h1>Community guidelines</h1>
+<p>Grata JstMStudio officiali Communitatis Praeceptionis. Omnes normae requiruntur ut omnes in JstMStudio paginarum et communitatum nostrarum sicut commentationes, servitor communitatis, chat et etc. Omnes consentire requiruntur, dum etiam in communitatibus nostris websites utentes.
+<p>JstMStudio Communitatis Communitates nostrae websites et communitates tutas, mundas ac familiares omnibus in quaque terrarum orbis parte utantur, conservent. Unusquisque ad unum opus concurrit ut eam incolumem servet et mundum. Nequaquam ut haec normas sequantur, ut ratio tua debilitata vel interdictum a retiacula nostra proveniat. Omnes opus est ut has normas sequantur. </p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Respectu</h2>
+<p>Quaeso, reverentiam exhibe omnibus et omnibus utentibus intra communitatis JstMStudio. JstMStudio communitatis omnes merentur eadem intus et extra tractari. Personas nullas in civitate nostra observari non permittimus.</p>
+<ul style="text-align:left;">
+<li>Pone aliquo modo in conventu nostro.</li>
+<li>Quaeso, ne quis intra civitatem nostram laedit nec carpat.</li>
+<li>Ne participes imagines imaginum quae inclusa sunt violentiae vitae, cruoris aut crudelitatis bestiae, robora sui ipsius nocumentum vel suicidium.</li>
+<li>Noli dox aliquem in communitate ut usorem personalem communicantem info inter IP, verum nomen, locum, nationis et etc.</li>
+<li>Lingua gravis et verba mala et maledicta in communitate nostra non permittuntur.</li><li> Noli racism contra aliquem Asianum (ut proprie CHINESE) vel Africanum in civitate nostra.</li>
+<li>Verere omnium secretum.</li>
+<li>Noli aliquem cogere ut secretum info tuum de nostro loco et communitate exhibeat.</li>
+<li>Ne quis troglodytam in nostris websites.</li>
+<li>Omnes virgam nostram sodalium observa.</li>
+<li>Bossy de aliquo in JstMStudio, penitus vel in vita reali non licet.</li>
+<li>Humanum abusionem non licet. </li>
+<li>Personans aliquis intra civitatem nostram vel se dicit esse aliquem non es.</li>
+</ul>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2> Potestas abusus</h2>
+<p>Abusus Potestas stricte est et nunc gravis casus in interrete est a primo die communitatum. Stricte nullum abusus potestatis actum in nostris communitatibus ac in websites patitur. Abusus potestas a manipulis non urgetur stricte prohibetur in communitatibus nostris, servitiis et in websites. Abusus potentia comprehendit:</p>
+<ul style="text-align:left;">
+<li>Mitans stimulum calcitrare vel damnare membra e grege tuo.</li>
+<li>Mitans communicare usorum supellectilem aliis.</li>
+<li>Mitans secare user accessum ad aliquid quod in nostro loco aedificatum est.</li>
+<li>Commodis users.</li>
+<li>21-Nam, minati parenti supellectilem queri, nostro suggestu uti non licet.</li>
+</ul>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>PG18</h2>
+<p>JstMStudio non patitur PG18 contenta in nostris locis disputari, uploaded et praesto esse. Ullam vim in nostro loco contentam non permittimus. Etiam nulla fraus, violenta, graphica et suicidia contenta in nostro loco nostro non permittimus. Etiam nos non patimur aliquem puerum abusionem sexualem et abusionem sexualem adultam nimis contentam esse. Nobis quoque non licet ullo contenta sermonis odisse nimium. </p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Privacy</h2>
+<p>Priuatio est una praecipuorum valorum in JstMStudio. In JstMStudio, observare volumus omnes et singulos secretos et singulas privatas personas ita in nostro suggestu, volumus urgere ut omnes secreti serventur. Alias personales in secreto info communicari sine eorum licentia scripto non permittimus. Personalia informationes inter pecuniaria, residentiales et medicinae informationes, tum privatas notitias.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Staff</h2>
+<p>JstMStudio scipionis est populus qui fecit, powered, conservare JstMStudio, ut merentur observari pro labore suo in quadrigis inceptis. JstMStudio Staff turmae habuit extremum dicere ad custodiendam suggestum ac programmatum ab histrionibus malis tutum. Quaeso observa singula membra nostra, ubicunque sint, et quam olim, omnes hic sunt. Minas, truculentas, nostras sodales baculi exponens, in externo vel in programmate nostro non licet. Baculus noster iura habet inactivandi et accessum tuum ad officia nostra etiam si periculum senserit negare.</p>
+<br>
+<hr style="width:50%; margin:auto">
+<br>
+<h2>Strikes</h2>
+<p>Si ab aliquibus usoribus in pagina et programmate nostro renuntiata esses, tesseram investigationis aperiemus ad causam investituendam. Si hasce communitatis normas invenimus te rupisse, immedicabile te ferit posse. Cum ad 5 te perveneris ferit, rationem vestram dispediemus. Appellare posses si putes nos erravisse ictum tibi dare sed provocare non conaris si lineas nostras vere confregisti, non revocas ictus si falsum est appellatum. Quaeso, nos protinus.</p>
+  </div>
+</div>
+
+<div id="myNav10" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav10()">&times;</a>
+  <div class="overlay-content">
+<h1>Profile</h1>
+       <p>JstMStudio Profile est situs interretialium substructio socialis retiacula. Users nuntia creare et legere contenti creatori ex toto orbe terrarum factae sunt. JstMStudio Profile gratis uti potes, minore restrictione ac maxima omnium, sine ullis etiam praeconiis.</p>
+       <p>JstMStudio Profile fons apertus est omnibus ad studium et visum. Posses etiam ad propositum conferre. In praesenti usu HTML, CSS et JavaScript et licentiatus sub MIT est coded. JstMStudio Profile est secretum amicae tribunal nimis. Non communicamus informationes usorum alicui tertiae parti et optimas nostras quam minus notitias quam maxime indagare conati sumus. Usorem ad propria manu redire velimus.</p>
+       <p>JstMStudio Profile locus est qui respectu omnium libertatem loquendi habet. Si libertatem loquendi in vita reali habere posses, eam in interrete habere debeas ut id fieri velimus. Hic nihil de rebus praeterquam de illegalibus vel NSFW stipate.</p>
+       <br>
+       <hr>
+       <br>
+         <h2>Profile Investigatio</h2>
+       <p>Welcome to JstMStudio Profile Search! Locus ad quaerendum profile in JstMStudio Profile. Locum inveniendi et cognoscendi plura de singulis profanis in JstMStudio. </p>
+       <br>
+       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for profile username" title="Type in a name">
+<ul id="myUL">
+   <li><button type="button" class="collapsible2">Jst Tan</button>
+<div class="content2">
+   <iframe src="Profile/jst-tan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+<li><button type="button" class="collapsible2">PJ Masks Fan</button>
+<div class="content2">
+<iframe src="Profile/pj-masks-fan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p>
+</div></li>
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p>
+</div></li>
+   <li><button type="button" class="collapsible2">Nihil</button>
+<div class="content2">
+   <p>Nihil</p>
+</div></li>
+</ul>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+<br>
+<hr>
+<br>
+<h2>Scribe Up</h2>
+       <p> Quisque nunc subscribere potuit pro scriptore rationem in JstMStudio Profile creare profile et scribere post. Scriptor ratio habere potest profile, suum profile creare, stipes creare, plugins in statione sua uti et etc. Scriptoris ratio summam libertatem in suis profile ac postibus habebit. Si interest, signare possis et applicare formam inferiorem implendo, omnibus patet. Subdendo, omnis applicatio sine 7 negotiorum die a JstMStudio membrorum recensetur.</p>
+       <br>
+       <button class="button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdlaiVNGbMk8Rlfdz7zsUeXTD0gNuJ2VXEnjAyK9Ss8Rs4vrA/viewform?fbzx=6439158439518808056" style="color:yellow;" Hic </span></a></button>
+  </div>
+</div>
+
+<h1><i class='bx bx-info-circle'></i> De Us</h1>
+<p>JstMStudio est parva studio ab Jst Tan. JstMStudio feruntur multae res, a musica, historia scripto, loco evolutionis et multo magis. JstMStudio parva est remotior indie studiorum quae multa intendit ad meliorem futuram fabricam. </p>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-contact' ></i> Contact Us</h2>
+<p>Dissimilis Facebook, Google et aliarum technicorum ingentium societates, apertae sunt omnibus ad nos contact omnibus et singulis. JstMStudio per multos usus contingere potuisti, ut subsidium, feedback, cimices report, suggestionem, donationem, patrocinium, emere fructus vel officia, plura de nobis cognoscere et etc. Quaeso ne contact nos ad promotionem et spam per, nolumus. aliqua responsa ad epistulas non relatas in nostra mailbox mittes et eam quam primum ad spam movebo. Instrumentorum socialis instrumentorum rationem tibi dedimus ut nos attingas per aliquod socialis instrumentorum communicationis socialis dispositio ad nos vel ad nos dirigere nuntios.</p>
+<br>
+<li><a href="https://www.facebook.com/jstmstudio"><i class='bx bxl-facebook-circle' ></i> Facebook</a><br>
+Facebook est current principale socialis instrumentorum suggestus JstMStudio. Contenta sicut enuntiationes, updates, et nuntios in officialibus nostris Facebook paginarum semel in aliquandiu collocamus. Nos quoque per Facebook nuntius protinus nos contingi posses ad officiales nostros Facebook paginas etiam ad subsidium, cimices referendum, feedback et suggestionem ac etiam nos recense.</li>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-info-quadratum' ></i> Information</h2>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav4()" id="teams">Team & Services</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav2()" id="projects">Projects</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav5()" id="app">App</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav3()" id="news">News</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav7()" id="status">Status</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav8()" id="store">Store</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;"> <a href="https://jstmstudio.substack.com">Blog</a></div>
+<br>
+<hr>
+<br>
+<h2><i class='bx bx-group' ></i> Communitatis</h2>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav9()" id="terms">Terms</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav()" id="community">Community</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav1()" id="donation">Donation</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav6()" id="partner">Partner</div>
+<br>
+<div style="font-size:30px;background-color:cyan; width:90%;text-align:center;color:purple;padding:10px;font-weight:bold; border-style: solid;" onclick="openNav10()" id="profile">Profile</div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+
+function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
+}
+
+function openNav9() {
+  document.getElementById("myNav9").style.width = "100%";
+}
+
+function closeNav9() {
+  document.getElementById("myNav9").style.width = "0%";
+}
+
+function openNav10() {
+  document.getElementById("myNav10").style.width = "100%";
+}
+
+function closeNav10() {
+  document.getElementById("myNav10").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+  <h1>Themes</h1>
+<p>Mos themata JstMStudio in colore quem mavis. Elige et eligere e colore infra statuto ut JstMStudio UI in praeponendo colorem facias.</p>
+  <br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+
+function myFunction5() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+
+</body>
+</html>
