@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>À propos de nous</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+.collapsible {
+  background-color: #f1f1f1;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: red;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+.body {
+  background: #E4E9F7;
+  }
+  
+.button2 {
+float:left;
+background-color: black;
+  color: red;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  cursor: pointer;
+  outline: none; 
+  font-size:30px;
+  background-color:cyan;
+  width:100%;
+  text-align:center;
+  color:purple;
+  padding:10px;
+  font-weight: bold;
+  border-style: solid;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: cyan;
+  color: purple;
+  font-weight: bold;
+  text-align:center;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 350px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: purple;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible2 {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible2:hover {
+  background-color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+
+/* Directory Content */
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible:hover {
+  background-color: yellow;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Jst polyvalent lieu de travail</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Accueil</span>
+        </a>
+         <span class="tooltip">Accueil</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">À propos</span>
+       </a>
+       <span class="tooltip">À propos</span>
+     </li>
+     <li>
+     <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">Client</span>
+       </a>
+       <span class="tooltip">Client</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">Documentation</span>
+       </a>
+       <span class="tooltip">Documentation</span>
+     </li>
+     <li>
+       <a href="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">Application Web</span>
+       </a>
+       <span class="tooltip">Application Web</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<br>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>Communauté</h1>
+     <p>Bienvenue dans la communauté JstMStudio ! JstMStudio a de nombreuses communautés officielles sur de nombreux types de plateformes de sites Web comme Revolt.chat et Guilded. La communauté JstMStudio est actuellement bien entretenue et modérée par le spécialiste de l'équipe et s'adresse actuellement à tous nos utilisateurs, clients et fans.<br><br>La communauté JstMStudio est un lieu où tout le monde et les utilisateurs de JstMStudio peuvent se rassembler et sortir et pour l'utilisateur pour demander de l'aide, signaler des bogues et donner des commentaires. </p>
+     <h>
+     <h2>Révolte</h2>
+     <p>JstMStudio exploite et maintient actuellement le serveur officiel de l'équipe sur notre serveur Revolt. Les utilisateurs peuvent rejoindre le serveur JstMStudio Revolt pour rejoindre notre lieu de rencontre communautaire, demander de l'aide, donner des commentaires, signaler des bogues et discuter avec le personnel. Vous pouvez également obtenir l'annonce officielle de JstMStudio. Vous pouvez rejoindre notre <a href="https://app.revolt.chat/invite/cPgxVqY4" style="color:red;">serveur Revolt ici</a>.</p>
+     <h>
+     <h2>Guildé</h2>
+     <p>JstMStudio exploite et maintient également un serveur Guilded officiel. Les utilisateurs peuvent rejoindre le serveur JstMStudio Guilded pour rejoindre notre lieu de rencontre communautaire, demander de l'aide, créer un ticket, donner des commentaires, signaler des bogues, discuter avec l'équipe. Vous pouvez également recevoir l'annonce officielle de JstMStudio.</p>
+    <iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2FWErNJm8E&size=large" width="553" height="262" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+<h1>Don</h1>
+     <p>JstMStudio est financé par de nombreuses méthodes et manières, la plus courante étant les dons et ensuite, les revenus publicitaires de notre page d'annonces. Nous ne vendons actuellement aucune et toutes les données utilisateur de base que nous avons collectées pour maintenir le site Web, donc le don est la voie des revenus pour l'équipe, c'est plutôt 1 $ ou 5 $, cela compte toujours beaucoup pour nous. Chaque centime serait utilisé directement ou indirectement dans l'équipe.
+     <h>
+     <h2>Achete-moi un café</h2>
+     <p>JstMStudio a actuellement des pages Buy Me A Coffee que chacun peut choisir de nous faire don mensuellement ou une seule fois. Vous pouvez également nous laisser un message public sur nos pages. Buy Me A Coffee facture actuellement des frais de 5% pour chaque don, nous n'avons donc reçu que 95% de tous les dons et abonnements mensuels. Cette page appartient à Jst Tan, PDG et actionnaire de JstMStudio. </p>
+     <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jestonjst" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Offre-moi un verre" data-outline-color="#000000" data-font-color="#000000 " data-coffee-color="#ffffff" ></script>
+     <br>
+     <h>
+     <h2>Ko-Fi</h2>
+     <p>JstMStudio exploite également actuellement des pages Ko-Fi pour que chacun choisisse de nous faire un don mensuel ou via un don mensuel sur Ko-Fi également. Vous pouvez également nous laisser un message public sur nos pages Ko-Fi. Ko-Fi facture actuellement des frais de 5 % pour chaque don mensuel, nous n'avons donc reçu que 95 % de tous les abonnements mensuels alors qu'il s'agit d'un don à 100 % à temps plein. Cette page appartient à Jst Tan, PDG et actionnaire de JstMStudio.</p>
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#28e059', 'R6R8BLGHG');kofiwidget2.draw();</script> 
+  </div>
+</div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>Projets</h1>
+<p>JstMStudio a actuellement de nombreux projets développés par toutes nos équipes enfants. Tous nos projets sont actuellement activement maintenus par leurs équipes d'enfants respectives. Pour chacun de nos projets, veuillez cliquer sur le bouton ci-dessous pour le projet spécifique pour en savoir plus. Tous les projets ici sont exclusivement produits par JstMStudio et financés par toutes les sources de revenus du studio comme la vente de livres, les dons et bien plus encore.</p>
+<br>
+<a href="teenager-heroes.html"><button class="button"><span>Héros adolescents </span></button></a>
+<a href="app.html#infohq"><button class="button"><span>InfoHQ </span></button></a>
+<a href="app.html"><button class="button"><span>Plate-forme JstMStudio </span></button></a>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>Actualités</h1>
+     <p>Bienvenue dans l'actualité de JstMStudio ! Un lieu d'actualités pour obtenir toutes les nouvelles telles que les annonces, les mises à jour, etc. de JstMStudio. Recevez toutes les dernières nouvelles officielles de JstMStudio ici.</p>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay-content">
+<h1>Équipe</h1>
+     <p>JstMStudio compte actuellement de nombreuses équipes enfants. Notre équipe enfant principale actuelle est notre équipe de développement Web. JstMStudio compte actuellement deux équipes enfants, Développement Web et Studio d'animation.</p>
+     <br>
+     <h>
+     <br>
+     <div style="color: green;">
+     <h2>Développement Web</h2>
+     <p>L'équipe de développeurs JstMStudio est détenue et entièrement gérée par JstMStudio. L'équipe de développeurs JstMStudio est une filiale de JstMStudio. L'équipe de développeurs JstMStudio crée des sites Web, des applications, des logiciels et des jeux pour nos clients et nos clients, dont certains pour notre équipe principale, JstMStudio.</p>
+     <h3>Services</h3>
+     <ul style="text-align:center;">
+     <li>Développement de site Web</li>
+     <li>Maintenance du site Web</li>
+     <li>Publicité</li>
+     </ul>
+     <br>
+     <h3>Fonctionne</h3>
+     <ul style="text-align:center;">
+     <li>InfoHQ</li>
+     <li>École de codage</li>
+     <li>Application JstMStudio</li>
+     </ul>
+     <br>
+     <h3>Personnel</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan est le fondateur et PDG de JstMStudio. Jst Tan est le développeur principal de JstMStudio. Jst Tan est un développeur Web expérimenté de 2 ans depuis 2020. Jst Tan est le principal développeur derrière tous les sites Web et logiciels de JstMStudio.</li>
+     </ul>
+     </div>
+     <br>
+     <h>
+     <br>
+     <div style="color: blue;">
+     <h2>Atelier d'animation</h2>
+     <p> JstMStudio Animation Studio appartient et est entièrement géré par JstMStudio. JstMStudio Animation Studio est une filiale de JstMStudio. JstMStudio Animation Studio a fourni de nombreux services à nos clients et clients. JstMStudio Animation Studio offrait un prix inférieur à celui de toutes les autres sociétés de production afin que nos clients et nos clients puissent réduire leurs coûts en utilisant nos services.</p>
+     <h3>Services</h3>
+     <ul style="text-align:center;">
+     <li>Conception de logos</li>
+     <li>Conception d'affiches</li>
+     <li>Rédaction d'articles</li>
+     </ul>
+     <br>
+     <h3>Fonctionne</h3>
+     <ul style="text-align:center;">
+     <li>Héros adolescents</li>
+     </ul>
+     <br>
+     <h3>Personnel</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan est le fondateur et PDG de JstMStudio. Jst Tan est scénariste et monteur vidéo chez JstMStudio. Jst Tan est également le créateur et le rédacteur exécutif de la série de livres Teenager Heroes. </li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+<h1>Télécharger l'application</h1>
+     <p>Bienvenue sur la page de téléchargement de l'application JstMStudio. Nous fournissons actuellement plusieurs applications sur plusieurs plates-formes afin que les utilisateurs puissent télécharger notre application sur leur appareil localement. </p>
+    <br>
+    <hr>
+    <br>
+    <h2>Windows</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Mac</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Linux</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Android</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>IOS</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+  </div>
+</div>
+
+<div id="myNav6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
+  <div class="overlay-content">
+<h1>Partenaire</h1>
+     <p>Le programme partenaire JstMStudio est le programme partenaire officiel de JstMStudio. Un programme que l'équipe associe à des particuliers et à des entreprises du monde entier. Un programme dont le membre représente l'équipe. Le programme de partenariat JstMStudio est disponible pour tout le monde. Le programme de partenariat JstMStudio est un programme qui rend l'équipe plus proche et conviviale de notre communauté officielle et de nos fans.</p>
+<br>
+<button type="button" class="collapsible2">Exigences <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+<p>Le programme partenaire JstMStudio a actuellement certaines exigences de base. Toutes les exigences énumérées ici sont strictement appliquées et vous devez satisfaire à toutes ces exigences avant de postuler ou de rejoindre le programme de partenariat JstMStudio. Toutes nos exigences sont répertoriées ci-dessous :</p>
+<ul>
+     <li>Avoir au moins 100 abonnés sur l'un de vos réseaux sociaux. </li>
+     <li>Être actif sur les réseaux sociaux de vos abonnés 1++. </li>
+     <li>Vous devez accepter et respecter nos Règles de la communauté et nos Conditions d'utilisation. </li>
+     <li>Actif dans notre communauté officielle. </li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Avantages <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>En postulant et en rejoignant le programme de partenariat JstMStudio, nous avons fourni de multiples avantages à chacun des partenaires de JstMStudio. Nous sommes reconnaissants à tous les partenaires d'avoir rejoint notre programme et nous avons fourni de nombreux avantages à nos partenaires. Nous ajouterons également d'autres avantages pour rejoindre notre programme de partenariat dans un avenir proche. Tous les avantages sont répertoriés ci-dessous :</p>
+<ul>
+     <li>Assistance prioritaire</li>
+     <li>Cris fréquents</li>
+   <li>Liste spéciale</li>
+   <li>Et bien plus !</li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Apply <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+<p>Le programme partenaire JstMStudio est un programme partenaire que JstMStudio associe à des individus ou à des équipes. Il est actuellement ouvert à tous pour s'inscrire. Si vous êtes intéressé par le programme partenaire JstMStudio et que vous remplissez toutes les conditions et acceptez toutes les conditions du programme partenaire JstMStudio, vous pouvez postuler au programme partenaire JstMStudio en remplissant le formulaire Google fourni ci-dessous. Chaque candidature au programme partenaire JstMStudio est examinée au cas par cas par JstMStudio. Veuillez noter que notre personnel a le droit d'approuver ou de refuser toute candidature à notre programme de partenariat sans aucune raison.</p>
+   <br><br>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBPTvkmrfmuCC4f4JnzmMSQ27xS0lY5sFrGUbLAcuwNVnRWA/viewform?embedded=true" width="100%" height="1930" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Liste <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>Bienvenue dans la liste de tous les partenaires de JstMStudio ! Un endroit pour en savoir plus sur chacun des partenaires JstMStudio. Un endroit pour obtenir tous les partenaires de JstMStudio.</p><br>
+<input type="text" id="myInput" onkeyup="myFunction5()" placeholder="Rechercher des partenaires" title="Saisir un nom">
+<ul id="myUL">
+  
+  <li><button type="button" class="collapsible2">Aucuna</button>
+<div class="content2">
+  <p>Aucun</p></div></li>
+  
+  <li><button type="button" class="collapsible2">Aucun</button>
+<div class="content2">
+  <p>Aucun</p></div></li>
+  
+  <li><button type="button" class="collapsible2">Aucun</button>
+<div class="content2">
+  <p>Aucun</p></div></li>
+  
+  <li><button type="button" class="collapsible2">Aucun</button>
+<div class="content2">
+  <p>Aucun</p></div></li>
+  
+  <li><button type="button" class="collapsible2">Aucun</button>
+<div class="content2">
+  <p>Aucun</p></div></li>
+</ul>
+<br>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav7()">&times;</a>
+  <div class="overlay-content">
+    <h1>Statut du site Web</h1>
+    <br>
+    <iframe src="https://status.jstmstudio.tk" style="width:100%;height:2890px;"></iframe>
+  </div>
+</div>
+
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+<h1>Magasin</h1>
+     <p>JstMStudio est une petite équipe basée en Malaisie. JstMStudio se concentre sur de nombreux domaines, du développement de sites Web à l'écriture d'histoires. JstMStudio est fondé par un groupe de jeunes amis intéressés par la technologie.</p>
+     <br>
+     <br>
+     <h>
+     <br>
+     <h1>Services</h1>
+   <p>JstMStudio fournit actuellement de nombreux services variés. Certains sont fournis gratuitement tandis que d'autres sont payés selon vos plans avec nous. Tous les services fournis par JstMStudio sont inclus dans les plans premium. Nous ajouterons également d'autres services à nos forfaits à l'avenir.</p>
+   <br>
+<hr style="width:80%;margin:auto;">
+<br>
+   <h2>Conception et développement Web</h2>
+   <p>Nous fournissons des services de développement Web dans tous nos plans. Nous allons construire votre site Web pour vous avec vos préférences. Nous n'utilisons ni Wordpress ni aucun constructeur de site pour créer l'un de nos sites Web. Tous les codes sont écrits à la main par nous selon vos préférences.<br><br>Nous avons également proposé des modifications et des modifications illimitées à vos sites Web. Nous le personnaliserons avec des modifications illimitées en fonction de vos préférences et de vos besoins, quel que soit le forfait que vous avez choisi.</p>
+   <br>
+<hr style="width:80%;margin:auto;">
+<br>
+   <h2>Gestion du profil d'entreprise</h2>
+   <p>Nous vous avons également aidé à gérer votre profil d'entreprise Google, Yahoo et Bing pour le tenir à jour avec vos besoins et vos préférences. Nous fournirons également une assistance pour tout ce qui concerne ces profils d'entreprise. Nous ferons également des mises à jour mensuelles comme la publication, etc., en fonction de vos projets.</p>
+     <br>
+<hr style="width:80%;margin:auto;">
+<br>
+    <h2>Programme du cours</h2>
+    <p>JstMStudio Course est un programme de cours payant de haute qualité proposé par JstMStudio pour que les apprenants suivent des cours et apprennent des choses qui sont dans leur intérêt pour une fraction du prix de notre concurrent. Tous les cours dispensés sont de haute qualité pour nos clients.
+<p>Nous proposons plusieurs types de cours allant de plusieurs industries comme la programmation et bien plus encore. Vous pouvez consulter tous les cours ci-dessous. D'autres cours seront bientôt ajoutés. Tous les cours sont facturés des frais uniques par JstMStudio pour un accès à vie et des mises à jour au cours spécifique. Les frais ne vous accorderont qu'un accès à vie au cours que vous avez payé. </p>
+    <br>
+    <h>
+    <br>
+    <h2>Répertoire des articles</h2>
+    <p></p>
+    <br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher des éléments !" title="Tapez un nom">
+<ul id="monUL">
+<li><button type="button" class="collapsible">Hébergement des pages Github</button>
+<div class="content">
+<p>JstMStudio fournit un hébergement gratuit pour tout le monde, y compris les développeurs du monde entier, via JstMStudio Hosting. Les utilisateurs peuvent demander un site d'hébergement gratuit avec JstMStudio.</p>
+<ul style="text-align:left;">
+<li><strong>GRATUIT</strong></li>
+<li>10 Go de bande passante</li>
+     <li>1 Go de stockage</li>
+     <li>Stockage de sauvegarde gratuit de 500 Mo</li>
+     <li>Assistance technique gratuite</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Hébergement Vercel</button>
+<div class="content">
+<p>JstMStudio fournit actuellement un hébergement gratuit à tous dans le monde pour héberger leurs sites Web en utilisant nos services. Ce plan inclut l'hébergement sur Vercel. </p>
+<ul style="text-align:left;">
+<li><strong>GRATUIT</strong></li>
+<li>Bande passante de 5 Go</li>
+<li>1 Go de stockage</li>
+<li>Stockage de sauvegarde gratuit de 500 Mo</li>
+<li>Assistance technique gratuite</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Hébergement Premium</button>
+<div class="content">
+<p>JstMStudio offre un hébergement gratuit à chacun pour héberger gratuitement ses sites Web en utilisant notre hébergement. L'hébergement Premium est un type spécial de plan d'hébergement qui nécessitera l'approbation de JstMStudio pour rejoindre et utiliser.</p>
+<ul style="text-align:left;">
+<li><strong>GRATUIT</strong></li>
+<li>1 Go de stockage</li>
+<li>Bande passante de 100 Go</li>
+<li>500 Mo de stockage de sauvegarde</li>
+<li>Assistance technique gratuite</li>
+<li>Onglet Numéros gratuits</li>
+<li>Onglet de discussion gratuit</li>
+<li>Onglet Projets gratuits</li>
+<li>Wiki gratuit</li>
+<li>Insight gratuit</li>
+<li>Domaines personnalisés pris en charge</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Thèmes</button>
+<div class="content">
+<p>JstMStudio vend une configuration de thème pour nos clients et utilisateurs. La configuration des thèmes JstMStudio permet aux utilisateurs du client de modifier les thèmes des pages Web à la couleur qu'ils préfèrent. Nous fournissons actuellement 9 configurations dans ce matériel.</p>
+<ul>
+<li style="text-align:left;">Prix : 30 $</li>
+<li style="text-align:left;">Délai de livraison : 48 heures</li>
+<li style="text-align:left;"><a href="materials/themes.html" style="color:yellow;">Démo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Bouton d'hyperlien couleur animé</button>
+<div class="content">
+   <p>JstMStudio vend également un bouton de lien hypertexte qui contient un changement de couleur et une animation unique lors du survol du bouton. Les clients peuvent ajouter ceci aux hyperliens de leur site Web pour seulement 20 $. </p>
+   <ul>
+   <li style="text-align:left;">Prix : 20 $</li>
+<li style="text-align:left;">Délai de livraison : 48 heures</li>
+<li style="text-align:left ;"><a href="materials/animated-color-hyperlink-button.html" style="color:yellow;">Démo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Filtre de recherche avec description</button>
+<div class="content">
+   <p>JstMStudio vend un filtre de recherche à partir d'une liste d'éléments contenant une description pour chacun et tous les éléments de la liste entière. Le filtre de recherche JstMStudio recherche uniquement le nom ou le titre des éléments, ce qui le rend plus précis. Vous pourriez l'avoir sur votre site Web pour seulement 20 $.</p>
+   <ul style="text-align:left;">
+     <li style="text-align:left;">Prix : 20 $</li>
+<li style="text-align:left;">Délai de livraison : 48 heures</li>
+<li style="text-align:left;"><a href="materials/search-filter-with-description.html" style="color:yellow;">Démo</a></li>
+   </ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Site Web de base</button>
+<div class="content">
+<p>JstMStudio propose actuellement un site Web de base de 5 pages pour des frais uniques de <strong>60 $</strong>. Le site Web de base de JstMStudio sera livré avec une personnalisation et des modifications illimitées gratuites avant l'achat et un support gratuit d'un mois pour toutes les questions après l'achat du site Web. </p>
+<ul style="text-align:left;">
+<li>60 $ (paiement unique)</li>
+<li>5 pages</li>
+<li>Assistance gratuite (1 mois)</li>
+<li>Personnalisation gratuite</li>
+<li>Modifications illimitées</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Site Web Premium</button>
+<div class="content">
+<p>JstMStudio propose actuellement un site Web premium de 5 pages pour des frais mensuels de <strong>100 $</strong>. Le site Web premium JstMStudio sera fourni avec un hébergement fourni et maintenu pour vous, des mises à jour de maintenance illimitées à vie, des services d'assistance gratuits pour vous et un stockage de 5 Go pour vous avec une sauvegarde de 1 Go. </p>
+<ul style="text-align:left;">
+<li>100 USD/mois</li>
+<li>5 pages</li>
+<li>Hébergement inclus</li>
+<li>Mises à jour de maintenance à vie illimitées</li>
+<li>Assistance gratuite</li>
+<li>5 Go de stockage (1 Go de sauvegarde)</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Annonces newsletter</button>
+<div class="content">
+<p>JstMStudio Newsletter Ads est une publicité qui sera affichée sur la newsletter envoyée à tous les abonnés de la newsletter. Vos annonces seront directement disponibles dans leur boîte mail. Les annonces de newsletter JstMStudio coûtent 50 $ pour chaque nouvel e-mail (quel que soit le nombre d'abonnés). </p>
+<ul style="text-align:left;">
+<li>50 $</li>
+<li>Permanent</li>
+<li>Annonces newsletter</li>
+<li>Afficher dans les e-mails</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Afficher les annonces</button>
+<div class="content">
+<p>JstMStudio Display Ads est un type d'annonces qui s'affichent sur des sites Web et des applications Web, qui peuvent toucher un public sur un ordinateur de bureau, un ordinateur portable et un téléphone mobile. Ce type d'annonces coûtera 100 $ pour 1 000 000 vues.</p>
+<ul style="text-align:left;">
+<li>100 $ / 1 000 vues</li>
+<li>1 000 vues</li>
+<li>Afficher des annonces</li>
+<li>Photos uniquement</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Annonces mobiles</button>
+<div class="content">
+<p>JstMStudio Mobile Ads est un type d'annonces qui s'affichent sur un téléphone mobile via une application mobile sur Android, Apple et d'autres systèmes d'exploitation. Avec ce format d'annonces, vous pouvez atteindre les clients directement sur leur téléphone. Chaque 1000 vues coûtera 200 $ et tous les fichiers multimédias sont pris en charge.</p>
+<ul style="text-align:left;">
+<li>200 $ / 1 000 vues</li>
+<li>1 000 vues</li>
+<li>Annonces mobiles</li>
+<li>Tous les fichiers multimédias pris en charge</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Annonces vidéo</button>
+<div class="content">
+<p>JstMStudio Video Ads est un type d'annonces affichées et lues dans un format vidéo, avec ou sans son. Chaque 1 000 vues de vos annonces vidéo coûterait 150 $. Ce format d'annonce doit être en vidéo uniquement.</p>
+<ul style="text-align:left;">
+<li>150 $ / 1 000 vues</li>
+       <li>1 000 vues</li>
+       <li>Annonces vidéo</li>
+       <li>Afficher dans la vidéo</li>
+       <li>Vidéo uniquement</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Initiation au HTML (cours)</button>
+<div class="content">
+<p>Cet ensemble de cours apprendra aux nouveaux apprenants à se lancer dans le codage en HTML5, la dernière version de HTML. Ces cours coûtent au total <strong>20 $</strong> pour 4 cours. </p>
+<ul style="text-align:left;">
+<li>Introduction au HTML</li>
+       <li>Format HTML</li>
+       <li>Éditeurs pour HTML</li>
+       <li>Éléments HTML</li>
+</ul>
+</div></li>
+
+</ul>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+  </div>
+</div>
+
+<div id="myNav9" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav9()">&times;</a>
+  <div class="overlay-content">
+<h1>Conditions</h1>
+<p>Bienvenue sur JstMStudio ! Vous êtes actuellement dans les pages de conditions JstMStudio, qui contiennent nos conditions de services, notre politique de confidentialité et nos directives communautaires. Vous devez comprendre et accepter chacun de nos services afin d'utiliser nos services et nos sites Web. Toutes les conditions fournies et répertoriées ici s'appliquent à chacun de nos sites Web, applications, jeux, etc. Ces conditions sont également strictement appliquées.</p>
+<p>Nous sommes toujours prêts à mettre à niveau et à apporter des modifications à nos logiciels, applications, sites Web et jeux. Ces conditions fournies ici sont susceptibles d'être modifiées au fil du temps pour rester à jour avec les derniers de nos logiciels, applications, sites Web et jeux, sans préavis si nécessaire, bien que nous le fassions généralement avec un préavis de 7 jours.</p>
+<li>Dernière mise à jour : 3 septembre 2022</li>
+<li>Date d'entrée en vigueur : 18 septembre 2022</li>
+<h2>Présentation</h2>
+<p>JstMStudio est une petite équipe indépendante, qui se concentre principalement sur beaucoup de choses, de l'écriture d'histoires au développement Web. Nous avons principalement développé des sites Web et des projets. Nous aimerions créer de meilleurs futurs sites Web respectueux de la vie privée pour tous.</p>
+<h2>Contactez-nous</h2>
+<p>N'hésitez pas à nous contacter si vous avez des questions supplémentaires ou si vous avez besoin de plus d'informations sur nos conditions, nos sites Web, notre application, nos logiciels, nos jeux, notre projet et notre équipe. Bien que nous soyons toujours occupés, nous ferons de notre mieux pour vous répondre dans les plus brefs délais. Veuillez nous contacter directement via notre e-mail officiel (<a href="mailto:jstmstudio@gmail.com">jstmstudio@gmail.com</a>).
+<br>
+<h>
+<br>
+<h1>Conditions d'utilisation</h1>
+<p>Bienvenue dans les conditions d'utilisation de JstMStudio ! Tous les termes énumérés ici s'appliquent à tous nos projets et sites Web. Ces conditions énoncent nos obligations légales les uns envers les autres et veuillez les prendre au sérieux. JstMStudio est fourni "tel quel" sans garantie ni responsabilité pour tout résultat de l'utilisation de nos services.</p>
+<h3>Définition</h3>
+<ul style="text-align:left;">
+   <li>Conditions : toutes ces conditions dans nos conditions d'utilisation</li>
+   <li>VOUS : nous entendons vous, les utilisateurs de nos services et sites Web.</li>
+   <li>JstMStudio : L'équipe (nous, notre, notre, site Web, services)</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Comptes</h2>
+   <p>Lorsque vous ouvrez un compte chez nous, vous êtes responsable de toutes les activités sur votre compte, que ce soit sur nos services ou à l'intérieur de services tiers. Vous êtes tenu de garder les informations de votre compte confidentielles mais non limitées pour accéder à votre compte via vos appareils. Vous devez nous informer sans 48 heures après avoir pris connaissance de toute violation de la sécurité ou de toute utilisation non autorisée de votre compte. Vous avez accepté de ne pas vendre, transférer ou licencier votre compte sans notre consentement écrit.</p>
+
+   <p>En vous inscrivant à un compte sur nos services et sites Web, vous devez <strong>OBLIGATION</strong> avoir au moins <strong>13 ans</strong> ou au-dessus de l'âge minimum du consentement numérique dans votre pays . Si vous utilisez ou visitez nos sites Web avant l'âge minimum, cela est directement contraire à nos conditions et aux lois de votre pays. Si vous aviez le consentement parental et que vos parents surveillaient strictement toutes vos activités en ligne, vous devez également avoir au moins 7 ans pour utiliser nos services.</p>
+
+   <p>En tant que responsable des services, One Future Unified Tea, a également le droit de résilier ou de désactiver votre accès à nos sites Web et services immédiatement, sans préavis ni responsabilité et avec ou sans raison fournie, y compris, mais sans s'y limiter à la violation des conditions d'utilisation et des directives de la communauté. Ce droit est accordé afin de s'assurer que notre site est sûr et sécurisé.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Contenu</h2>
+<p>Nos sites Web et services vous permettent de partager des vidéos/livres/musique/art, des critiques, des commentaires, des discussions, etc. Vous êtes donc responsable de tout le contenu que vous avez partagé et téléchargé via nos sites Web et services. Vous devez avoir le droit de partager le contenu que vous avez partagé et ne pas entrer en conflit avec les droits d'auteur d'autrui. Tous les contenus téléchargés et partagés par les utilisateurs sont sous licence Creative Commons CC BY-NC-SA 3.0. Vous n'êtes pas autorisé à partager des contenus que nous ne pouvons pas et n'autorisez pas le partage de contenus illégaux via notre site Web et notre communauté. Tous les contenus illégaux sont interdits de partage ici. Tous les contenus actuellement répertoriés ci-dessous ne sont pas autorisés :</p>
+<ul style="text-align:left;">
+   <li>Drogues</li>
+   <li>Armes</li>
+   <li>Acquisition, piratage ou distribution de logiciels piratés</li>
+   <li>Tricheurs</li>
+   <li>Exploits ou piratages</li>
+   <li>Virus</li>
+   <li>Utilisation non autorisée d'éléments protégés par des droits d'auteur</li>
+   <li>Sexe</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Sites Web liés</h2>
+<p>Nous pouvons créer des liens vers d'autres sites que nous ne contrôlons pas ou n'exploitons pas par l'équipe qui pourraient être disponibles et répertoriés sur nos sites Web. Lorsque vous entrez un lien vers un site tiers, vous serez redirigé vers des services et sites Web tiers. Nous vous conseillons vivement de lire leur politique de confidentialité et leurs conditions avant d'utiliser leurs sites Web. Nous déclinons toute responsabilité quant à leur contenus, politiques et pratiques de confidentialité sur leurs sites Web qui ne sont pas sous notre contrôle.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Droits d'utilisation de nos sites Web</h2>
+<p>JstMStudio a fourni plusieurs services et sites Web pour tous nos projets. Nous avons autorisé et accordé votre utilisation à tous nos services dans tous nos projets, mais l'utilisation de nos services et sites Web n'est pas un droit. Nous sommes autorisés à interrompre, modifier et poursuivre les projets et services avec ou sans préavis ou consentement.</p>
+<p>JstMStudio avait le droit de désactiver et de refuser votre accès à tout ou partie de nos services avec ou sans aucune raison. Le manque de respect envers l'un des membres de notre personnel peut entraîner la désactivation de votre compte pour votre action visant à protéger tous les membres de notre personnel. Le personnel de JstMStudio est composé de personnes qui ont créé, propulsé et entretenu JstMStudio afin qu'ils méritent d'être respectés pour leur travail acharné et nous aimerions les protéger du mal. Nous détenons également le droit de vous refuser le droit de participer à l'un de nos programmes hébergés ou en partenariat avec nous.</p>
+<p>JstMStudio a également le droit de résilier votre site de nos services d'hébergement à tout moment avec ou sans raison, bien que nous fournissions généralement une raison. Nous nous réservons le droit de suspendre notre service à tout moment sans ou avec préavis. </p>
+  
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Droit d'auteur</h2>
+<p>JstMStudio respecte les droits d'auteur de chacun. Si vous pensez que nous ou quelqu'un violons vos droits d'auteur sur notre site Web, nos logiciels, nos services et vous depuis les États-Unis, nous vous encourageons fortement à nous en informer dès que possible. Nous supprimerons dès que possible le contenu protégé par le droit d'auteur de notre site et le rendrons non accessible au grand public. Nous avertirons également les utilisateurs pour violation du droit d'auteur et pourrions mettre fin à l'accès de quelqu'un à nos services en cas de violation répétée du droit d'auteur.</p>
+<p>Si vous pensez qu'il s'agit d'un faux droit d'auteur, veuillez nous envoyer un contre-avis, nous enverrons une copie à la société d'origine l'informant qu'il pourrait être remplacé par le contenu supprimé ou le désactiver dans 14 jours. Sauf si le titulaire des droits d'auteur intente une action en justice contre le fournisseur de contenu, le membre ou l'utilisateur, le contenu supprimé peut être remplacé ou l'accès à celui-ci sera restauré, dans les 14 jours ouvrables ou plus après réception de la contre-notification. Pour tous les droits d'auteur, veuillez nous contacter par e-mail.</p>
+<p>Nous n'autorisons pas non plus le téléchargement de contenu sur notre site Web, quelles que soient les circonstances. Nous n'autorisons et n'hébergeons aucun contenu de violation du droit d'auteur sur notre site. Tous les droits d'auteur sur le contenu doivent être accordés au créateur avant le téléchargement sur notre site Web et l'hébergement. Le site Web que nous hébergeons ne doit contenir aucun contenu warez, droit d'auteur et matériel illégal, y compris des liens ou des redirections vers du matériel protégé par le droit d'auteur hébergé sur des sites Web / ressources tiers. Nous ne distribuons en aucun cas du matériel, des fichiers ou des warez protégés par le droit d'auteur. Tous les contenus de votre site doivent avoir les droits de publication sur votre site. </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Droits de propriété</h2>
+<p>Tous les droits, titres, noms, conceptions, intérêts, communément appelés matériel de service, sont la propriété de JstMStudio et de notre actionnaire. Vous reconnaissez et acceptez que vous n'acquérez pas de droits de propriété quand vous le souhaitez en téléchargeant notre matériel de service. Vous avez accepté de ne vendre aucune partie des sociétés sans notre consentement et de suivre notre licence open source. Vous avez également accepté de ne revendiquer aucune propriété partielle en utilisant nos services ou en accédant à nos services sur notre site Web. Tous les droits sont réservés à notre équipe. Alors que pour Teenager Heroes, il appartient actuellement au créateur de Teenager Heroes, Jst Tan et à l'équipe. Teenager Heroes est tous droits réservés par le créateur et les auteurs.</p>
+<br>
+<h>
+<br>
+<h1>Politique de confidentialité</h1>
+<p>Chez JstMStudio, accessible depuis nos sites Web, applications, logiciels et projets, l'une de nos principales priorités est la confidentialité de nos visiteurs et utilisateurs. Ce document de politique de confidentialité contient tous les types d'informations collectées et enregistrées par JstMStudio et comment nous les utilisons.</p>
+
+<p>Cette politique de confidentialité s'applique uniquement à nos activités en ligne comme les événements et est valable pour nos visiteurs et utilisateurs sur nos sites Web, applications et logiciels en ce qui concerne les informations qu'ils ont partagées et/ou collectées dans JstMStudio. Cette politique ne s'applique pas aux informations collectées hors ligne ou via des canaux autres que ce site Web.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Informations que nous collectons</h2>
+<p>Les informations personnelles que vous êtes invité à fournir, et les raisons pour lesquelles vous êtes invité à nous les fournir, vous seront précisées au moment et aux moments où nous vous demanderons de fournir vos informations personnelles.</p >
+
+<p>Si vous nous rendez visite, nous collecterons votre emplacement, le nom de la page, les heures, le pays, la ville, les langues, le type d'appareil, le type de navigateur, l'IP et le FAI. Toutes les informations collectées ne vous permettent en aucun cas de vous identifier.</p>
+
+<p>Si vous nous contactez directement, nous pouvons recevoir des informations supplémentairesinformations vous concernant telles que votre nom, votre adresse e-mail, votre numéro de téléphone, le contenu du message et/ou des pièces jointes que vous pouvez nous envoyer, et toute autre information que vous pouvez choisir de nous fournir.</p>
+
+<p>Lorsque vous créez un compte, nous pouvons vous demander vos coordonnées, y compris des éléments tels que le nom, le nom de l'entreprise, l'adresse, l'adresse e-mail et le numéro de téléphone.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Comment nous utilisons les informations</h2>
+<p>JstMStudio utilise les informations que nous avons collectées de différentes manières tout en protégeant la confidentialité des utilisateurs, notamment pour :</p>
+<ul style="text-align:left;">
+<li>Fournir, exploiter et maintenir nos sites Web et nos services</li>
+<li>Améliorer, personnaliser et développer nos sites Web et nos services</li>
+<li>Comprendre et analyser la façon dont vous utilisez nos sites Web et services</li>
+<li>Développer de nouveaux produits, services, fonctionnalités et fonctionnalités</li>
+<li>Communiquer avec vous, directement ou par l'intermédiaire de l'un de nos partenaires, y compris pour le service client, pour vous fournir des mises à jour et d'autres informations relatives aux sites Web et aux services, et à des fins de marketing et de promotion</li>
+<li>Vous envoyer des e-mails pour les mises à jour, etc.</li>
+<li>Détecter et prévenir les fraudes sur nos services et sites Web</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Fichiers journaux</h2>
+<p>JstMStudio suit une procédure standard d'utilisation des fichiers journaux. Ces fichiers enregistrent les visiteurs lorsqu'ils visitent des sites Web, des logiciels, des applications et des services. Toutes les sociétés d'hébergement, qu'elles soient payantes ou gratuites, le font et font partie de l'analyse des services d'hébergement. Les informations collectées par les fichiers journaux incluent les adresses IP (protocole Internet), le type de navigateur, le fournisseur d'accès Internet (FAI), l'horodatage, les pages de renvoi/sortie, le type d'appareil, l'emplacement et éventuellement le nombre de clics. Ceux-ci ne sont liés à aucune information personnellement identifiable. Le but de l'information est d'analyser les tendances, d'administrer le site, de suivre les mouvements des utilisateurs sur le site Web, de suivre l'utilisation des sites Web, des logiciels, des applications et des services et de collecter des informations démographiques.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Cookies et balises Web</h2>
+<p>Comme tout autre site Web, JstMStudio utilise également des "cookies". Ces cookies sont utilisés pour stocker des informations, y compris les préférences et les informations des visiteurs, ainsi que les pages du site Web auxquelles le visiteur a accédé ou visité. Cela augmentera également la vitesse de chargement de nos sites Web et services. Les informations sont utilisées pour optimiser l'expérience des utilisateurs en personnalisant le contenu de notre page Web en fonction du type de navigateur des visiteurs et/ou d'autres informations.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Notre partenaire publicitaire</h2>
+<p>Certains annonceurs sur nos sites Web et services peuvent utiliser des cookies et des balises Web. Nos partenaires publicitaires sont listés ci-dessous. Chacun de nos partenaires publicitaires a sa propre politique de confidentialité et les conditions de ses politiques sur les données des utilisateurs. Pour un accès plus facile, nous avons créé un lien hypertexte vers leurs politiques de confidentialité ci-dessous pour que vous puissiez les visiter et comprendre leurs conditions de pratiques avec les données des utilisateurs. Vous pouvez consulter cette liste ci-dessous pour trouver la politique de confidentialité de chacun des partenaires publicitaires de JstMStudio.</p>
+<p>Les serveurs publicitaires ou réseaux publicitaires tiers utilisent des technologies telles que les cookies, JavaScript ou les balises Web qui sont utilisées dans leurs publicités et liens respectifs qui apparaissent sur les services et sites Web JstMStudio, qui sont envoyés directement au navigateur des utilisateurs. Ils reçoivent automatiquement votre adresse IP lorsque cela se produit. Ces technologies sont utilisées pour mesurer l'efficacité de leurs campagnes publicitaires et/ou pour personnaliser le contenu publicitaire que vous voyez sur les sites Web que vous visitez. Notez que JstMStudio n'a aucun accès ni aucun contrôle sur ces cookies qui sont utilisés par des annonceurs tiers.</p>
+<ul style="text-align:left;">
+<li><a href="https://propellerads.com/privacy/">Propellerads</a></li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Politique de confidentialité des tiers</h2>
+<p>La politique de confidentialité de JstMStudio ne s'applique pas aux autres annonceurs ou sites Web. Ainsi, nous vous conseillons de consulter les politiques de confidentialité respectives de ces serveurs publicitaires tiers pour des informations plus détaillées. Il peut inclure leurs pratiques et instructions sur la manière de désactiver certaines options.</p>
+
+<p>Vous pouvez choisir de désactiver les cookies via les options de votre navigateur. Pour connaître des informations plus détaillées sur la gestion des cookies avec des navigateurs Web spécifiques, vous pouvez les trouver sur les sites Web respectifs des navigateurs.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Droits de confidentialité CCPA (ne vendez pas mes données personnelles)</h2>
+<p>En vertu des lois CCPA et entre autres droits, les consommateurs californiens ont actuellement le droit de :</p>
+<ul style="text-align:left;">
+<li>Nous demander, à nous qui collectons les données personnelles d'un consommateur, de divulguer les catégories et les éléments spécifiques de données personnelles qu'une entreprise a collectés sur les consommateurs.</li>
+
+<li>Demandez que nous supprimions toutes les données personnelles sur le consommateur qu'une entreprise a collectées.</li>
+</ul>
+<p>Si vous faites une demande à JstMStudio, nous avons un mois pour vous répondre. Si vous souhaitez exercer l'un de ces droits qui vous sont accordés en tant que consommateur californien, veuillez nous contacter directement.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Droits de protection des données GDPR</h2>
+<p>Si vous êtes dans la zone effective du RGPD, JstMStudio souhaite s'assurer que vous êtes pleinement conscient de tous vos droits de protection des données accordés dans les zones de l'UE. Chaque utilisateur dispose des droits de protection des données suivants :</p>
+<ul style="text-align:left;">
+<li>Le droit d'accès - Vous avez le droit de demander des copies de vos données personnelles. Nous pouvons vous facturer une somme modique pour ces services.</li>
+<li>Le droit de rectification : vous avez le droit de nous demander de corriger toute information que nous avons collectée et que vous jugez inexacte. Vous avez également le droit de nous demander de compléter les informations que vous jugez incomplètes.</li>
+<li>Le droit à l'effacement : vous avez le droit de nous demander d'effacer vos données personnelles, sous certaines conditions.</li>
+<li>Le droit de restreindre le traitement : vous avez le droit de demander que nous restreignions le traitement de toutes vos données personnelles, sous certaines conditions discutées.</li>
+<li>Le droit de vous opposer au traitement - Vous avez le droit de vous opposer à notre traitement de toutes vos données personnelles, sous certaines conditions discutées avec vous.</li>
+<li>Le droit à la portabilité des données : vous avez le droit de demander que nous transférions les données que nous avons collectées à une autre organisation, ou directement à vous, sous certaines conditions.</li>
+</ul>
+<p>Si vous faites une demande à l'équipe, nous avons un délai d'un mois pour vous répondre. Si vous souhaitez exercer l'un de ces droits, veuillez nous contacter directement.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Informations sur les enfants</h2>
+<p>Une autre partie de la priorité de JstMStudio est d'ajouter la protection des enfants lors de l'utilisation d'Internet à grande échelle de nos jours. Nous encourageons les parents et les tuteurs à observer, participer et/ou surveiller et guider leur activité en ligne.</p>
+<p>JstMStudio vise à fournir Internet à toute personne de tout âge, y compris les enfants du monde entier. Si votre enfant utilise nos services et sites Web, veuillez surveiller son activité. Si votre enfant est intéressé par nos services, veuillez amener votre enfant à utiliser notre site Web version enfants qui a été surveillé par l'équipe tous les jours et ne suit pas les données de votre enfant.</p>
+<p>JstMStudio ne collecte sciemment aucune information personnelle identifiable d'enfants de moins de 13 ans. Si vous pensez que votre enfant a fourni ce type d'informations sur notre site Web, nous vous encourageons fortement à nous contacter immédiatement et nous ferons de notre mieux supprimer rapidement ces informations de nos dossiers. Si vous êtes intéressé par notre site Web et nos services, n'hésitez pas à nous contacter et à donner votre consentement parental pour que votre enfant utilise nos services et sites Web. Nous vous conseillons vivement de surveiller et de participer aux activités de votre enfant sur nos sites Web et services si vous avez accepté de laisser votre enfant utiliser nos services.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Services tiers</h2>
+<p>À l'exception des services publicitaires, JstMStudio utilise également certains services et applications tiers sur nos sites Web et services. Tous les tiers utilisés sur notre site Web sont répertoriés ci-dessous.</p>
+<ul style="text-align:left;">
+<li>Google Analytics</li>
+<li>Google Drive</li>
+<li>Sous-pile</li>
+<li>Boxicons</li>
+<li>Compteur de statistiques</li>
+<li>Cloudflare</li>
+<li>VideoSDK</li>
+</ul>
+<h>
+<h1>Règles de la communauté</h1>
+<p>Bienvenue dans les directives communautaires officielles de JstMStudio. Toutes les directives doivent être respectées et suivies par tout le monde sur les sites Web de JstMStudio et nos communautés, comme les commentaires, le serveur communautaire, le chat, etc. Tout le monde doit également accepter ces directives lors de l'utilisation de notre communauté de sites Web.</p>
+<p>Les lignes directrices de la communauté JstMStudio visent à assurer la sécurité, la propreté et la convivialité de nos sites Web et de nos communautés pour que chacun puisse les utiliser partout dans le monde. Tout le monde devait travailler ensemble pour le garder sûr et propre. Si vous ne suivez pas ces directives, votre compte pourrait être désactivé ou banni de notre réseau. Tout le monde est tenu de suivre ces directives. </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Respecter</h2>
+<p>Veuillez rendre hommage à tous les utilisateurs de la communauté JstMStudio. Tout le monde mérite d'être traité de la même manière à l'intérieur et à l'extérieur de la communauté JstMStudio. Nous ne permettons à aucune personne de ne pas être respectée dans notre communauté.</p>
+<ul style="text-align:left;">
+<li>S'il vous plaît, ayez une certaine manière dans notre communauté.</li>
+<li>Veuillez ne blesser ni harceler personne au sein de notre communauté.</li>
+<li>Ne partagez pas d'images contenant de la violence réelle, du sang ou de la cruauté envers les animaux, qui n'encouragent pas l'automutilation ou le suicide.</li>
+<li>Ne doxez personne dans la communauté comme partageant des informations personnelles sur l'utilisateur, y compris l'adresse IP, le vrai nom, l'emplacement, la nationalité, etc.</li>
+<li>Les propos offensants tels que les gros mots et les jurons ne sont pas autorisés dans notre communauté.</li><li>Ne faites pas de racisme contre les Asiatiques (en particulier les CHINOIS) ou les Africains de notre communauté.</li>
+<li>Respectez la vie privée de chacun.</li>
+<li>Ne forcez personne à vous donner ses informations de confidentialité sur notre site Web et notre communauté.</li>
+<li>Ne trollez personne sur nos sites Web.</li>
+<li>Respectez tous les membres de notre personnel.</li>
+<li>Les autoritaires sur qui que ce soit dans JstMStudio, Internet ou dans la vraie vie ne sont pas autorisés.</li>
+<li>L'exploitation humaine n'est pas autorisée. </li>
+<li>Se faire passer pour quelqu'un au sein de notre communauté ou prétendre être quelqu'un que vous n'êtes pas.</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Abus de pouvoir</h2>
+<p>L'abus de pouvoir est strictement et actuellement un cas grave sur Internet depuis les débuts des communautés. Nous n'autorisons strictement aucun acte d'abus de pouvoir sur nos communautés et nos sites Web. Les abus de pouvoir ne sont pas encouragés par l'équipe sont strictement interdits sur nos communautés, services et sites internet. Pouvoir d'abus inclus :</p>
+<ul style="text-align:left;">
+<li>Menacer d'expulser ou de bannir des membres de votre groupe.</li>
+<li>Menacer de partager les contenus des utilisateurs avec d'autres</li>
+<li>Menacer de couper l'accès des utilisateurs à quelque chose qui a été construit sur notre site Web.</li>
+<li>Profiter des avantages des utilisateurs.</li>
+<li>Pour les 21 ans, il est interdit de menacer de porter plainte auprès de leurs parents tout en utilisant notre plate-forme.</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>PG18</h2>
+<p>JstMStudio n'autorise pas la discussion, le téléchargement et la disponibilité du contenu PG18 sur nos sites. Nous n'autorisons aucun contenu violent sur notre site. Nous n'autorisons pas non plus les contenus frauduleux, violents, graphiques et suicidaires sur nos sites Web. Nous n'autorisons pas non plus les contenus d'exploitation sexuelle d'enfants et d'exploitation sexuelle d'adultes. Nous n'autorisons pas non plus les contenus de discours de haine. </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Confidentialité</h2>
+<p>La confidentialité est l'une des valeurs les plus importantes de JstMStudio. Dans JstMStudio, nous respecterions la vie privée de chacun et leurs droits d'auteur respectifs, donc dans notre plate-forme, nous aimerions faire respecter la vie privée de chacun. Nous n'autorisons pas le partage d'autres informations personnelles confidentielles sans leur autorisation écrite. Informations personnelles, y compris des informations financières, résidentielles et médicales, ainsi que des informations privées.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Personnel</h2>
+<p>Le personnel de JstMStudio est composé de personnes qui ont créé, propulsé et entretenu JstMStudio afin qu'ils méritent d'être respectés pour leur travail acharné sur les projets d'équipe. L'équipe du personnel de JstMStudio a eu le dernier mot pour protéger notre plate-forme et nos logiciels contre les mauvais acteurs. Veuillez respecter chacun de nos membres du personnel, peu importe d'où ils viennent et quel âge ils ont, tout le monde est le même ici. Menacer, intimider, exposer les membres de notre personnel ne sont pas autorisés en externe ou dans notre logiciel. Notre personnel a également le droit de désactiver et de refuser votre accès à nos services s'il se sent menacé.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Grèves</h2>
+<p>Si vous avez été signalé par des utilisateurs de nos sites Web et logiciels, nous ouvrirons un ticket d'enquête pour enquêter sur l'affaire. Si nous constatons que vous avez enfreint ces règles de la communauté, nous pourrions vous envoyer un avertissement irréversible. Une fois que vous aurez atteint jusqu'à 5 avertissements, nous désactiverons votre compte. Vous pouvez faire appel si vous pensez que nous nous sommes trompés en vous donnant un avertissement, mais n'essayez pas de faire appel si vous avez vraiment enfreint nos directives, nous ne révoquons pas votre avertissement s'il s'agit d'un faux appel. Veuillez nous contacter directement.</p>
+  </div>
+</div>
+
+<div id="myNav10" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav10()">&times;</a>
+  <div class="overlay-content">
+<h1>Profil</h1>
+       <p>JstMStudio Profile est un site Web de réseautage social. Les utilisateurs pouvaient créer et lire des messages rédigés par des créateurs de contenu du monde entier. Vous pouvez utiliser le profil JstMStudio gratuitement, avec moins de restrictions et surtout, sans aucune publicité.</p>
+       <p>JstMStudio Profile est totalement open source pour que tout le monde puisse l'étudier et le voir. Vous pouvez aussi contribuer au projet. Il est actuellement codé en HTML, CSS et JavaScript et sous licence MIT. JstMStudio Profile est également une plate-forme respectueuse de la vie privée. Nous ne partageons pas les informations des utilisateurs avec des tiers et nous avons fait de notre mieux pour suivre le moins de données possible. Nous aimerions redonner aux utilisateurs le contrôle d'eux-mêmes.</p>
+       <p>JstMStudio Profile est un lieu qui respecte la liberté d'expression de chacun. Si vous pouviez avoir la liberté d'expression dans la vraie vie, vous devriez également l'avoir sur Internet, alors nous aimerions que cela se produise. Vous pouvez publier n'importe quoi ici, à l'exception des éléments illégaux ou NSFW.</p>
+      <br>
+      <hr>
+      <br>
+<h2>Recherche de profil</h2>
+       <p>Bienvenue dans la recherche de profil JstMStudio ! Un endroit pour rechercher un profil dans JstMStudio Profile. Un endroit pour trouver et en savoir plus sur chaque profil dans JstMStudio. </p>
+       <br>
+       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher le nom d'utilisateur du profil" title="Saisir un nom">
+<ul id="myUL">
+  <li><button type="button" class="collapsible2">Jst Tan</button>
+<div class="content2">
+  <iframe src="Profile/jst-tan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+	<li><button type="button" class="collapsible2">PJ Masks Fan</button>
+<div class="content2">
+<iframe src="Profile/pj-masks-fan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+  <li><button type="button" class="collapsible2">Aucun</button>
+<div class="content2">
+  <p>Aucun</p>
+</div></li>
+  <li><button type="button" class="collapsible2">Aucun</button>
+<div class="content2">
+  <p>Aucun</p>
+</div></li>
+  <li><button type="button" class="collapsible2">Aucun</button>
+<div class="content2">
+  <p>Aucun</p>
+</div></li>
+</ul>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+<br>
+<hr>
+<br>
+<h2>Inscrivez-vous</h2>
+       <p>Tout le monde peut désormais créer un compte d'écrivain sur le profil JstMStudio pour créer un profil et rédiger un article. Le compte Writer peut avoir un profil, modifier son propre profil, créer une publication, utiliser des plugins sur sa publication, etc. Le compte Writer aura également une liberté totale sur son profil et ses publications. Si vous êtes intéressé, vous pouvez vous inscrire et postuler en remplissant le formulaire ci-dessous, il est ouvert à tous. En soumettant, toutes les candidatures seront examinées sans 7 jours ouvrables par les membres de JstMStudio.</p>
+       <br>
+       <button class="button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdlaiVNGbMk8Rlfdz7zsUeXTD0gNuJ2VXEnjAyK9Ss8Rs4vrA/viewform?fbzx=6439158439518808056" style="color:yellow;"><span>Signe Ici </span></a></button>
+  </div>
+</div>
+
+<h1><i class='bx bx-info-circle'></i> À propos de nous</h1>
+<p>JstMStudio est un petit studio fondé par Jst Tan. JstMStudio se concentre sur beaucoup de choses, de la musique, l'écriture d'histoires, le développement de sites Web et bien plus encore. JstMStudio est un petit studio indépendant distant qui se concentre sur de nombreuses choses pour construire un avenir meilleur. </p>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-contact' ></i> Contactez-nous</h2>
+<p>Contrairement à Facebook, Google et d'autres grandes entreprises technologiques, nous sommes ouverts à tous pour nous contacter à toutes fins. Vous pouvez contacter JstMStudio à de nombreuses fins, comme l'assistance, les commentaires, le rapport de bogues, la suggestion, le don, le parrainage, acheter nos produits ou services, en savoir plus sur nous, etc. Veuillez ne pas nous contacter pour la promotion et le spam, nous ne le ferions pas envoyer toutes les réponses aux e-mails non liés dans notre boîte aux lettres et les déplacerait vers le spam dès que possible. Nous avons fourni une liste de comptes de médias sociaux pour que vous puissiez nous contacter via l'un des médias sociaux en nous envoyant une publication ou en nous envoyant un message direct.</p>
+<br>
+<li><a href="https://www.facebook.com/jstmstudio"><i class='bx bxl-facebook-circle' ></i>Facebook</a><br>
+Facebook est la principale plate-forme de médias sociaux actuelle de JstMStudio. Nous publions de temps en temps des contenus tels que des annonces, des mises à jour et des actualités sur nos pages Facebook officielles. Vous pouvez également nous contacter directement via Facebook Messenger sur nos pages Facebook officielles pour obtenir de l'aide, des rapports de bogues, des commentaires et des suggestions et également nous revoir.</li>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-info-square' ></i> Informations</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav4()" id="teams">Equipe & Services</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav2()" id="projets">Projets</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav5()" id="app">Application</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav3()" id="news">Actualités</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav7()" id="status">Statut</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav8()" id="store">Magasin</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;"> <a href="https://jstmstudio.substack.com">Blog</a></div>
+<br>
+<hr>
+<br>
+<h2><i class='bx bx-group' ></i> Communauté</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav9()" id="terms">Conditions</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav()" id="community">Communauté</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav1()" id="don">Don</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav6()" id="partner">Partenaire</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav10()" id="profil">Profil</div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+
+function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
+}
+
+function openNav9() {
+  document.getElementById("myNav9").style.width = "100%";
+}
+
+function closeNav9() {
+  document.getElementById("myNav9").style.width = "0%";
+}
+
+function openNav10() {
+  document.getElementById("myNav10").style.width = "100%";
+}
+
+function closeNav10() {
+  document.getElementById("myNav10").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+<h1>Thèmes</h1>
+<p>Vous pouvez personnaliser les thèmes de JstMStudio dans une couleur que vous préférez. Sélectionnez et choisissez parmi le jeu de couleurs ci-dessous pour faire de l'interface utilisateur de JstMStudio votre préférence de couleur.</p>
+<br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+
+function myFunction5() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+
+</body>
+</html>
