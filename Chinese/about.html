@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>关于我们</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+.collapsible {
+  background-color: #f1f1f1;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: red;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+.body {
+  background: #E4E9F7;
+  }
+  
+.button2 {
+float:left;
+background-color: black;
+  color: red;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  cursor: pointer;
+  outline: none; 
+  font-size:30px;
+  background-color:cyan;
+  width:100%;
+  text-align:center;
+  color:purple;
+  padding:10px;
+  font-weight: bold;
+  border-style: solid;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: cyan;
+  color: purple;
+  font-weight: bold;
+  text-align:center;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 350px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: purple;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible2 {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible2:hover {
+  background-color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+
+/* Directory Content */
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible:hover {
+  background-color: yellow;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Jst 多功能工作室</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">主页</span>
+        </a>
+         <span class="tooltip">主页</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">信息</span>
+       </a>
+       <span class="tooltip">信息</span>
+     </li>
+     <li>
+     <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">客户</span>
+       </a>
+       <span class="tooltip">客户</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">文档</span>
+       </a>
+       <span class="tooltip">文档</span>
+     </li>
+     <li>
+       <a href="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">网络应用</span>
+       </a>
+       <span class="tooltip">网络应用</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<br>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>社区</h1>
+     <p>欢迎来到 JstMStudio 社区！ JstMStudio 在 Revolt.chat 和 Guilded 等多种类型的网站平台上拥有许多官方社区。 JstMStudio 社区目前由团队专家维护和管理，目前面向我们所有的用户、客户和粉丝。<br><br>JstMStudio 社区是 JstMStudio 的每个人和用户聚集在一起、闲逛的地方 用户寻求支持、报告错误和提供反馈。 </p>
+     <hr>
+     <h2>反抗</h2>
+     <p>JstMStudio 目前在我们的 Revolt 服务器上运营和维护团队的官方服务器。 用户可以加入 JstMStudio Revolt 服务器加入我们的社区视频群聊、寻求支持、提供反馈、报告错误并与员工聊天。 您也可以获取 JstMStudio 的官方公告。 你可以加入我们的<a href="https://app.revolt.chat/invite/cPgxVqY4" style="color:red;">Revolt server here</a>。</p>
+     <hr>
+     <h2>公会</h2>
+     <p>JstMStudio 也运营和维护一个官方的 Guilded 服务器。 用户可以加入 JstMStudio Guilded 服务器加入我们的社区视频群聊、寻求支持、创建票证、提供反馈、报告错误并与团队讨论。 JstMStudio的官方公告也可以看到。</p>
+    <iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2FWErNJm8E&size=large" width="553" height="262" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+<h1>捐赠</h1>
+     <p>JstMStudio 通过多种方式获得资助，最常见的是来自捐赠，然后是我们广告页面的广告收入。 我们目前不出售我们为维护网站而收集的任何和所有基本用户数据，因此捐赠是团队收入的途径，而不是 1 美元或 5 美元，这对我们来说仍然很重要。 每一分钱都直接或间接地用在团队中。
+     <hr>
+     <h2>Buy Me A Coffee</h2>
+     <p>JstMStudio 目前有一个Buy Me A Coffee 页面供大家选择每月或只捐赠一次。 您也可以在我们的页面上给我们留言。 Buy Me A Coffee 目前对每笔捐款收取 5% 的费用，因此我们仅收到所有捐款和每月会员资格的 95%。 此页面归 JstMStudio 首席执行官兼股东 Jst Tan 所有。 </p>
+     <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jestonjst" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="请我喝一杯" data-outline-color="#000000" data-font-color="#000000 " data-coffee-color="#ffffff" ></script>
+     <br>
+     <hr>
+     <h2>Ko-Fi</h2>
+     <p>JstMStudio 目前也运营一个 Ko-Fi 页面，供大家选择每月向我们捐款或通过每月在 Ko-Fi 上捐款。 您也可以在我们的 Ko-Fi 页面上给我们留言。 Ko-Fi 目前对每个月的捐款收取 5% 的费用，所以我们只收到了所有月度会员的 95%，而这是 100% 的全职捐款。 此页面归 JstMStudio 首席执行官兼股东 Jst Tan 所有。</p>
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#28e059', 'R6R8BLGHG');kofiwidget2.draw();</script> 
+  </div>
+</div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>项目</h1>
+<p>JstMStudio 目前有许多由我们所有子团队开发的项目。 我们所有的项目目前都由其各自的子团队积极维护。 对于我们的每一个和所有项目，请单击下面的特定项目按钮以了解更多信息。 这里的所有项目均由 JstMStudio 独家制作，资金来自工作室的所有收入来源，如图书销售、捐赠等。</p>
+<br>
+<a href="teenager-heroes.html"><button class="button"><span>少年英雄</span></button></a>
+<a href="app.html#infohq"><button class="button"><span>信息总部</span></button></a>
+<a href="app.html"><button class="button"><span>JstMStudio 平台</span></button></a>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>新闻</h1>
+     <p>欢迎来到 JstMStudio 新闻！ 获取 JstMStudio 的公告、更新等所有新闻的新闻位置。 在这里获取 JstMStudio 的所有最新官方消息。</p>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay-content">
+<h1>团队</h1>
+     <p>JstMStudio目前有很多子团队。 我们目前的主要子团队是我们的 Web 开发团队。 JstMStudio 目前有两个子团队，Web 开发和动画工作室。</p>
+     <br>
+     <hr>
+     <br>
+     <div style="颜色：绿色；">
+     <h2>网页开发</h2>
+     <p>JstMStudio 开发团队由 JstMStudio 拥有并完全维护。 JstMStudio Developer Team 是 JstMStudio 的子公司。 JstMStudio 开发团队为我们的客户和客户创建网站、应用程序、软件和游戏，其中一些为我们的主要团队 JstMStudio。</p>
+     <h3>服务</h3>
+     <ul style="text-align:center;">
+     <li>网站开发</li>
+     <li>网站维护</li>
+     <li>广告</li>
+     </ul>
+     <br>
+     <h3>作品</h3>
+     <ul style="text-align:center;">
+     <li>信息总部</li>
+     <li>编码学校</li>
+     <li>JstMStudio 应用</li>
+     </ul>
+     <br>
+     <h3>员工</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan 是 JstMStudio 的创始人兼首席执行官。 Jst Tan 是 JstMStudio 的首席开发人员。 自 2020 年以来，Jst Tan 是一位经验丰富的 2 年 Web 开发人员。Jst Tan 是 JstMStudio 所有网站和软件的主要开发人员。</li>
+     </ul>
+     </div>
+     <br>
+     <hr>
+     <br>
+     <div style="color: blue;">
+     <h2>动画工作室</h2>
+     <p>JstMStudio 动画工作室由 JstMStudio 拥有并完全维护。 JstMStudio 动画工作室是 JstMStudio 的子公司。 JstMStudio 动画工作室为我们的客户和客户提供了许多服务。 JstMStudio 动画工作室提供的价格也低于任何其他制作公司，因此我们的客户和客户可以通过使用我们的服务来降低成本。</p>
+     <h3>服务</h3>
+     <ul style="text-align:center;">
+     <li>标志设计</li>
+     <li>海报设计</li>
+     <li>写文章</li>
+     </ul>
+     <br>
+     <h3>作品</h3>
+     <ul style="text-align:center;">
+     <li>少年英雄</li>
+     </ul>
+     <br>
+     <h3>员工</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan 是 JstMStudio 的创始人兼首席执行官。 Jst Tan 是 JstMStudio 的故事作家和视频编辑器。 Jst Tan 还是 Teenager Heroes 丛书的创作者和执行作家。 </li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+<h1>下载应用</h1>
+     <p>欢迎来到 JstMStudio 应用程序下载页面。 我们目前在多个平台上提供多个应用程序，因此用户可以在本地将我们的应用程序下载到他们的设备上。 </p>
+    <br>
+    <hr>
+    <br>
+    <h2>Windows</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>苹果系统</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Linux</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>安卓</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>IOS</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+  </div>
+</div>
+
+<div id="myNav6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
+  <div class="overlay-content">
+<h1>合作伙伴</h1>
+     <p>JstMStudio 合作伙伴计划是JstMStudio的官方合作伙伴计划。 团队与来自世界各地的个人和公司合作的计划。 成员代表团队的程序。 JstMStudio 合作伙伴计划可供所有人申请。 JstMStudio 合作伙伴计划是一项旨在使团队与我们的官方社区和粉丝更加亲密和友好的计划。</p>
+<br>
+<button type="button" class="collapsible2">要求 <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+<p>JstMStudio 合作伙伴计划目前有一些基本要求。 此处列出的所有要求均严格执行，您需要在申请或加入 JstMStudio 合作伙伴计划之前满足所有这些要求。 下面列出了我们的所有要求：</p>
+<ul>
+     <li>在您的某个社交媒体上拥有至少 100 名关注者。 </li>
+     <li>在您的 1++ 关注者社交媒体上保持活跃。 </li>
+     <li>您必须接受并遵守我们的社区准则和服务条款。 </li>
+     <li>活跃于我们的官方社区。 </li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">好处 <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>通过申请并加入JstMStudio合作伙伴计划，我们为JstMStudio的每一位合作伙伴提供了多重福利。 我们感谢每一位合作伙伴加入我们的计划，我们为我们的合作伙伴提供了许多好处。 我们也会在不久的将来为加入我们的合作伙伴计划增加更多好处。 下面列出了所有好处：</p>
+<ul>
+     <li>优先支持</li>
+     <li>经常喊话</li>
+   <li>特别上市</li>
+   <li>还有更多！</li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">应用<i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>JstMStudio合作伙伴计划是JstMStudio与个人或团队合作的合作伙伴计划。 目前开放给大家报名。 如果您对 JstMStudio 合作伙伴计划感兴趣，并且满足所有要求并同意 JstMStudio 合作伙伴计划的所有条款，您可以通过填写下面提供的 Google 表格申请 JstMStudio 合作伙伴计划。 JstMStudio 将逐案审查每个 JstMStudio 合作伙伴计划的申请。 请注意，我们的员工有权无理由批准或拒绝任何合作伙伴计划申请。</p>
+   <br><br>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBPTvkmrfmuCC4f4JnzmMSQ27xS0lY5sFrGUbLAcuwNVnRWA/viewform?embedded=true" width="100%" height="1930" frameborder="0" marginheight="0" marginwidth="0">正在加载...</iframe>
+</div>
+<br><br>
+<button type="button" class="collapsible2">列表 <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>欢迎来到JstMStudio所有合作伙伴名单！ 一个了解每个 JstMStudio 合作伙伴的更多信息的地方。 获取JstMStudio所有合作伙伴的地方。</p><br>
+<input type="text" id="myInput" onkeyup="myFunction5()" placeholder="搜索合作伙伴" title="输入名称">
+<ul id="myUL">
+  
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p></div></li>
+  
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p></div></li>
+  
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p></div></li>
+  
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p></div></li>
+  
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p></div></li>
+</ul>
+<br>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav7()">&times;</a>
+  <div class="overlay-content">
+    <h1>网站状态</h1>
+    <br>
+    <iframe src="https://status.jstmstudio.tk" style="width:100%;height:2890px;"></iframe>
+  </div>
+</div>
+
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+<h1>商店</h1>
+     <p>JstMStudio 是一个位于马来西亚的小团队。 JstMStudio 专注于从网站开发到写故事的许多事情。 JstMStudio由一群对技术有兴趣的年轻朋友创立。</p>
+     <br>
+     <br>
+     <hr>
+     <br>
+     <h1>服务</h1>
+   <p>JstMStudio 目前提供了多种多样的服务。 有些是免费提供的，有些是根据您与我们的计划付费的。 JstMStudio 提供的所有服务都包含在高级计划中。 我们将来也会在我们的计划中添加更多服务。</p>
+   <br>
+<hr style="width:80%;margin:auto;">
+<br>
+   <h2>网页设计与开发</h2>
+   <p>我们在所有计划中都提供网络开发服务。 我们将根据您的喜好为您建立网站。 我们不使用 Wordpress 或任何网站建设者来建立我们的任何网站。 所有代码均由我们根据您的喜好手写。<br><br>我们也为您的网站提供无限制的编辑和更改。 无论您选择哪种计划，我们都会根据您的喜好和需求进行无限更改。</p>
+   <br>
+<hr style="width:80%;margin:auto;">
+<br>
+   <h2>业务资料管理</h2>
+   <p>我们还帮助您管理您的 Google、Yahoo 和 Bing 业务资料，使其与您的需求和偏好保持同步。 我们还将为这些业务简介中的所有内容提供支持。 我们还将根据您的计划进行每月更新，例如发布等。</p>
+     <br>
+<hr style="width:80%;margin:auto;">
+<br>
+    <h2>课程计划</h2>
+    <p>JstMStudio课程是JstMStudio提供的多类型高质量付费课程项目，供学习者参加课程并学习他们感兴趣的东西，而价格仅为竞争对手的一小部分。 为我们的客户提供的所有课程都是高质量的。
+<p>我们提供多种类型的课程，涵盖编程等多个行业。 您可以查看以下所有课程。 更多课程将很快添加。 JstMStudio 对所有课程收取一次性费用，以便终身访问和更新特定课程。 这些费用只会授予您终生访问您支付的课程的权利。 </p>
+    <br>
+    <hr>
+    <br>
+    <h2>物品目录</h2>
+    <p></p>
+    <br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索项目！" title="输入名称">
+<ul id="myUL">
+<li><button type="button" class="collapsible">Github Pages 托管</button>
+<div class="content">
+<p>JstMStudio 通过 JstMStudio Hosting 为包括世界各地的开发人员在内的所有人提供免费托管。 用户可以使用 JstMStudio 请求免费托管站点。</p>
+<ul style="text-align:left;">
+<li><strong>免费</strong></li>
+<li>10GB 带宽</li>
+     <li>1GB 存储空间</li>
+     <li>免费 500MB 备份存储空间</li>
+     <li>免费技术支持</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Vercel 托管</button>
+<div class="content">
+<p>JstMStudio 目前为世界上的每个人提供免费托管，让他们使用我们的服务托管他们的网站。 该计划包括在 Vercel 上托管。 </p>
+<ul style="text-align:left;">
+<li><strong>免费</strong></li>
+<li>5GB 带宽</li>
+<li>1GB 存储空间</li>
+<li>免费 500MB 备份存储空间</li>
+<li>免费技术支持</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">高级托管</button>
+<div class="content">
+<p>JstMStudio 为每个人提供免费托管服务，让他们可以免费使用我们的托管服务来托管他们的网站。 高级托管是一种特殊类型的托管计划，需要获得 JstMStudio 的批准才能加入和使用。</p>
+<ul style="text-align:left;">
+<li><strong>免费</strong></li>
+<li>1GB 存储空间</li>
+<li>100GB 带宽</li>
+<li>500MB 备份存储空间</li>
+<li>免费技术支持</li>
+<li>免费问题标签</li>
+<li>自由讨论标签</li>
+<li>免费项目标签</li>
+<li>免费维基</li>
+<li>自由洞察</li>
+<li>支持自定义域</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">主题</button>
+<div class="content">
+<p>JstMStudio 为我们的客户和用户销售主题配置。 JstMStudio Themes 配置允许客户端用户将网页主题更改为他们喜欢的颜色。 我们目前在此材料中提供 9 种配置。</p>
+<ul>
+<li style="text-align:left;">价格：30 美元</li>
+<li style="text-align:left;">交货时间：48 小时</li>
+<li style="text-align:left;"><a href="materials/themes.html" style="color:yellow;">演示</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">动画彩色超链接按钮</button>
+<div class="content">
+   <p>JstMStudio 还出售一个超链接按钮，该按钮在悬停在按钮上时包含颜色变化和独特的动画。 客户只需 20 美元即可将其添加到他们的网站超链接中。 </p>
+   <ul>
+   <li style="text-align:left;">价格：20 美元</li>
+<li style="text-align:left;">交货时间：48 小时</li>
+<li style="text-align:left;"><a href="materials/animated-color-hyperlink-button.html" style="c颜色:黄色;">演示</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">使用描述搜索过滤器</button>
+<div class="content">
+   <p>JstMStudio 出售一个项目列表的搜索过滤器，其中包含整个列表中每个项目和所有项目的描述。 JstMStudio 搜索过滤器仅搜索项目的名称或标题，使其更加准确。 只需 20 美元，您就可以在自己的网站上找到它。</p>
+   <ul style="text-align:left;">
+     <li style="text-align:left;">价格：20 美元</li>
+<li style="text-align:left;">交货时间：48 小时</li>
+<li style="text-align:left;"><a href="materials/search-filter-with-description.html" style="color:yellow;">演示</a></li>
+   </ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">基本网站</button>
+<div class="content">
+<p>JstMStudio 目前提供一个包含 5 个页面的基本网站，一次性费用为 <strong>60 美元</strong>。 JstMStudio 基础网站将在购买前免费提供无限制的定制和更改，并在网站购买后提供 1 个月的免费支持。 </p>
+<ul style="text-align:left;">
+<li>60 美元（一次性付款）</li>
+<li>5 页</li>
+<li>免费支持（1 个月）</li>
+<li>免费定制</li>
+<li>无限变化</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">高级网站</button>
+<div class="content">
+<p>JstMStudio 目前提供一个包含 5 个页面的高级网站，每月费用为 <strong>100 美元</strong>。 JstMStudio 高级网站将随附为您提供和维护的主机、无限制的终身维护更新、为您提供的免费支持服务以及 5GB 存储空间和 1GB 备份。 </p>
+<ul style="text-align:left;">
+<li>100 美元/月</li>
+<li>5 页</li>
+<li>包括托管</li>
+<li>无限终身维护更新</li>
+<li>免费支持</li>
+<li>5GB 存储空间（1GB 备份）</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">时事通讯广告</button>
+<div class="content">
+<p>JstMStudio 时事通讯广告是将在发送给时事通讯的所有订阅者的时事通讯上显示的广告。 您的广告将直接出现在他们的邮箱中。 JstMStudio 时事通讯广告每封新电子邮件的费用为 50 美元（无论有多少订阅者）。 </p>
+<ul style="text-align:left;">
+<li>50 美元</li>
+<li>常任</li>
+<li>时事通讯广告</li>
+<li>在电子邮件中显示</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">展示广告</button>
+<div class="content">
+<p>JstMStudio Display Ads 是一种显示在网站和网络应用程序上的广告，可以覆盖台式机、笔记本电脑和手机上的受众。 这种类型的广告每 100 万次观看将花费 100 美元。</p>
+<ul style="text-align:left;">
+<li>100 美元/1000 次观看</li>
+<li>1000 次浏览</li>
+<li>展示广告</li>
+<li>只有照片</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">移动广告</button>
+<div class="content">
+<p>JstMStudio Mobile Ads是一种通过Android、Apple等操作系统的移动应用程序在手机上展示的广告。 使用这种广告格式，您可以直接通过手机吸引客户。 每 1000 次观看将花费 200 美元，并且支持所有媒体文件。</p>
+<ul style="text-align:left;">
+<li>200 美元/1000 次观看</li>
+<li>1000 次浏览</li>
+<li>移动广告</li>
+<li>支持所有媒体文件</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">视频广告</button>
+<div class="content">
+<p>JstMStudio 视频广告是一种以视频格式显示和播放的广告，有声或无声。 您的视频广告每 1k 次观看将花费 150 美元。 此广告格式只能是视频。</p>
+<ul style="text-align:left;">
+<li>150 美元/1000 次观看</li>
+       <li>1000 次观看</li>
+       <li>视频广告</li>
+       <li>在视频中展示</li>
+       <li>仅视频</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">HTML 入门（课程）</button>
+<div class="content">
+<p>这组课程将教初学者开始使用 HTML5（最新版本的 HTML）进行编码。 这门课程 4 门课程的总费用为 <strong>20 美元</strong>。 </p>
+<ul style="text-align:left;">
+<li>HTML 简介</li>
+       <li>HTML格式</li>
+       <li>HTML 编辑器</li>
+       <li>HTML 元素</li>
+</ul>
+</div></li>
+
+</ul>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+  </div>
+</div>
+
+<div id="myNav9" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav9()">&times;</a>
+  <div class="overlay-content">
+<h1>条款</h1>
+<p>欢迎来到 JstMStudio！ 您当前位于 JstMStudio 条款页面，其中包含我们的服务条款、隐私政策和社区指南。 您需要了解并同意我们的每一项服务，才能使用我们的服务和网站。 此处提供和列出的所有条款适用于我们所有的网站、应用程序、游戏等。这些条款也得到严格执行。</p>
+<p>我们始终升级和更改我们的软件、应用程序、网站和游戏。 此处提供的这些条款可能会随着时间的推移而更改，以便与我们最新的软件、应用程序、网站和游戏保持同步，如果需要，恕不另行通知，尽管我们通常会提前 7 天通知。</p>
+<li>最后更新时间：2022 年 9 月 3 日</li>
+<li>生效日期：2022 年 9 月 18 日</li>
+<h2>介绍</h2>
+<p>JstMStudio 是一个小型独立团队，主要专注于许多事情，从故事写作到网络开发。 我们主要开发网站和项目。 我们希望为每个人建立一个更美好的未来隐私友好型网站。</p>
+<h2>联系我们</h2>
+<p>如果您有任何其他问题或需要有关我们的条款、网站、应用程序、软件、游戏、项目和团队的更多信息，请随时与我们联系。 虽然我们总是很忙，但我们会尽力尽快回复您。 请通过我们的官方电子邮件 (<a href="mailto:jstmstudio@gmail.com">jstmstudio@gmail.com</a>) 直接与我们联系。
+<br>
+<hr>
+<br>
+<h1>服务条款</h1>
+<p>欢迎使用 JstMStudio 服务条款！ 此处列出的所有条款适用于我们所有的项目和网站。 这些条款规定了我们对彼此的法律义务，请认真对待。 JstMStudio 按“原样”提供，对使用我们服务的任何结果不作任何保证或承担任何责任。</p>
+<h3>定义</h3>
+<ul style="text-align:left;">
+   <li>条款：我们的服务条款中的所有这些条款</li>
+   <li>您：我们指的是您，我们服务和网站的用户。</li>
+   <li>JstMStudio：团队（我们、我们、我们的网站、服务）</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>账户</h2>
+   <p>当您注册我们的帐户时，您对您帐户上的所有活动负责，无论是在我们的服务上还是在第三方服务内。 您需要对您的帐户信息保密，但不限于通过您的设备访问您的帐户。 您必须在知道任何安全漏洞或任何未经授权使用您的帐户后的 48 小时内通知我们。 未经我们书面同意，您同意不出售、转让或许可您的帐户。</p>
+
+   <p>通过在我们的服务和网站上注册帐户，您<strong>需要</strong>至少<strong>13 岁</strong>或超过您所在国家/地区的最低数字同意年龄 . 如果您在最低年龄以下使用或访问我们的网站，这将直接违反我们的条款和您所在国家/地区的法律。 如果您获得了父母的同意并与您的父母一起严格跟踪您的所有在线活动，则您也必须年满 7 岁才能使用我们的服务。</p>
+
+   <p>作为服务的维护者，One Future Unified Tea 也有权立即终止或禁止您访问我们的网站和服务，无需事先通知或承担任何责任，无论是否提供任何理由，包括但不限于 违反服务条款和社区准则。 授予此权利是为了确保我们的网站安全可靠。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>内容</h2>
+<p>我们的网站和服务允许您分享视频/书籍/音乐/艺术、评论、评论、聊天等。因此，您应对您通过我们的网站和服务分享和上传的所有内容负责。 您必须拥有分享您分享的内容的权利，并且不与任何其他人的版权冲突。 上传和共享的所有用户内容均根据 Creative Commons CC BY-NC-SA 3.0 获得许可。 您不得分享我们不能也不允许通过我们的网站和社区分享任何非法内容的内容。 禁止在此处共享所有非法内容。 不允许出现以下当前列出的所有内容：</p>
+<ul style="text-align:left;">
+   <li>药物</li>
+   <li>武器</li>
+   <li>破解、破解或分发盗版软件</li>
+   <li>秘籍</li>
+   <li>利用或黑客攻击</li>
+   <li>病毒</li>
+   <li>未经授权使用版权项目</li>
+   <li>性别</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>链接网站</h2>
+<p>我们可能会链接到不受我们团队控制或运营的其他网站，这些网站可能可用并列在我们的网站上。 当您输入第三方站点链接时，您将被重定向到第三方服务和网站。 我们强烈建议您在使用他们的网站之前阅读他们的隐私政策和条款。 我们不对其任何内容承担任何责任s、隐私政策和他们网站上不受我们控制的做法。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>使用我们网站的权利</h2>
+<p>JstMStudio 为我们所有的项目提供了多种服务和网站。 我们允许并授予您在我们所有项目中使用我们所有服务的权利，但使用我们的服务和网站并不是一种权利。 无论是否通知或同意，我们都可以停止、修改和继续项目和服务。</p>
+<p>JstMStudio 有权以任何理由或不以任何理由禁用和拒绝您访问我们的任何或所有服务。 不尊重我们的任何员工可能会导致您的帐户被禁用，因为您采取了保护我们所有员工的行动。 JstMStudio 员工是制作、支持和维护 JstMStudio 的人，因此他们的辛勤工作值得尊重，我们希望保护他们免受伤害。 我们也有权拒绝您参与我们主办或与我们合作的任何计划的权利。</p>
+<p>JstMStudio 也有权随时以任何理由或不以任何理由终止您的网站使用我们的托管服务，尽管我们通常会提供理由。 我们保留随时暂停服务的权利，恕不另行通知。 </p>
+  
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>版权</h2>
+<p>JstMStudio 尊重每一个人的版权财产。 如果您认为我们或某人侵犯了您在我们的网站、软件、服务和您在美国的版权，我们强烈建议您尽快通知我们。 我们将尽快从我们的网站上删除版权内容，并使其不对公众开放。 我们还会警告用户侵犯版权，如果重复侵犯版权，我们可能会终止用户访问我们的服务。</p>
+<p>如果您认为这是虚假版权，请向我们发送反通知，我们将向原公司发送一份副本，通知他们可能会在 14 天内用已删除的内容替换或禁用它。 除非版权所有者对内容提供者、成员或用户提起诉讼寻求法院命令，否则在收到反通知后的 14 个工作日或更长时间内，被删除的内容可能会被替换或恢复访问。 出于所有版权目的，请通过电子邮件与我们联系。</p>
+<p>在任何情况下，我们也不允许将任何内容上传到我们的网站。 我们不允许在我们的网站上托管任何侵犯版权的内容。 在上传到我们的网站和托管之前，必须将所有内容版权授予创作者。 我们托管的网站不得包含任何 warez 内容、版权和非法材料，包括第三方网站/资源上托管的版权材料的链接或重定向。 在任何情况下，我们都不会分发版权材料、文件或软件。 您网站上的所有内容必须有权在您的网站上发布。 </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>产权</h2>
+<p>所有权利、所有权、名称、设计、利益，通常称为服务材料，均归 JstMStudio 和我们的股东所有。 您承认并同意，您不会随时通过下载我们的服务材料获得所有权。 您同意未经我们同意不得出售公司的任何部分，并且应遵循我们的开源许可。 您还同意，您不会通过使用我们的服务或在我们的网站上访问我们的服务来主张任何部分所有权。 我们的团队保留所有权利。 而对于 Teenager Heroes，它目前由 Teenager Heroes 创作者 Jst Tan 和团队拥有。 少年英雄版权归创作者和作者所有。</p>
+<br>
+<hr>
+<br>
+<h1>隐私政策</h1>
+<p>在 JstMStudio，可从我们的网站、应用程序、软件和项目访问，我们的主要优先事项之一是访问者和用户的隐私。 本隐私政策文档包含 JstMStudio 收集和记录的各种类型的信息以及我们如何使用这些信息。</p>
+
+<p>本隐私政策仅适用于我们的在线活动，如活动，并且对我们网站、应用程序和软件上的访问者和用户有效，涉及他们在 JstMStudio 中共享和/或收集的信息。 本政策不适用于线下或通过本网站以外的渠道收集的任何信息。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>我们收集的信息</h2>
+<p>要求您提供的个人信息，以及要求您提供给我们的原因，将在我们要求您提供个人信息的时间和地点向您说明。</p >
+
+<p>如果您访问我们，我们将收集您的位置、页面名称、时间、国家/地区、城市、语言、设备类型、浏览器类型、IP 和 ISP。 无论如何，收集到的所有信息都无法识别您的身份。</p>
+
+<p>如果您直接联系我们，我们可能会收到其他信息关于您的信息，例如您的姓名、电子邮件地址、电话号码、您可能发送给我们的消息和/或附件的内容，以及您可能选择向我们提供的任何其他信息。</p>
+
+<p>当您注册帐户时，我们可能会要求您提供联系信息，包括姓名、公司名称、地址、电子邮件地址和电话号码等项目。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>我们如何使用信息</h2>
+<p>JstMStudio 在保护用户隐私的同时以各种方式使用我们收集的信息，包括：</p>
+<ul style="text-align:left;">
+<li>提供、运营和维护我们的网站和服务</li>
+<li>改进、个性化和扩展我们的网站和服务</li>
+<li>了解并分析您如何使用我们的网站和服务</li>
+<li>开发新产品、服务、特性和功能</li>
+<li>直接或通过我们的合作伙伴之一与您沟通，包括客户服务、为您提供与网站和服务相关的更新和其他信息，以及用于营销和促销目的</li>
+<li>向您发送电子邮件以获取更新等信息</li>
+<li>发现并防止我们的服务和网站上的欺诈行为</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>日志文件</h2>
+<p>JstMStudio 遵循使用日志文件的标准程序。 这些文件记录访问者访问网站、软件、应用程序和服务的时间。 所有托管公司，无论是付费托管还是免费托管，都会这样做，并且是托管服务分析的一部分。 日志文件收集的信息包括互联网协议 (IP) 地址、浏览器类型、互联网服务提供商 (ISP)、日期和时间戳、引用/退出页面、设备类型、位置以及可能的点击次数。 这些与任何可识别个人身份的信息无关。 这些信息的目的是分析趋势、管理网站、跟踪用户在网站上的活动、跟踪网站、软件、应用程序和服务的使用情况，以及收集人口统计信息。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Cookie 和网络信标</h2>
+<p>与任何其他网站一样，JstMStudio 也使用“cookies”。 这些 cookie 用于存储信息，包括访问者的偏好和信息，以及访问者访问或访问过的网站页面。 它还将提高加载我们的网站和服务的速度。 这些信息用于根据访问者的浏览器类型和/或其他信息定制和个性化我们的网页内容，从而优化用户体验。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>我们的广告合作伙伴</h2>
+<p>我们网站和服务上的一些广告商可能会使用 cookie 和网络信标。 我们的广告合作伙伴如下所列。 我们的每个广告合作伙伴都有自己的隐私政策和用户数据政策条款。 为了更方便地访问，我们在下面链接到他们的隐私政策，以便您访问并了解他们的用户数据实践条款。 您可以查阅下面提供的此列表以找到 JstMStudio 每个广告合作伙伴的隐私政策。</p>
+<p>第三方广告服务器或广告网络使用 cookie、JavaScript 或 Web Beacon 等技术，这些技术用在各自的广告和出现在 JstMStudio 服务和网站上的链接中，直接发送到用户的浏览器。 发生这种情况时，他们会自动接收您的 IP 地址。 这些技术用于衡量其广告活动的有效性和/或个性化您在访问的网站上看到的广告内容。 请注意，JstMStudio 无法访问或控制第三方广告商使用的这些 cookie。</p>
+<ul style="text-align:left;">
+<li><a href="https://propellerads.com/privacy/">螺旋桨</a></li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>第三方隐私政策</h2>
+<p>JstMStudio 的隐私政策不适用于其他广告商或网站。 因此，我们建议您查阅这些第三方广告服务器各自的隐私政策以获取更多详细信息。 它可能包括他们关于如何选择退出某些选项的做法和说明。</p>
+
+<p>您可以通过您的个人浏览器选项选择禁用 cookie。 要了解有关使用特定网络浏览器进行 cookie 管理的更多详细信息，可以在浏览器各自的网站上找到。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>CCPA 隐私权（请勿出售我的个人数据）</h2>
+<p>根据 CCPA 法律和其他权利，加州消费者目前有权：</p>
+<ul style="text-align:left;">
+<li>要求收集消费者个人数据的我们披露企业收集的消费者个人数据的类别和具体部分。</li>
+
+<li>要求我们删除企业收集的有关消费者的任何个人数据。</li>
+</ul>
+<p>如果您向 JstMStudio 提出请求，我们有一个月的时间回复您。 如果您想行使作为加利福尼亚消费者授予您的任何这些权利，请直接与我们联系。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>GDPR 数据保护权</h2>
+<p>如果您在 GDPR 生效区内，JstMStudio 希望确保您完全了解欧盟区授予的所有数据保护权利。 每个用户都享有以下数据保护权利：</p>
+<ul style="text-align:left;">
+<li>访问权——您有权索取您个人数据的副本。 我们可能会为此服务向您收取少量费用。</li>
+<li>纠正权 – 您有权要求我们纠正我们收集到的您认为不准确的任何信息。 您还有权要求我们补全您认为不完整的信息。</li>
+<li>删除权 – 在特定条件下，您有权要求我们删除您的个人数据。</li>
+<li>限制处理的权利 – 在讨论的某些条件下，您有权要求我们限制对您的任何和所有个人数据的处理。</li>
+<li>反对处理的权利 – 在与您讨论的某些条件下，您有权反对我们处理您的任何和所有个人数据。</li>
+<li>数据可移植权 – 在特定条件下，您有权要求我们将收集到的数据传输给其他组织，或直接传输给您。</li>
+</ul>
+<p>如果您向团队提出请求，我们有一个月的时间回复您。 如果您想行使这些权利中的任何一项，请直接与我们联系。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>儿童信息</h2>
+<p>JstMStudio 优先考虑的另一部分是在当今使用广泛的互联网时增加对儿童的保护。 我们鼓励父母和监护人观察、参与和/或监督和指导他们的在线活动。</p>
+<p>JstMStudio 旨在为全世界所有年龄段的每个人（包括儿童）提供互联网。 如果您的孩子正在使用我们的服务和网站，请监控他们的活动。 如果您的孩子对我们的服务感兴趣，请让您的孩子使用我们团队每天监控的儿童版网站，不要跟踪您的孩子数据。</p>
+<p>JstMStudio 不会故意收集 13 岁以下儿童的任何个人身份信息。如果您认为您的孩子在我们的网站上提供了此类信息，我们强烈建议您立即与我们联系，我们将尽最大努力 及时从我们的记录中删除此类信息。 如果您对我们的网站和服务感兴趣，请随时与我们联系并同意您的父母让您的孩子使用我们的服务和网站。 如果您同意让您的孩子使用我们的服务，我们强烈建议您监督和参与您孩子在我们网站和服务上的活动。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>第三方服务</h2>
+<p>除了广告服务，JstMStudio 还在我们的网站和服务中使用了一些第三方服务和应用程序。 下面列出了我们网站中使用的所有第三方。</p>
+<ul style="text-align:left;">
+<li>谷歌分析</li>
+<li>谷歌云端硬盘</li>
+<li>子堆栈</li>
+<li>方框图标</li>
+<li>统计员</li>
+<li>云彩</li>
+<li>视频SDK</li>
+</ul>
+<hr>
+<h1>社区准则</h1>
+<p>欢迎使用 JstMStudio 官方社区指南。 JstMStudio 网站和我们的社区中的每个人都必须遵守和遵守所有准则，例如评论、社区服务器、聊天等。每个人在使用我们的网站社区时也必须同意这些准则。</p>
+<p>JstMStudio 社区准则旨在确保我们的网站和社区安全、清洁和家庭友好，供世界各地的每个人使用。 每个人都需要共同努力，以保持它的安全和清洁。 不遵守此准则可能会导致您的帐户被禁用或禁止进入我们的网络。 每个人都必须遵守此准则。 </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>尊重</h2>
+<p>请尊重JstMStudio社区内的每一位用户。 JstMStudio 社区内外的每个人都应该受到同等对待。 我们不允许任何人在我们的社区中不受尊重。</p>
+<ul style="text-align:left;">
+<li>请在我们的社区中保持礼貌。</li>
+<li>请不要伤害或骚扰我们社区内的任何人。</li>
+<li>请勿分享包含现实生活中的暴力、血腥或虐待动物、鼓励自残或自杀的图像内容。</li>
+<li>不要在社区中攻击任何人，比如分享用户个人信息，包括 IP、真实姓名、位置、国籍等。</li>
+<li>我们的社区不允许使用粗话和脏话等攻击性语言。</li><li>不要对我们社区中的任何亚洲人（特别是中国人）或非洲人进行种族歧视。</li>
+<li>尊重每个人的隐私。</li>
+<li>不要强迫任何人向您提供他们在我们网站和社区中的隐私信息。</li>
+<li>不要在我们的网站上欺骗任何人。</li>
+<li>尊重我们所有的员工。</li>
+<li>不允许在 JstMStudio、互联网或现实生活中对任何人专横。</li>
+<li>不允许人类剥削。 </li>
+<li>冒充我们社区内的某个人或声称自己不是。</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>滥用权力</h2>
+<p>从早期的社区开始，滥用权力是一个严格的，目前在互联网上是一个严重的案例。 我们严禁在我们的社区和网站上进行任何滥用权力的行为。 在我们的社区、服务和网站上，团队不鼓励滥用权力。 滥用权力包括：</p>
+<ul style="text-align:left;">
+<li>威胁踢出或禁止成员加入您的群组。</li>
+<li>威胁要与他人分享用户的资料。</li>
+<li>威胁要切断用户对我们网站上构建的内容的访问。</li>
+<li>利用用户。</li>
+<li>对于 21 岁以下的用户，不允许在使用我们的平台时威胁要向他们的父母投诉。</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>PG18</h2>
+<p>JstMStudio 不允许在我们的网站上讨论、上传和提供 PG18 内容。 我们不允许在我们的网站上出现任何暴力内容。 我们也不允许在我们的网站上出现任何欺诈、暴力、图片和自杀内容。 我们也不允许任何儿童性剥削和成人性剥削内容。 我们也不允许任何仇恨言论内容。 </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>隐私</h2>
+<p>隐私是 JstMStudio 中最重要的价值观之一。 在 JstMStudio 中，我们会尊重每个人的隐私和他们各自的版权，因此在我们的平台上，我们希望强制每个人的隐私都受到尊重。 未经他们的书面许可，我们不允许共享其他个人机密信息。 个人信息，包括财务、住宅和医疗信息，以及私人信息。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>工作人员</h2>
+<p>JstMStudio 员工是 JstMStudio 的制作者、支持者和维护者，因此他们在团队项目中的辛勤工作值得尊重。 JstMStudio Staff 团队拥有确保我们的平台和软件免受不良行为者侵害的最终决定权。 请尊重我们的每一位员工，无论他们来自哪里，年龄多大，这里的每个人都是一样的。 禁止在外部或我们的软件中威胁、欺凌、揭露我们的员工。 如果感到受到威胁，我们的员工也有权禁用和拒绝您访问我们的服务。</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>罢工</h2>
+<p>如果您在我们的网站和软件中被任何用户举报，我们将开立调查单以调查此案。 如果我们发现您违反了这些社区准则，我们可能会向您发出不可撤销的警告。 一旦达到最多 5 次警示，我们将禁用您的帐户。 如果您认为我们误判了您，您可以上诉，但如果您确实违反了我们的准则，请不要尝试上诉，如果是虚假上诉，我们不会撤销您的罢工。 请直接联系我们。</p>
+  </div>
+</div>
+
+<div id="myNav10" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav10()">&times;</a>
+  <div class="overlay-content">
+<h1>简介</h1>
+       <p>JstMStudio Profile 是一个基于网络的社交网站。 用户可以创建和阅读来自世界各地的内容创建者发布的帖子。 您可以免费使用 JstMStudio Profile，限制更少，最重要的是，没有任何广告。</p>
+       <p>JstMStudio Profile完全开源，供大家学习查看。 您也可以为该项目做出贡献。 它目前使用 HTML、CSS 和 JavaScript 编码，并获得麻省理工学院的许可。 JstMStudio Profile 也是一个隐私友好的平台。 我们不会与任何第三方共享用户信息，并且我们会尽力跟踪尽可能少的数据。 我们希望将用户交还给他们自己。</p>
+       <p>JstMStudio Profile 是一个尊重每个人言论自由的地方。 如果你可以在现实生活中享有言论自由，那么你也应该在互联网上拥有它，因此我们希望实现这一目标。 除了非法或 NSFW 内容外，您可以在这里发布任何内容。</p>
+       <br>
+       <hr>
+       <br>
+         <h2>个人资料搜索</h2>
+       <p>欢迎使用 JstMStudio 配置文件搜索！ 在 JstMStudio Profile 中搜索个人资料的地方。 在 JstMStudio 中查找和了解每个配置文件的更多信息的地方。 </p>
+      <br>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索个人资料用户名" title="Type in a name">
+<ul id="myUL">
+  <li><button type="button" class="collapsible2">Jst Tan</button>
+<div class="content2">
+  <iframe src="Profile/jst-tan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+	<li><button type="button" class="collapsible2">PJ Masks Fan</button>
+<div class="content2">
+<iframe src="Profile/pj-masks-fan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p>
+</div></li>
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p>
+</div></li>
+  <li><button type="button" class="collapsible2">没有任何</button>
+<div class="content2">
+  <p>没有任何</p>
+</div></li>
+</ul>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+<br>
+<hr>
+<br>
+<h2>Sign Up</h2>
+      <p>Everyone could now sign up for a writer account on JstMStudio Profile to create a profile and write post. Writer account could have a profile, edit their own profile, create post, use plugins on their post and etc. Writer account will have total freedom on their profile and posts too. If you are interested, you could sign up and apply by filling up the form below, it is open for everyone. By submitting, all application will be reviewed without 7 business day by JstMStudio members.</p>
+      <br>
+      <button class="button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdlaiVNGbMk8Rlfdz7zsUeXTD0gNuJ2VXEnjAyK9Ss8Rs4vrA/viewform?fbzx=6439158439518808056" style="color:yellow;"><span>Sign Up Here </span></a></button>
+  </div>
+</div>
+
+<h1><i class='bx bx-info-circle'></i>关于我们</h1>
+<p>JstMStudio 是由 Jst Tan 创立的小型工作室。 JstMStudio 专注于很多事情，从音乐、故事写作、网站开发等等。 JstMStudio 是一个小型远程独立工作室，专注于构建更美好未来的许多事情。 </p>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-contact' ></i> 联系我们</h2>
+<p>与 Facebook、谷歌和其他大型科技公司不同，我们对所有人开放，可以出于任何目的与我们联系。 您可以出于多种目的联系 JstMStudio，例如支持、反馈、错误报告、建议、捐赠、赞助、购买我们的产品或服务、了解更多关于我们等。请不要联系我们进行促销和垃圾邮件，我们不会 在我们的邮箱中发送对非相关电子邮件的任何回复，并尽快将其移至垃圾邮件。 我们提供了一份社交媒体帐户列表，供您通过任何社交媒体向我们发帖或直接向我们发送消息与我们联系。</p>
+<br>
+<li><a href="https://www.facebook.com/jstmstudio"><i class='bx bxl-facebook-circle' ></i> 脸书</a><br>
+Facebook 是 JstMStudio 目前主要的社交媒体平台。 我们不时在我们的官方 Facebook 页面上发布公告、更新和新闻等内容。 您也可以通过 Facebook Messenger 直接联系我们，访问我们的官方 Facebook 页面，以获得支持、错误报告、反馈和建议，并评价我们。</li>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-info-square' ></i> 资讯</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav4()" id="teams">团队和服务</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav2()" id="项目">项目</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav5()" id="app">应用</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav3()" id="news">新闻</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav7()" id="status">状态</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav8()" id="store">商店</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;"> <a href="https://jstmstudio.substack.com">博客</a></div>
+<br>
+<hr>
+<br>
+<h2><i class='bx bx-group' ></i> 社区</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav9()" id="terms">条款</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav()" id="community">社区</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav1()" id="donation">捐赠</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav6()" id="合作伙伴">合作伙伴</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav10()" id="profile">个人资料</div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+
+function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
+}
+
+function openNav9() {
+  document.getElementById("myNav9").style.width = "100%";
+}
+
+function closeNav9() {
+  document.getElementById("myNav9").style.width = "0%";
+}
+
+function openNav10() {
+  document.getElementById("myNav10").style.width = "100%";
+}
+
+function closeNav10() {
+  document.getElementById("myNav10").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+<h1>主题</h1>
+<p>您可以将Jst 多功能工作室的主题自定义为您喜欢的颜色。 从下面的颜色集中选择并选择，以使Jst 多功能工作室 UI 成为您的颜色偏好。</p>
+<br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+
+function myFunction5() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+
+</body>
+</html>
