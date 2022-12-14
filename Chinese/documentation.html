@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>文档</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+.collapsible {
+  background-color: #f1f1f1;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: red;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+body {
+  background: #E4E9F7;
+  }
+  
+.button2 {
+float:left;
+background-color: black;
+  color: red;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  background-color: yellow;
+  color: green;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+}
+
+.active, .collapsible2:hover {
+  background-color: green;
+  color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: yellow;
+  text-align: center;
+  color: green;
+}
+
+body {
+  color:red;
+}
+.dictionary {
+  color: blue;
+  max-width: 400px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+.txtBox {
+  appearance: none;
+  -webkit-appearance:none;
+  font-size:16px;
+  padding: 15px;
+  width:100%;
+}
+.submit-btn {
+  appearance: none;
+  -webkit-appearance:none;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: grey;
+  color: #fff;
+  font-size: 15px;
+  height: 100%;
+}
+form {
+  position: relative;
+}
+.search-result{
+  padding:20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+.logo {
+  overflow: hidden;
+  background-color: purple;
+  text-align:center;
+  color: yellow;
+  padding:18px;
+  font-weight: bold;
+}
+
+.logo h1 {
+  float: center;
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  }
+  
+.collapsible3 {
+background: #cce5ff;
+  color: darkblue;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 8px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  width:95%;
+  margin: 15px;
+}
+
+.content3 {
+background-color: #cce5ff;
+  color: darkblue;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  margin: 15px;
+  text-align: center;
+}
+
+.dictionary {
+  color: blue;
+  max-width: 400px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+.txtBox {
+  appearance: none;
+  -webkit-appearance:none;
+  font-size:16px;
+  padding: 15px;
+  width:100%;
+}
+.submit-btn {
+  appearance: none;
+  -webkit-appearance:none;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: grey;
+  color: #fff;
+  font-size: 15px;
+  height: 100%;
+}
+form {
+  position: relative;
+}
+.search-result{
+  padding:20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+.collapsible3 {
+  background-color: blue;
+  color: yellow;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible3:hover {
+  background-color: green;
+}
+
+.content3 {
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+  background-color: green;
+  text-align: center;
+  color: yellow;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+      <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Jst 多功能工作室</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">主页</span>
+        </a>
+         <span class="tooltip">主页</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">信息</span>
+       </a>
+       <span class="tooltip">信息</span>
+     </li>
+     <li>
+     <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">客户</span>
+       </a>
+       <span class="tooltip">客户</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">文档</span>
+       </a>
+       <span class="tooltip">文档</span>
+     </li>
+     <li>
+       <a href="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">网络应用</span>
+       </a>
+       <span class="tooltip">网络应用</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<br>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>关于</h1>
+<p>JstMStudio 是由 Jst Tan 创立的小型工作室。 JstMStudio 专注于很多事情，从音乐、故事写作、网站开发等等。 JstMStudio 是一个小型远程独立工作室，专注于构建更美好未来的许多事情。 </p>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+    <h1>联系方式</h1>
+     <p>想联系 JstMStudio？ 团队目前提供多种方式让大家联系团队。 请联系我们获取支持、反馈、建议和错误报告等重要内容，而不是垃圾邮件等不重要的内容。 我们是一个小团队，所以我们可能会很忙，导致团队回复晚了，所以请耐心等待。 我们也只在正式营业时间回复。</p>
+     <br>
+     <小时>
+     <br>
+     <h1>官方联系方式<h1>
+     <br>
+       <h3><a href="https://m.me/106374745315761">信使</a></h3>
+       <p>我们为所有 Facebook 用户提供了 Messenger 联系服务，以联系 JstMStudio 开发团队。 您可以直接在 Messenger 上联系我们。</p>
+       <br>
+       <h3><a href="https://twitter.com/messages/compose?recipient_id=1496024914431602690">推特</a></h3>
+       <p>对于那些使用 Twitter 的人，JstMStudio 也提供了 Twitter 上的联系服务。 我们也在那里活跃。</p>
+  </div>
+</div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>为 JstMStudio 做贡献</h1>
+<p>您可以为 JstMStudio 项目提供帮助和贡献，并帮助解决问题。 我们感谢您对我们项目的每一次帮助和贡献，无论是一个小错字还是团队的错误。</p>
+<br>
+<hr>
+<br>
+<h2>报告错误</h2>
+<p>在没有技术知识的情况下为项目做出贡献的一种方法是向团队报告错误。 如果您在我们的网站或软件上发现错误，请创建 Github 问题或给我们发送电子邮件并报告。 通过改进我们的软件，让每个人都能更顺畅地使用它，这将对我们有很大帮助。<br><br>如果可以，当我们尚未修复错误时，您也可以帮助我们修复报告的错误。 它肯定会帮助团队节省很多时间和精力来查找错误。 完成编程后，您可以提交拉取请求，让我们的一位志愿者也批准和部署它。 </p>
+<br>
+<hr>
+<br>
+<h2>将内容添加到 JstMStudio 软件</h2>
+<p>您可以通过在我们的软件中添加一些内容来为该项目做出贡献。 您可以将网站或项目提交到我们的搜索引擎，将视频、音乐和书籍添加到我们的内容库以供所有人欣赏等等。</p>
+<br>
+<hr>
+<br>
+<h2>代码</h2>
+<p>如果您是一名开发人员，您还可以帮助我们改进我们的软件，例如改进我们的 UI、帮助开发和构建我们即将推出的新功能和与团队合作的项目等。您还可以帮助我们为我们创建更多功能并做出贡献 当前的服务也是如此。 </p>
+  </div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>捐赠</h1>
+<p>JstMStudio 是由像您这样的人资助的。 我们不会出售任何用户数据，不会在您的屏幕上投放垃圾广告，也不会在付费专区中锁定内容。 我们没有，我们认为这很烦人。 我们通过销售网站和捐赠获得资金。 如果您想支持该项目，请捐一两美元给我们。 这对您来说可能意义不大，但对我们来说意义重大。 <br><br>
+我们目前提供两种方式供大家帮助、支持和捐赠给我们。 您可以通过<a href="https://www.buymeacoffee.com/jestonjst">给我买杯咖啡</a>和<a href="https://ko-fi.com/R6R8BLGHG"向我们捐款 >科菲</a>。 您也可以通过一次性或每月捐赠来支持我们。
+    </p>
+      <br><br>
+      <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jestonjst" data-color="#40DCA5" data-emoji=""  data-font="Lato" data-text="Buy me a drink" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+      <br><br>
+      <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#28e032', 'R6R8BLGHG');kofiwidget2.draw();</script> 
+  </div>
+</div>
+
+<div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay-content">
+<h1>常见问题</h1>
+<p>JstMStudio 社区有很多常见问题。 我们将在这里解释所有问题。 您一直在寻找的问题也有可能在这里得到直接回答。 所有答案也都是由团队编写的。 </p>
+<br>
+<小时>
+<br>
+<button type="button" class="collapsible2"><h2>JstMStudio 为什么存在？</h2></button>
+<div class="content2">
+   <p>JstMStudio 由 Jst Tan 创立。 JstMStudio 旨在以竞争对手提供的价格的利润率出售网站。 </p>
+</div>
+<button type="button" class="collapsible2"><h2>JstMStudio 如何货币化和融资？</h2></button>
+<div class="content2">
+   <p>JstMStudio 通过大量保护隐私的方式获利，例如捐赠、赞助、静态广告等。我们的资金主要来自社区捐赠以及向我们的客户和消费者销售我们构建的网站。 我们不会也无意将我们提供的任何功能锁定在付费专区后面，也不会出售任何用户数据。 </p>
+</div>
+<button type="button" class="collapsible2"><h2>JstMStudio 怎么发音？</h2></button>
+<div class="content2">
+   <p>请使用下面的音频播放器收听团队提供的音频文件，以了解 JstMStudio 的发音。 音频是通过文本转语音 (TTS) 软件生成的，团队中没有任何人发声。</p>
+   <audio controls>
+   <source src="pronounce.mp3" type="audio/mpeg">
+您的浏览器不支持音频元素。
+</audio>
+    </div>
+    <script>
+    var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+<h1>JstMStudio 帮助文章</h1>
+   <p style="text-align:center;"><strong>获取帮助文章和错误代码答案的地方。 JstMStudio 提供并使用了很多帮助文章代码。 请在搜索栏中搜索您的错误代码以查找相关信息。 </strong></p>
+   <br><br>
+   <table>
+     <tr>
+       <th>标题</th>
+       <th>代码</th>
+     </tr>
+     <tr>
+       <td>账号被封</td>
+       <td>13841</td>
+     </tr>
+     <tr>
+       <td>账号已删除</td>
+       <td>67381</td>
+     </tr>
+     <tr>
+       <td>帐户已停用</td>
+       <td>89651</td>
+     </tr>
+     <tr>
+       <td>找不到账号</td>
+       <td>10915</td>
+     </tr>
+     <tr>
+       <td>调整捐赠</td>
+       <td>52107</td>
+     </tr>
+     <tr>
+       <td>COPPA不是要求每个软件都是13吗？</td>
+       <td>98106</td>
+     </tr>
+     <tr>
+       <td>捐赠有什么作用？</td>
+       <td>61029</td>
+     </tr>
+     <tr>
+       <td>嵌入</td>
+       <td>92657</td>
+     </tr>
+     <tr>
+       <td>我该如何捐赠？</td>
+       <td>78526</td>
+     </tr>
+       <tr>
+       <td>使用 JstMStudio 项目需要多长时间？</td>
+       <td>23195</td>
+     </tr>
+     <tr>
+       <td>支付处理器</td>
+       <td>89103</td>
+    </tr>
+  </table>
+  <br><br>
+<form class="searchForm">
+<input type="search" class="txtBox">
+<input type="submit" class="submit-btn" value="submit">
+</form>
+ <div class="search-result">
+<h2 class="search-word"></h2>
+<p class="description" style="text-align:center"></p>
+  </div>
+ <script>
+const txtBox = document.querySelector(".txtBox");
+const form = document.querySelector(".searchForm");
+const searchWord = document.querySelector(".search-word");
+const description = document.querySelector(".description");
+const dictionaryJson =
+  "https://en.jstmstudio.tk/articles.json";
+function searchDict(e) {
+  e.preventDefault();
+  fetch(dictionaryJson)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      e.preventDefault;
+      let word = txtBox.value;
+      console.log(txtBox.value);
+      let searchKeyword = word.toUpperCase();
+      Object.keys(data).forEach(function(key) {
+        if (key === searchKeyword) {
+          searchWord.innerHTML = searchKeyword;
+          if(searchKeyword === data[key]){
+            description.innerHTML = "Not found";
+          }
+          else{
+             description.innerHTML = data[key];
+          }
+          
+          console.log(data[key]);
+        }
+      });
+    });
+}
+
+form.addEventListener("submit", searchDict);
+
+_.find(allmCar, (mCar) => /XYZ/.test(mCar.value));
+</script>
+  </div>
+</div>
+
+<div id="myNav6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
+  <div class="overlay-content">
+    <div class="logo">
+<h1>JstMStudio论坛</h1>
+<p>JstMStudio 论坛是面向所有 JstMStudio 用户、粉丝和查看者的官方论坛软件。 JstMStudio Forum是JstMStudio独立开发的论坛软件。 向 JstMStudio 寻求帮助、提供反馈、报告错误等的地方。</p>
+</div>
+<br>
+<div style="background-color: green;color: yellow;text-align:left;width:40%;padding:4px;">
+<p><strong><a href="/Forum/index.html" style="color:yellow;"><i class='bx bx-home' ></i> JstMStudio</a></strong ></p>
+</div>
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h1 style="text-align:center;">公告</h1>
+<p style="font-size:20px;" id="公告"></p>
+</div>
+
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h3 style="font-size:25px;text-align:center;">重要</h3>
+<p></p>
+
+<strong>
+<button type="button" class="collapsible3"><div class="list">
+<i class='bx bxs-megaphone' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">公告<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>获取JstMStudio 官方公告的地方。 从团队获取最新官方公告的地方。 </p>
+<iframe src="forum/announcements.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-news' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">新闻<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>获取 JstMStudio 最新消息的地方。 获取团队最新消息的地方，如新产品、新作品、新活动等。</p>
+<iframe src="forum/news.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bxs-megaphone' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">更新<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p style="font-size:14px;">获取 JstMStudio 最新更新的地方。 一个直接从团队获取最新产品、项目、软件和展示更新的地方。</p>
+<iframe src="forum/updates.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+</div>
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h3 style="font-size:25px;text-align:center;">支持</h3>
+<p></p>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-support' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">支持<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>一个寻求与 JstMStudio 相关的任何支持的地方。 从 JstMStudio 社区和支持团队寻求支持和帮助的地方。</p>
+<iframe src="forum/support.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-bulb' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">反馈<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>向 JstMStudio 提供反馈的地方。 将您的反馈想法提交给团队的地方。</p>
+<iframe src="forum/feedback.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bxs-bug' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">错误报告<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>一个向 JstMStudio 报告错误的地方，以便团队尽快修复它。 报告和标记错误的地方。</p>
+<iframe src="forum/bugs-report.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+</div>
+<br><br>
+<div style="background-color: green;padding:1px;color: yellow;">
+<h3 style="font-size:25px;text-align:center;">讨论</h3>
+<p></p>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-chat' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">一般<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>通过我们的论坛讨论 JstMStudio 的地方。 一个讨论与团队相关的任何事情的地方，例如我们的工作、故事、软件、平台等。</p>
+<iframe src="forum/general.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-book-content' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;">内容<i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>JstMStudio 平台中当前可用的共享内容的地方。 一个分享和讨论我们官方平台上可用内容的地方。</p>
+<iframe src="forum/content.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+
+<strong>
+<button type="button" class="collapsible3">
+<div class="list">
+<i class='bx bx-chat' style="float:left;"></i>
+<a style="color: darkblue;font-size:18px;"> 题外话 <i class='bx bxs-down-arrow'></i></a>
+</div></button>
+<div class="content3">
+<p>一个讨论与团队无关的地方，JstMStudio。 一个讨论任何与 JstMStudio 无关的地方，比如游戏等。</p>
+<iframe src="forum/off-topic.html" style="width:100%;height:200px;"></iframe>
+</div>
+</strong>
+</div>
+<script src="announcement.js"></script>
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.display === "block") {
+      content3.style.display = "none";
+    } else {
+      content3.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav7()">&times;</a>
+  <div class="overlay-content">
+  <h1>扩展</h1>
+       <p>JstMStudio Profile 是第一个真正为用户个人资料和帖子的扩展提供支持的社交网站。 扩展是安装在程序上的软件附加组件，可增强其功能。 用户可以从各种扩展中进行选择，以在他们的个人资料中使用，并在 JstMStudio 个人资料扩展库中发布。 JstMStudio 配置文件扩展由官方工作人员团队和社区构建。<br><br>用户可以通过在帖子元素结束之前或在他们的个人资料上添加，将此处的所有插件安装到他们的代码中。 请通过复制并粘贴以下代码来安装插件。</p>
+       <br>
+       <hr>
+       <br>
+       <h2>拍手</h2>
+       <p>Clap 是 JstMStudio Profile 的官方扩展之一。 它可以在 JstMStudio Profile 用户帖子中使用。 安装此插件后，用户可以为用户发帖鼓掌。</p>
+       <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fclap.html&style =github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+       <br>
+       <hr>
+       <br>
+       <h2>评论</h2>
+       <p>Comment是JstMStudio Profile的官方扩展之一。 用户可以将它们添加到他们的帖子中以供查看者发表评论。 用户也可以使用它来获得对其帖子的反馈。</p>
+       <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fcomment.html&style =github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+       <br>
+       <hr>
+       <br>
+       <h2>喜欢</h2>
+       <p>Like 是 JstMStudio Profile 的官方扩展之一。 用户可以将它们添加到他们的帖子中，供查看者和作者显示他们对帖子的反应。 用户也可以做出反应以表达他们的支持。</p>
+       <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Flike.html&style =github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+       <br>
+       <hr>
+       <br>
+       <h2>分享</h2>
+       <p>Share 是 JstMStudio Profile 的官方扩展之一。 用户可以将它们添加到他们的帖子中，以便查看者将他们的帖子分享到社交媒体上。 用户也可以通过分享帖子来表达他们的支持。</p>
+       <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fshare.html&style =github&showBorder=on&showLineNumbers=on&showCopy=on"></script>
+       <br>
+       <hr>
+       <br>
+       <h2>上下</h2>
+       <p>Updown 是 JstMStudio Profile 的官方扩展之一。 用户可以将它们添加到他们的帖子中，供查看者和作者显示他们对帖子的反应。 用户也可以做出反应以表达他们的支持。 Updown 也可以用于投票。</p>
+      <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2FOne-Future-Web%2FWeb-App%2Fblob%2F068fa630ef3740efe71dba43dcd938f1395e6fce%2FExtension%2FCodes%2Fupdown.html&style=github&showBorder=on&showLineNumbers=on&showCopy=on"></script>  
+  </div>
+</div>
+
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+  <h1>应用程序接口</h1>
+<p>JstMStudio 在我们的平台软件 JstMStudio App Platform 中提供了许多服务和功能。 JstMStudio API 是 JstMStudio App Platform 的应用程序编程接口，它为所有开发人员提供支持，将 JstMStudio App Platform 中的服务实施到他们的网站中，而无需自行开发功能，完全免费，不收取任何费用。 它是为所有人使用而构建的，而不是为了从开发人员和网站所有者等用户那里赚钱。</p>
+<p>JstMStudio API 是一个开源 API（应用程序编程接口）。 每个人都可以在我们的官方 Github 存储库上查看、阅读和研究所有 JstMStudio API 源代码。 JstMStudio API 是使用 HTML、CSS 和 vanilla JavaScript 构建的，也不同于任何传统的 API，并在 AGPL 3.0 下获得许可。</p>
+<button type="button" class="collapsible3">商业搜索引擎</button>
+<div class="content3">
+     <p>Business Search Engine是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在 JstMStudio 商务搜索引擎上搜索商务。 </p>
+    
+     <p>为了在您的网站上设置商业搜索引擎，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FBusiness%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入到您希望商业搜索引擎出现的站点中，请仅将其插入到 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FBusiness%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+<button type="button" class="collapsible3">计算器</button>
+<div class="content3">
+     <p>计算器是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以使用您网站上的 JstMStudio 计算器计算简单和复杂的数学。 </p>
+    
+     <p>为了在您的网站上设置计算器，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalculator%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望计算器出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalculator%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+<button type="button" class="collapsible3">日历</button>
+<div class="content3">
+   <h1>日历</h1>
+     <p>Calendar是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以使用 JstMStudio Calendar 免费将日历添加到您的站点。 </p>
+    
+     <p>为了在您的网站上设置日历，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalendar%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望日历出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCalendar%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+
+<button type="button" class="collapsible3">相机</button>
+<div class="content3">
+     <p>Camera是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以使用 JstMStudio Camera 免费将相机添加到您的站点，以便其他人可以直接在您的站点上拍照。 </p>
+    
+     <p>为了在您的网站上设置相机，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCamera%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望相机出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%Main-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCamera%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">代码编辑器</button>
+<div class="content3">
+<p>代码编辑器是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以使用 JstMStudio 代码编辑器免费向您的站点添加代码编辑器，以便您的用户可以在您的网站上编辑他们的代码。</p>
+    
+     <p>为了在您的网站上设置代码编辑器，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCode%2520Editor%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望代码编辑器出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCode%2520Editor%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">罗盘</button>
+<div class="content3">
+     <p>Compass是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以使用 JstMStudio Compass 免费向您的站点添加指南针。 </p>
+    
+     <p>为了在您的网站上设置 Compass，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCompass%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望罗盘出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FCompass%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">联系</button>
+<div class="content3">
+     <p>Contact是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以使用 JstMStudio Contact 免费向您的站点添加联系人管理服务。 用户可以将联系信息添加到我们的服务中进行存储，以便他们将来可以检索他们的朋友/客户的联系信息。 它全部存储在您的浏览器本地存储中，因此不可用也对其他任何人。</p>
+    
+     <p>为了在您的网站上设置联系人，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FContact%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望联系人出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FContact%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">字典</button>
+<div class="content3">
+<p>Dictionary是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在您的网站上免费添加一本词典，以便用户可以搜索某个词的含义。 </p>
+    
+     <p>为了在您的网站上设置词典，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FDictionary%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>之后，请将此 HTML 代码插入到您希望字典出现的站点中，请仅将其插入到 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FDictionary%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">语言翻译器</button>
+<div class="content3">
+     <p>Language Translator是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在您的网站上免费添加一个语言翻译器，这样每个人都可以直接在您的网站上翻译文本。 </p>
+    
+     <p>为了在您的网站上设置语言翻译器，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FLanguage%2520Translator%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>之后，请将此 HTML 代码插入您希望语言翻译器出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FLanguage%2520Translator%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+   </div>
+
+<button type="button" class="collapsible3">地图</button>
+<div class="content3">
+<p>Map是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以免费在您的网站上添加地图。 </p>
+    
+     <p>为了在您的网站上设置地图，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FMap%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>之后，请将此 HTML 代码插入您希望地图出现的站点，请将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2JstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FMap%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">注释</button>
+<div class="content3">
+<p>Notes是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以免费在您的网站上添加注释，这样每个人都可以直接在您的网站上添加注释。 </p>
+    
+     <p>为了在您的网站上设置注释，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FNotes%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     <p>之后，请将此 HTML 代码插入您希望注释出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FNotes%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+   </div>
+
+<button type="button" class="collapsible3">照片编辑器</button>
+<div class="content3">
+     <p>Photo Editor是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在照片编辑器上编辑照片。 我们的免费 API 也支持照片编辑器，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置照片编辑器，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Editor%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望照片编辑器出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Editor%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+</div>
+</div>
+
+<button type="button" class="collapsible3">照片存储</button>
+<div class="content3">
+<p>Photo Storage是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以将图像上传并存储在照片存储中。 我们的免费 API 也支持照片存储，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置照片存储，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Storage%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望照片存储出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FPhoto%2520Storage%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+<button type="button" class="collapsible3">二维码生成器</button>
+<div class="content3">
+<p>QR Code Generator是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在二维码生成器上生成二维码。 我们的免费 API 也支持 QR 代码生成器，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置二维码生成器，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2520代码%2520Generator%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望 QR 代码生成器出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2FCode%2520Generator%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+</div>
+
+<button type="button" class="collapsible3">二维码阅读器</button>
+<div class="content3">
+     <h1>二维码阅读器</h1>
+     <p>QR Code Reader是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在二维码阅读器上阅读二维码。 我们的免费 API 也支持二维码阅读器，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置二维码阅读器，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2FCode%2FReader%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望 QR 码阅读器出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FQR%2FCode%2520Reader%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+   </div>
+  
+   <button type="button" class="collapsible3">评论</button>
+<div class="content3">
+<p>Reviews是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在您的网站上免费添加评论，以便用户可以直接在您的网站上搜索产品评论。 </p>
+    
+     <p>为了在您的网站上设置审核，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FReviews%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望显示评论的网站，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FReviews%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">搜索引擎</button>
+<div class="content3">
+     <p>Search是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在您的网站上免费添加一个搜索引擎，这样用户就可以在您的网站上免费搜索互联网。 </p>
+    
+     <p>为了在您的网站上设置搜索，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FSearch%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望搜索引擎出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FSearch%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">股票</button>
+<div class="content3">
+     <p>股票是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在您的网站上免费添加一只股票，这样用户就可以直接在您的网站上获得实时股票信息。 </p>
+    
+     <p>为了在您的网站上设置股票，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+    
+     <p>请将此 HTML 代码插入您希望显示评论的网站，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FStocks%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">文本编辑器</button>
+<div class="content3">
+     <p>Text Editor是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在文本编辑器上编辑文本。 我们的免费 API 也支持文本编辑器，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置文本编辑器，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520Editor%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望文本编辑器出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520Editor%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">文字转语音</button>
+<div class="content3">
+<p>Text to Speech是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在 Text to Speech 上进行文字转语音。 我们的免费 API 也支持文本转语音，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置 Text to Speech，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520To%2520Speech%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>粘贴上面的代码后。 请在您希望文本转语音出现的位置插入代码。请仅在 <code>body</code> 部分插入。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FText%2520To%2520Speech%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">待办事项</button>
+<div class="content3">
+<p>To Do是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在 To Do 上列出您所有的待办事项列表。 我们的免费 API 也支持待办事项，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置待办事项，请将所有这些代码插入您的网站。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FTo%2520Do%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入到您希望显示的站点中，请仅将其插入到 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FTo%2520Do%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">天气</button>
+<div class="content3">
+<p>天气是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以在天气上查看世界各地的最新天气。 我们的免费 API 也支持天气，所以每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置天气，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWeather%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望天气出现的网站，请仅将其插入 <code>body</code> 部分。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWeather%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+   </div>
+</div>
+
+   <button type="button" class="collapsible3">白板</button>
+<div class="content3">
+<p>白板是JstMStudio在JstMStudio Web App中提供的一项服务。 您可以使用 Whiteboard 在浏览器上绘图。 我们的免费 API 也支持白板，因此每个人都可以在他们的网站上使用它。 </p>
+     <p>为了在您的网站上设置白板，请在您的网站中插入所有这些代码。 需要将此代码复制到您的网站上，这样它才能工作。</p>
+     <p>请将此代码插入您的 <code>head</code> 部分，以便它可以处理我们服务器上所需的所有代码。 它是工作所必需的，所以不要错过它。</p>
+     <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWhiteboard%2Fsrc.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script>
+     </div>
+     <p>之后，请将此 HTML 代码插入您希望白板出现的站点，请仅将其插入 <code>body</code> 部分。</p>
+    <div style="text-align:left;">
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FJstMStudio%2FMain-Platform%2Fblob%2Fmain%2FEnglish%2FAPI%2FServices%2FWhiteboard%2Fcode.html&style=default&type=code&showBorder=on&showLineNumbers=on&showFullPath=on&showCopy=on"></script> 
+  </div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible3");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content3 = this.nextElementSibling;
+    if (content3.style.display === "block") {
+      content3.style.display = "none";
+    } else {
+      content3.style.display = "block";
+    }
+  });
+}
+</script>
+</div>
+</div>
+
+<h1>JstMStudio 文档</h1>
+<p>嗨！ 欢迎使用 JstMStudio 文档！ 一个获取一些有用的文章和你需要使用的一切的地方，为项目做出贡献等等都是我们团队自豪地写的。 您可以在这里找到许多有用的文章，它们可能会对您的问题有所帮助。 在联系我们寻求支持之前，请仔细阅读此处的所有文章。 我们可能会将您重定向回此处。</p>
+
+<br>
+<hr>
+<br>
+<h2>文章</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav()" id="about">关于</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav1()" id="contact">联系人</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav2()" id="contributing">贡献</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav3()" id="donation">捐赠</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav4()" id="faq">常见问题解答</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav5()" id="helparticles">帮助文章</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav6()" id="forum">论坛</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav7()" id="profile">配置文件扩展名</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav8()" id="api">API</div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+
+function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+<h1>主题</h1>
+<p>您可以将Jst 多功能工作室的主题自定义为您喜欢的颜色。 从下面的颜色集中选择并选择，以使Jst 多功能工作室 UI 成为您的颜色偏好。</p>
+<br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+  </script>
+
+</body>
+</html>
