@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>Tentang kita</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: #E4E9F7;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  width: 90%;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+body {
+background-color: #E4E9F7;
+} 
+.collapsible {
+  background-color: #f1f1f1;
+  color: red;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: red;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: cyan;
+}
+
+body.red-mode {
+  background-color: red;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: cyan;
+}
+
+body.green-mode {
+  background-color: green;
+  color: yellow;
+}
+
+body.yellow-mode {
+  background-color: yellow;
+  color: green;
+}
+
+body.orange-mode {
+  background-color: orange;
+  color: blue;
+}
+
+body.purple-mode {
+  background-color: purple;
+  color: cyan;
+}
+
+body.magenta-mode {
+  background-color: magenta;
+  color: #1a2b22;
+}
+
+.dark-mode .home-section {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .home-section {
+  background-color: red;
+  color: white;
+}
+
+.blue-mode .home-section {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .home-section {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .home-section {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .home-section {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .home-section {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .home-section {
+  background-color: magenta;
+  color: #1a2b22;
+}
+.body {
+  background: #E4E9F7;
+  }
+  
+.button2 {
+float:left;
+background-color: black;
+  color: red;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.collapsible2 {
+  cursor: pointer;
+  outline: none; 
+  font-size:30px;
+  background-color:cyan;
+  width:100%;
+  text-align:center;
+  color:purple;
+  padding:10px;
+  font-weight: bold;
+  border-style: solid;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: cyan;
+  color: purple;
+  font-weight: bold;
+  text-align:center;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 350px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: purple;
+  border: none;
+  color: yellow;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible2 {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible2:hover {
+  background-color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+
+/* Directory Content */
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible:hover {
+  background-color: yellow;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">JstMStudio</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Laman Utama</span>
+        </a>
+         <span class="tooltip">Home</span>
+      </li>
+      <li>
+       <a href="about.html">
+         <i class='bx bx-info-circle'></i>
+         <span class="links_name">Perihal</span>
+       </a>
+       <span class="tooltip">Perihal</span>
+     </li>
+     <li>
+     <li>
+       <a href="client.html">
+         <i class='bx bxs-user-circle'></i>
+         <span class="links_name">Pelanggan</span>
+       </a>
+       <span class="tooltip">Pelanggan</span>
+     </li>
+     <li>
+     <li>
+       <a href="documentation.html">
+         <i class='bx bxs-info-circle'></i>
+         <span class="links_name">Dokumentasi</span>
+       </a>
+       <span class="tooltip">Dokumentasi</span>
+     </li>
+     <li>
+       <a href="app.html">
+        <i class='bx bx-log-in'></i>
+         <span class="links_name">Apl Web</span>
+       </a>
+       <span class="tooltip">Apl Web</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+  
+<br>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+<h1>Komuniti</h1>
+     <p>Selamat datang ke Komuniti JstMStudio! JstMStudio mempunyai banyak komuniti rasmi merentas pelbagai jenis platform tapak web seperti Revolt.chat dan Guilded. Komuniti JstMStudio kini diselenggara dengan baik dan dikendalikan oleh pakar pasukan dan pada masa ini untuk semua pengguna, pelanggan dan peminat kami.<br><br>Komuniti JstMStudio ialah tempat untuk semua orang dan pengguna JstMStudio berkumpul dan melepak serta untuk pengguna untuk meminta sokongan, melaporkan pepijat dan memberi maklum balas. </p>
+     <hr>
+     <h2>Pemberontakan</h2>
+     <p>JstMStudio kini mengendalikan dan menyelenggara pelayan rasmi pasukan pada pelayan Revolt kami. Pengguna boleh menyertai pelayan JstMStudio Revolt untuk menyertai hangout komuniti kami, meminta sokongan, memberi maklum balas, melaporkan pepijat dan berbual dengan kakitangan. Anda juga boleh mendapatkan pengumuman rasmi JstMStudio juga. Anda boleh menyertai <a href="https://app.revolt.chat/invite/cPgxVqY4" style="color:red;">pelayan Revolt kami di sini</a>.</p>
+     <hr>
+     <h2>Bersatu</h2>
+     <p>JstMStudio juga mengendalikan dan menyelenggara pelayan Bersatu rasmi juga. Pengguna boleh menyertai pelayan JstMStudio Guilded untuk menyertai hangout komuniti kami, meminta sokongan, membuat tiket, memberi maklum balas, melaporkan pepijat, berbincang dengan pasukan. Anda juga boleh mendapatkan pengumuman rasmi JstMStudio juga.</p>
+    <iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2FWErNJm8E&size=large" width="553" height="262" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+  <div class="overlay-content">
+<h1>Derma</h1>
+     <p>JstMStudio dibiayai melalui banyak kaedah dan cara, dengan yang paling biasa daripada derma dan selepas itu, hasil iklan daripada halaman iklan kami. Pada masa ini kami tidak menjual mana-mana dan semua data pengguna asas yang kami kumpulkan untuk menyelenggara tapak web jadi derma adalah jalan untuk hasil untuk pasukan, sebaliknya ia adalah $1 atau $5, ia masih sangat penting bagi kami. Setiap satu sen akan digunakan dalam pasukan secara langsung atau tidak langsung.
+     <hr>
+     <h2>Beli Saya Kopi</h2>
+     <p>JstMStudio pada masa ini mempunyai halaman Beli Saya Kopi untuk semua orang memilih untuk menderma kami secara bulanan atau sekali sahaja. Anda juga boleh meninggalkan kami mesej awam juga di halaman kami juga. Buy Me A Coffee pada masa ini mengenakan yuran 5% untuk setiap sumbangan jadi kami hanya menerima 95% daripada semua sumbangan dan keahlian bulanan. Halaman ini dimiliki oleh Jst Tan, Ketua Pegawai Eksekutif dan pemegang saham JstMStudio. </p>
+     <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="jestonjst" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Beli saya minuman" data-outline-color="#000000" data-font-color="#000000 " data-coffee-color="#ffffff" ></script>
+     <br>
+     <hr>
+     <h2>Ko-Fi</h2>
+     <p>JstMStudio juga pada masa ini mengendalikan halaman Ko-Fi untuk semua orang memilih untuk menderma kami secara bulanan atau melalui derma bulanan di Ko-Fi juga. Anda boleh meninggalkan mesej awam kepada kami di halaman Ko-Fi kami juga. Ko-Fi pada masa ini mengenakan yuran 5% untuk setiap derma bulanan jadi kami hanya menerima 95% daripada semua keahlian bulanan manakala ia adalah 100% derma sepenuh masa. Halaman ini dimiliki oleh Jst Tan, Ketua Pegawai Eksekutif dan pemegang saham JstMStudio.</p>
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#28e059', 'R6R8BLGHG');kofiwidget2.draw();</script> 
+  </div>
+</div>
+
+<div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+  <div class="overlay-content">
+<h1>Projek</h1>
+<p>JstMStudio pada masa ini mempunyai banyak projek yang dibangunkan oleh semua pasukan anak kami. Semua projek kami kini diselenggara secara aktif oleh pasukan anak masing-masing. Untuk setiap dan semua projek kami, sila klik pada butang di bawah untuk projek khusus mengetahui lebih lanjut mengenainya. Semua projek di sini dihasilkan secara eksklusif oleh JstMStudio dan dibiayai daripada semua aliran hasil studio seperti penjualan buku, derma dan banyak lagi.</p>
+<br>
+<a href="teenager-heroes.html"><button class="button"><span>Wira Remaja </span></button></a>
+<a href="app.html#infohq"><button class="button"><span>InfoHQ </span></button></a>
+<a href="app.html"><button class="button"><span>Platform JstMStudio </span></button></a>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay-content">
+<h1>Berita</h1>
+     <p>Selamat datang ke berita JstMStudio! Tempat berita untuk mendapatkan semua berita seperti pengumuman, kemas kini dan lain-lain JstMStudio. Dapatkan semua berita rasmi terkini JstMStudio di sini.</p>
+    <hr>
+  </div>
+</div>
+
+<div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay-content">
+<h1>Pasukan</h1>
+     <p>JstMStudio pada masa ini mempunyai banyak pasukan kanak-kanak. Pasukan anak utama semasa kami ialah pasukan Pembangunan Web kami. JstMStudio kini mempunyai dua pasukan kanak-kanak, Pembangunan Web dan Studio Animasi.</p>
+     <br>
+     <hr>
+     <br>
+     <div style="color: green;">
+     <h2>Pembangunan Web</h2>
+     <p>Pasukan Pembangun JstMStudio dimiliki dan diselenggara sepenuhnya oleh JstMStudio. Pasukan Pembangun JstMStudio ialah anak syarikat JstMStudio. Pasukan Pembangun JstMStudio mencipta tapak web, apl, perisian dan permainan untuk pelanggan dan pelanggan kami dengan beberapa untuk pasukan utama kami, JstMStudio.</p>
+     <h3>Perkhidmatan</h3>
+     <ul style="text-align:center;">
+     <li>Pembangunan Laman Web</li>
+     <li>Penyelenggaraan Laman Web</li>
+     <li>Pengiklanan</li>
+     </ul>
+     <br>
+     <h3>Berfungsi</h3>
+     <ul style="text-align:center;">
+     <li>InfoHQ</li>
+     <li>Sekolah Pengekodan</li>
+     <li>Apl JstMStudio</li>
+     </ul>
+     <br>
+     <h3>Kakitangan</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan ialah pengasas, CEO JstMStudio. Jst Tan ialah pembangun utama JstMStudio. Jst Tan ialah pembangun web 2 tahun berpengalaman sejak 2020. Jst Tan ialah pembangun utama di sebalik semua tapak web dan perisian JstMStudio.</li>
+     </ul>
+     </div>
+     <br>
+     <hr>
+     <br>
+     <div style="color: blue;">
+     <h2>Studio Animasi</h2>
+     <p>Studio Animasi JstMStudio dimiliki dan diselenggara sepenuhnya oleh JstMStudio. JstMStudio Animation Studio ialah anak syarikat JstMStudio. JstMStudio Animation Studio menyediakan banyak perkhidmatan kepada pelanggan dan pelanggan kami. JstMStudio Animation Studio juga menawarkan harga yang lebih rendah berbanding syarikat pengeluaran lain supaya pelanggan dan pelanggan kami dapat mengurangkan kos dengan menggunakan perkhidmatan kami.</p>
+     <h3>Perkhidmatan</h3>
+     <ul style="text-align:center;">
+     <li>Mereka Logo</li>
+     <li>Reka Bentuk Poster</li>
+     <li>Menulis Catatan</li>
+     </ul>
+     <br>
+     <h3>Berfungsi</h3>
+     <ul style="text-align:center;">
+     <li>Wira Remaja</li>
+     </ul>
+     <br>
+     <h3>Kakitangan</h3>
+     <ul style="text-align:center;">
+     <li><strong>Jst Tan</strong><br>Jst Tan ialah pengasas, CEO JstMStudio. Jst Tan ialah penulis cerita dan editor video dalam JstMStudio. Jst Tan juga pencipta dan penulis eksekutif siri buku Wira Remaja. </li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay-content">
+<h1>Muat turun Apl</h1>
+     <p>Selamat datang ke halaman Muat Turun Apl JstMStudio. Pada masa ini kami menyediakan berbilang apl merentas berbilang platform supaya pengguna boleh memuat turun apl kami ke peranti mereka secara setempat. </p>
+    <br>
+    <hr>
+    <br>
+    <h2>Windows</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Mac</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Linux</h2>
+    <a href="https://github.com/JstMStudio/Desktop-App/archive/refs/heads/1.0.0.zip"><button class="button"><span>Download (ZIP) </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>Android</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h2>IOS</h2>
+    <a href="https://en.jstmstudio.tk"><button class="button"><span>Open PWA </span></button></a>
+  </div>
+</div>
+
+<div id="myNav6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav6()">&times;</a>
+  <div class="overlay-content">
+<h1>Rakan Kongsi</h1>
+     <p>Program Rakan Kongsi JstMStudio ialah program rakan kongsi rasmi JstMStudio. Satu program yang mana pasukan bekerjasama dengan individu dan syarikat dari seluruh dunia. Satu program yang ahli mewakili pasukan. Program Rakan Kongsi JstMStudio tersedia untuk semua orang memohon. Program Rakan Kongsi JstMStudio ialah program yang menjadikan pasukan lebih dekat dan mesra dengan komuniti rasmi dan peminat kami.</p>
+<br>
+<button type="button" class="collapsible2">Keperluan <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+<p>Program Rakan Kongsi JstMStudio mempunyai beberapa keperluan asas pada masa ini. Semua keperluan yang disenaraikan di sini dikuatkuasakan dengan ketat dan anda dikehendaki memenuhi semua keperluan ini sebelum memohon atau menyertai Program Rakan Kongsi JstMStudio. Semua keperluan kami disenaraikan di bawah:</p>
+<ul>
+     <li>Mempunyai sekurang-kurangnya 100 pengikut di salah satu media sosial anda. </li>
+     <li>Aktif di media sosial 1++ pengikut anda. </li>
+     <li>Anda mesti menerima dan mematuhi Garis Panduan Komuniti dan Syarat Perkhidmatan kami. </li>
+     <li>Aktif dalam komuniti rasmi kami. </li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Faedah <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>Dengan memohon dan menyertai Program Rakan Kongsi JstMStudio, kami menyediakan pelbagai faedah untuk setiap rakan kongsi JstMStudio. Kami berterima kasih kepada setiap rakan kongsi kerana menyertai program kami dan kami telah memberikan banyak manfaat untuk rakan kongsi kami. Kami akan menambah lebih banyak faedah untuk menyertai Program Rakan Kongsi kami dalam masa terdekat juga. Semua faedah disenaraikan di bawah:</p>
+<ul>
+     <li>Sokongan Keutamaan</li>
+     <li>Seruan yang kerap</li>
+   <li>Penyenaraian Khas</li>
+   <li>Dan banyak lagi!</li>
+</ul>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Gunakan <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>Program Rakan Kongsi JstMStudio ialah program rakan kongsi yang JstMStudio bekerjasama dengan individu atau pasukan. Ia kini dibuka untuk semua orang mendaftar. Jika anda berminat dengan Program Rakan Kongsi JstMStudio, dan memenuhi semua keperluan dan bersetuju menerima semua syarat Program Rakan Kongsi JstMStudio, anda boleh memohon Program Rakan Kongsi JstMStudio dengan mengisi Borang Google yang disediakan di bawah. Setiap permohonan untuk Program Rakan Kongsi JstMStudio disemak mengikut kes demi kes oleh JstMStudio. Sila ambil perhatian bahawa kakitangan kami mempunyai hak untuk meluluskan atau menolak sebarang permohonan untuk Program Rakan Kongsi kami tanpa sebab sama sekali.</p>
+   <br><br>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBPTvkmrfmuCC4f4JnzmMSQ27xS0lY5sFrGUbLAcuwNVnRWA/viewform?embedded=true" width="100%" height="1930" marginheightborder="0" marginwidth="0">Memuatkan…</iframe>
+</div>
+<br><br>
+<button type="button" class="collapsible2">Senarai <i class='bx bxs-caret-down-circle'></i></button>
+<div class="content2">
+   <p>Selamat datang ke senarai semua rakan kongsi JstMStudio! Tempat untuk mengetahui lebih lanjut tentang setiap dan semua Rakan Kongsi JstMStudio. Tempat untuk mendapatkan semua rakan kongsi JstMStudio.</p><br>
+<input type="text" id="myInput" onkeyup="myFunction5()" placeholder="Cari rakan kongsi" title="Taipkan nama">
+<ul id="myUL">
+  
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p></div></li>
+  
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p></div></li>
+</ul>
+<br>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+  </div>
+</div>
+
+<div id="myNav7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav7()">&times;</a>
+  <div class="overlay-content">
+    <h1>Status Laman Web</h1>
+    <br>
+    <iframe src="https://status.jstmstudio.tk" style="width:100%;height:2890px;"></iframe>
+  </div>
+</div>
+
+<div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div class="overlay-content">
+<h1>Kedai</h1>
+     <p>JstMStudio ialah sebuah pasukan kecil yang berpangkalan di Malaysia. JstMStudio tertumpu dalam banyak perkara daripada pembangunan laman web kepada penulisan cerita. JstMStudio diasaskan daripada sekumpulan rakan muda yang berminat dalam teknologi.</p>
+     <br>
+     <br>
+     <hr>
+     <br>
+     <h1>Perkhidmatan</h1>
+   <p>JstMStudio menyediakan pelbagai perkhidmatan pada masa ini. Ada yang disediakan secara percuma manakala ada yang dibayar mengikut perancangan anda bersama kami. Semua perkhidmatan yang disediakan oleh JstMStudio termasuk dalam pelan premium. Kami akan menambah lebih banyak perkhidmatan pada rancangan kami pada masa hadapan juga.</p>
+   <br>
+<hr style="width:80%;margin:auto;">
+<br>
+   <h2>Reka Bentuk & Pembangunan Web</h2>
+   <p>Kami menyediakan perkhidmatan pembangunan web dalam semua rancangan kami. Kami akan membina laman web anda untuk anda dengan pilihan anda. Kami tidak menggunakan Wordpress atau mana-mana pembina tapak untuk membina mana-mana tapak web kami. Semua kod ditulis tangan oleh kami mengikut pilihan anda.<br><br>Kami juga menawarkan pengeditan dan perubahan tanpa had pada tapak web anda. Kami akan menyesuaikannya dengan perubahan tanpa had untuk disesuaikan dengan pilihan anda dan keperluan anda tidak kira rancangan yang anda pilih.</p>
+   <br>
+<hr style="width:80%;margin:auto;">
+<br>
+   <h2>Pengurusan Profil Perniagaan</h2>
+   <p>Kami juga membantu anda mengurus profil perniagaan Google, Yahoo dan Bing anda untuk memastikannya dikemas kini dengan keperluan dan keutamaan anda. Kami juga akan memberikan sokongan untuk segala-galanya pada profil perniagaan tersebut juga. Kami juga akan melakukan kemas kini bulanan seperti siaran dan lain-lain juga bergantung pada rancangan anda.</p>
+     <br>
+<hr style="width:80%;margin:auto;">
+<br>
+    <h2>Program Kursus</h2>
+    <p>Kursus JstMStudio ialah program kursus berbayar berkualiti tinggi pelbagai jenis yang ditawarkan oleh JstMStudio untuk pelajar menghadiri kursus dan mempelajari perkara yang menarik minat mereka untuk sebahagian kecil daripada harga daripada pesaing kami. Semua kursus yang disediakan adalah berkualiti tinggi untuk pelanggan kami.
+<p>Kami menyediakan pelbagai jenis kursus daripada pelbagai indistri seperti pengaturcaraan dan banyak lagi. Anda boleh menyemak semua kursus di bawah. Lebih banyak kursus akan ditambah tidak lama lagi. Semua kursus dikenakan yuran sekali sahaja oleh JstMStudio untuk akses seumur hidup dan kemas kini kursus tertentu. Yuran hanya akan memberi anda akses seumur hidup kepada kursus yang anda bayar. </p>
+    <br>
+    <hr>
+    <br>
+    <h2>Direktori Item</h2>
+    <p></p>
+    <br>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari item!" title="Taipkan nama">
+<ul id="myUL">
+<li><button type="button" class="collapsible">Penghosan Halaman Github</button>
+<div class="content">
+<p>JstMStudio menyediakan pengehosan percuma untuk semua orang termasuk pembangun di dunia melalui Pengehosan JstMStudio. Pengguna boleh meminta tapak pengehosan percuma dengan JstMStudio.</p>
+<ul style="text-align:left;">
+<li><strong>PERCUMA</strong></li>
+<li>Lebar Jalur 10GB</li>
+     <li>Storan 1GB</li>
+     <li>Storan sandaran 500MB percuma</li>
+     <li>Sokongan Teknikal Percuma</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Penghosan Vercel</button>
+<div class="content">
+<p>JstMStudio pada masa ini menyediakan pengehosan percuma untuk semua orang di dunia untuk mengehoskan tapak web mereka menggunakan perkhidmatan kami. Pelan ini termasuk pengehosan di Vercel. </p>
+<ul style="text-align:left;">
+<li><strong>PERCUMA</strong></li>
+<li>5GB Lebar Jalur</li>
+<li>Storan 1GB</li>
+<li>Storan sandaran 500MB percuma</li>
+<li>Sokongan Teknikal Percuma</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Penghosan Premium</button>
+<div class="content">
+<p>JstMStudio menawarkan pengehosan percuma untuk semua orang mengehos tapak web mereka secara percuma menggunakan pengehosan kami. Pengehosan Premium ialah jenis pelan pengehosan khas yang memerlukan kelulusan daripada JstMStudio untuk menyertai dan menggunakan.</p>
+<ul style="text-align:left;">
+<li><strong>PERCUMA</strong></li>
+<li>Storan 1GB</li>
+<li>Lebar Jalur 100GB</li>
+<li>500MB Storan Sandaran</li>
+<li>Sokongan Teknikal Percuma</li>
+<li>Tab Isu Percuma</li>
+<li>Tab Perbincangan Percuma</li>
+<li>Tab Projek Percuma</li>
+<li>Wiki Percuma</li>
+<li>Wawasan Percuma</li>
+<li>Domain Tersuai Disokong</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Tema</button>
+<div class="content">
+<p>JstMStudio menjual konfigurasi tema untuk pelanggan dan pengguna kami. Konfigurasi Tema JstMStudio membenarkan pengguna pelanggan menukar tema halaman web kepada warna yang mereka suka. Pada masa ini kami menyediakan 9 konfigurasi dalam bahan ini.</p>
+<ul>
+<li style="text-align:left;">Harga: $30</li>
+<li style="text-align:left;">Masa Penghantaran: 48 jam</li>
+<li style="text-align:left;"><a href="materials/themes.html" style="color:yellow;">Demo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Butang Hiperpautan Warna Beranimasi</button>
+<div class="content">
+   <p>JstMStudio juga menjual butang hiperpautan yang mengandungi perubahan warna dan animasi unik semasa tuding di atas butang. Pelanggan boleh menambah ini pada hiperpautan tapak web mereka dengan hanya $20. </p>
+   <ul>
+   <li style="text-align:left;">Harga: $20</li>
+<li style="text-align:left;">Masa Penghantaran: 48 jam</li>
+<li style="text-align:left;"><a href="materials/animated-color-hyperlink-button.html" style="color:yellow;">Demo</a></li>
+</ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Penapis Carian Dengan Penerangan</button>
+<div class="content">
+   <p>JstMStudio menjual penapis carian daripada senarai item yang mengandungi penerangan untuk setiap dan semua item dalam keseluruhan senarai. Penapis carian JstMStudio hanya mencari nama atau tajuk untuk item menjadikannya lebih tepat. Anda boleh memilikinya di tapak web anda dengan hanya $20.</p>
+   <ul style="text-align:left;">
+     <li style="text-align:left;">Harga: $20</li>
+<li style="text-align:left;">Masa Penghantaran: 48 jam</li>
+<li style="text-align:left;"><a href="materials/search-filter-with-description.html" style="color:yellow;">Demo</a></li>
+   </ul>
+<br>
+</div></li>
+<li><button type="button" class="collapsible">Tapak Web Asas</button>
+<div class="content">
+<p>JstMStudio pada masa ini menawarkan tapak web asas dengan 5 halaman dengan bayaran sekali sebanyak <strong>$60</strong>. Laman web asas JstMStudio akan datang dengan penyesuaian dan perubahan tanpa had percuma sebelum membeli dan sokongan 1 bulan percuma untuk semua perkara selepas tapak web dibeli. </p>
+<ul style="text-align:left;">
+<li>$60 (Bayaran Sekali)</li>
+<li>5 Halaman</li>
+<li>Sokongan Percuma (1 bulan)</li>
+<li>Penyesuaian Percuma</li>
+<li>Perubahan Tanpa Had</li>
+</ul>
+</div></li>
+<li><button type="button" class="collapsible">Tapak Web Premium</button>
+<div class="content">
+<p>JstMStudio pada masa ini menawarkan tapak web premium dengan 5 halaman untuk yuran bulanan sebanyak <strong>$100</strong>. Laman web premium JstMStudio akan datang dengan pengehosan yang disediakan dan diselenggara untuk anda, kemas kini penyelenggaraan seumur hidup tanpa had, perkhidmatan sokongan percuma untuk anda dan storan 5GB untuk anda dengan sandaran 1GB. </p>
+<ul style="text-align:left;">
+<li>$100 / bulan</li>
+<li>5 halaman</li>
+<li>Termasuk Pengehosan</li>
+<li>Kemas Kini Penyelenggaraan Sepanjang Hayat Tanpa Had</li>
+<li>Sokongan Percuma</li>
+<li>Storan 5GB (Sandaran 1GB)</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Iklan Surat Berita</button>
+<div class="content">
+<p>Iklan Surat Berita JstMStudio ialah iklan yang akan dipaparkan pada surat berita yang dihantar kepada semua pelanggan surat berita. Iklan anda akan tersedia terus dalam peti mel mereka. Iklan Surat Berita JstMStudio berharga $50 untuk setiap e-mel baharu (tidak kira berapa ramai pelanggan). </p>
+<ul style="text-align:left;">
+<li>$50</li>
+<li>Kekal</li>
+<li>Iklan Surat Berita</li>
+<li>Paparan dalam E-mel</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Iklan Paparan</button>
+<div class="content">
+<p>Iklan Paparan JstMStudio ialah sejenis iklan yang dipaparkan pada tapak web dan apl web, yang boleh menjangkau khalayak pada desktop, komputer riba dan telefon mudah alih. Iklan jenis ini akan berharga $100 untuk setiap 1000 ribu tontonan.</p>
+<ul style="text-align:left;">
+<li>$100 / 1k tontonan</li>
+<li>1000 Paparan</li>
+<li>Iklan Paparan</li>
+<li>Foto Sahaja</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Iklan Mudah Alih</button>
+<div class="content">
+<p>Iklan Mudah Alih JstMStudio ialah sejenis iklan yang dipaparkan pada telefon mudah alih melalui aplikasi mudah alih pada Android, Apple dan sistem pengendalian lain. Dengan format iklan ini, anda boleh menjangkau pelanggan secara terus pada telefon mereka. Setiap 1000 tontonan akan berharga $200 dan semua fail media disokong.</p>
+<ul style="text-align:left;">
+<li>$200 / 1k tontonan</li>
+<li>1000 Paparan</li>
+<li>Iklan Mudah Alih</li>
+<li>Semua Fail Media Disokong</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Iklan Video</button>
+<div class="content">
+<p>Iklan Video JstMStudio ialah sejenis iklan yang dipaparkan dan dimainkan dalam format video, dengan atau tanpa bunyi. Setiap 1k tontonan iklan video anda akan berharga $150. Format iklan ini dikehendaki berada dalam video sahaja.</p>
+<ul style="text-align:left;">
+<li>$150 / 1K paparan</li>
+       <li>1000 paparan</li>
+       <li>Iklan Video</li>
+       <li>Paparan dalam Video</li>
+       <li>Video sahaja</li>
+</ul>
+</div></li>
+
+<li><button type="button" class="collapsible">Bermula kepada HTML (Kursus)</button>
+<div class="content">
+<p>Set kursus ini akan mengajar pelajar kali pertama untuk memulakan pengekodan dalam HTML5, versi terkini HTML. Kursus ini dalam jumlah kos <strong>$20</strong> untuk 4 kursus. </p>
+<ul style="text-align:left;">
+<li>Memperkenalkan HTML</li>
+       <li>Format HTML</li>
+       <li>Editor untuk HTML</li>
+       <li>Elemen HTML</li>
+</ul>
+</div></li>
+
+</ul>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+  </div>
+</div>
+
+<div id="myNav9" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav9()">&times;</a>
+  <div class="overlay-content">
+<h1>Syarat</h1>
+<p>Selamat datang ke JstMStudio! Anda kini berada di halaman syarat JstMStudio, yang mengandungi syarat perkhidmatan, dasar privasi dan garis panduan komuniti kami. Anda dikehendaki memahami dan bersetuju dengan setiap dan semua perkhidmatan kami untuk menggunakan perkhidmatan dan tapak web kami. Semua syarat yang disediakan dan disenaraikan di sini digunakan untuk setiap dan semua tapak web, apl, permainan dan lain-lain kami. Syarat ini juga dikuatkuasakan dengan ketat.</p>
+<p>Kami sentiasa bersedia untuk menaik taraf dan membuat perubahan pada perisian, apl, tapak web dan permainan kami. Syarat-syarat yang diberikan di sini adalah tertakluk kepada perubahan lebih masa untuk mengikuti perkembangan terkini perisian, apl, tapak web dan permainan kami, tanpa sebarang notis jika perlu walaupun kami biasanya akan melakukannya dengan notis awal 7 hari.</p>
+<li>Terakhir dikemas kini: 3 September 2022</li>
+<li>Tarikh Berkuatkuasa: 18 September 2022</li>
+<h2>Pengenalan</h2>
+<p>JstMStudio ialah pasukan indie kecil, yang memberi tumpuan terutamanya dalam banyak perkara, daripada penulisan cerita sehingga pembangunan web. Kami terutamanya membangunkan laman web dan projek. Kami ingin membina tapak web mesra privasi masa hadapan yang lebih baik untuk semua orang.</p>
+<h2>Hubungi Kami</h2>
+<p>Sila hubungi kami jika anda mempunyai sebarang soalan tambahan atau memerlukan maklumat lanjut tentang syarat, tapak web, apl, perisian, permainan, projek dan pasukan kami. Walaupun kami sentiasa sibuk, kami akan cuba sedaya upaya untuk membalas anda secepat mungkin. Sila hubungi kami terus melalui e-mel rasmi kami (<a href="mailto:jstmstudio@gmail.com">jstmstudio@gmail.com</a>).
+<br>
+<hr>
+<br>
+<h1>Syarat Perkhidmatan</h1>
+<p>Selamat datang ke Syarat Perkhidmatan JstMStudio! Semua istilah yang disenaraikan di sini digunakan untuk semua projek dan tapak web kami. Syarat-syarat ini ditetapkan mengenai kewajipan undang-undang kami antara satu sama lain dan sila ambil perhatian serius. JstMStudio disediakan 'seadanya' tanpa waranti atau liabiliti untuk sebarang hasil penggunaan perkhidmatan kami.</p>
+<h3>Takrif</h3>
+<ul style="text-align:left;">
+   <li>Syarat: Semua syarat ini di dalam Syarat Perkhidmatan kami</li>
+   <li>ANDA: Kami maksudkan anda, pengguna perkhidmatan dan tapak web kami.</li>
+   <li>JstMStudio: Pasukan (kami, kami, kami, tapak web, perkhidmatan)</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Akaun</h2>
+   <p>Apabila anda mendaftar untuk akaun dengan kami, anda bertanggungjawab untuk semua aktiviti pada akaun anda sama ada pada perkhidmatan kami atau dalam perkhidmatan pihak ketiga. Anda dikehendaki merahsiakan maklumat akaun anda tetapi tidak terhad untuk mengakses akaun anda melalui peranti anda. Anda mesti memberitahu kami tanpa 48 jam selepas mengetahui sebarang pelanggaran keselamatan atau sebarang penggunaan tanpa kebenaran akaun anda. Anda bersetuju untuk tidak menjual, memindahkan atau melesenkan akaun anda tanpa kebenaran bertulis kami.</p>
+
+   <p>Dengan mendaftar untuk akaun di perkhidmatan dan tapak web kami, anda <strong>DIWAJIBKAN</strong> berumur sekurang-kurangnya <strong>13 tahun</strong> atau melebihi umur minimum persetujuan digital di negara anda . Jika anda menggunakan atau melawati tapak web kami di bawah umur minimum, ia melanggar syarat kami dan undang-undang negara anda secara langsung. Jika anda mendapat kebenaran ibu bapa dan dengan ibu bapa anda menjejaki semua aktiviti dalam talian anda dengan ketat, anda dikehendaki berumur sekurang-kurangnya 7 tahun untuk menggunakan perkhidmatan kami juga.</p>
+
+   <p>Sebagai penyelenggara perkhidmatan, One Future Unified Tea, juga mempunyai hak untuk menamatkan atau melumpuhkan akses anda ke tapak web dan perkhidmatan kami serta-merta, tanpa notis atau liabiliti awal dan dengan atau tanpa sebarang sebab yang diberikan, termasuk tetapi tidak terhad kepada pelanggaran Syarat Perkhidmatan dan Garis Panduan Komuniti. Hak ini diberikan untuk memastikan tapak kami selamat dan terjamin.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Kandungan</h2>
+<p>Tapak web dan perkhidmatan kami membolehkan anda berkongsi video/buku/muzik/seni, ulasan, ulasan, sembang dan lain-lain. Oleh itu, anda bertanggungjawab ke atas semua kandungan yang anda kongsi dan muat naik melalui tapak web dan perkhidmatan kami. Anda dikehendaki mempunyai hak untuk berkongsi kandungan yang anda kongsi dan tidak bercanggah dengan mana-mana hak cipta yang lain. Semua kandungan pengguna yang dimuat naik dan dikongsi dilesenkan di bawah Creative Commons CC BY-NC-SA 3.0. Anda tidak dibenarkan berkongsi kandungan yang kami tidak boleh dan tidak membenarkan sebarang kandungan yang menyalahi undang-undang dikongsi melalui tapak web dan komuniti kami. Semua kandungan haram dilarang untuk dikongsi di sini. Semua kandungan yang disenaraikan di bawah pada masa ini tidak dibenarkan:</p>
+<ul style="text-align:left;">
+   <li>Dadah</li>
+   <li>Senjata</li>
+   <li>Penyelesaian, pemecahan atau pengedaran perisian cetak rompak</li>
+   <li>Tipu</li>
+   <li>Eksploitasi atau penggodaman</li>
+   <li>Virus</li>
+   <li>Penggunaan Item Hak Cipta Tanpa Kebenaran</li>
+   <li>Jantina</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Tapak Web Terpaut</h2>
+<p>Kami mungkin memautkan ke tapak lain yang kami tidak kawal atau dikendalikan oleh pasukan yang mungkin tersedia dan disenaraikan dalam tapak web kami. Apabila anda memasukkan pautan tapak pihak ketiga, anda akan diubah hala ke perkhidmatan dan tapak web pihak ketiga. Kami amat menasihatkan anda untuk membaca dasar privasi dan terma mereka sebelum menggunakan tapak web mereka. Kami tidak bertanggungjawab ke atas mana-mana kandungan mereka s, dasar privasi dan amalan di tapak web mereka yang bukan di bawah kawalan kami.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Hak Untuk Menggunakan Laman Web Kami</h2>
+<p>JstMStudio menyediakan berbilang perkhidmatan dan tapak web merentas semua projek kami. Kami membenarkan dan memberikan penggunaan anda kepada semua perkhidmatan kami merentas semua projek kami tetapi menggunakan perkhidmatan dan tapak web kami bukanlah hak. Kami dibenarkan untuk menghentikan, mengubah suai dan meneruskan projek dan perkhidmatan dengan atau tanpa notis atau persetujuan.</p>
+<p>JstMStudio mempunyai hak untuk melumpuhkan dan menafikan akses anda kepada mana-mana atau semua perkhidmatan kami dengan atau tanpa sebarang sebab. Tidak menghormati mana-mana ahli kakitangan kami mungkin menyebabkan akaun anda dilumpuhkan kerana tindakan anda melindungi semua kakitangan kami. Kakitangan JstMStudio ialah orang yang membuat, memberi kuasa, menyelenggara JstMStudio supaya mereka layak dihormati kerana kerja keras mereka dan kami ingin melindungi mereka daripada bahaya. Kami juga memegang hak untuk menafikan hak anda untuk menyertai mana-mana program kami yang dihoskan atau bekerjasama dengan kami.</p>
+<p>JstMStudio juga mempunyai hak untuk menamatkan tapak anda daripada perkhidmatan pengehosan kami pada bila-bila masa yang kami mahu dengan atau tanpa sebarang sebab, walaupun kami biasanya memberikan alasan. Kami berhak untuk menggantung perkhidmatan kami pada bila-bila masa tanpa atau dengan notis awal. </p>
+  
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Hak cipta</h2>
+<p>JstMStudio menghormati hak cipta setiap orang. Jika anda percaya bahawa kami atau seseorang melanggar hak cipta anda di tapak web, perisian, perkhidmatan kami dan anda dari AS, kami amat menggalakkan anda untuk memberitahu kami secepat mungkin. Kami akan mengalih keluar kandungan hak cipta secepat mungkin daripada tapak kami dan menjadikannya tidak tersedia kepada orang awam. Kami juga akan memberi amaran kepada pengguna kerana melanggar hak cipta dan mungkin menamatkan akses seseorang kepada perkhidmatan kami jika pelanggaran hak cipta berulang.</p>
+<p>Jika anda percaya ia adalah hak cipta palsu, sila hantarkan notis balas kepada kami, kami akan menghantar salinan kepada syarikat asal memberitahu mereka bahawa ia mungkin digantikan dengan kandungan yang dialih keluar atau melumpuhkannya dalam masa 14 hari. Melainkan pemilik hak cipta memfailkan tindakan untuk mendapatkan perintah mahkamah terhadap pembekal kandungan, ahli atau pengguna, kandungan yang dialih keluar boleh diganti atau akses kepadanya akan dipulihkan, dalam 14 hari perniagaan atau lebih selepas menerima notis balas. Untuk semua tujuan hak cipta, sila hubungi kami melalui e-mel.</p>
+<p>Kami juga tidak membenarkan sebarang kandungan dimuat naik ke tapak web kami dalam apa jua keadaan. Kami tidak membenarkan dan mengehoskan sebarang kandungan pelanggaran hak cipta di tapak kami. Semua hak cipta kandungan mesti diberikan kepada pencipta sebelum memuat naik ke tapak web dan pengehosan kami. Laman web yang dihoskan oleh kami tidak boleh mengandungi sebarang kandungan warez, hak cipta dan bahan yang menyalahi undang-undang termasuk pautan atau ubah hala ke bahan hak cipta yang dihoskan pada tapak web / sumber pihak ketiga. Kami tidak mengedarkan bahan hak cipta, fail atau warez dalam apa jua keadaan. Semua kandungan di tapak anda mesti mempunyai hak untuk menerbitkannya di tapak anda. </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Hak Harta</h2>
+<p>Semua hak, tajuk, nama, reka bentuk, minat, biasanya dikenali sebagai bahan perkhidmatan dimiliki oleh JstMStudio dan pemegang saham kami. Anda mengakui dan bersetuju bahawa anda tidak memperoleh hak pemilikan pada bila-bila masa anda mahu dengan memuat turun Bahan Perkhidmatan kami. Anda bersetuju bahawa anda tidak akan menjual mana-mana bahagian syarikat tanpa kebenaran kami dan harus mengikut lesen sumber terbuka kami. Anda juga bersetuju bahawa anda tidak menuntut sebarang pemilikan bahagian dengan menggunakan perkhidmatan kami atau dengan mengakses perkhidmatan kami di laman web kami. Semua hak adalah terpelihara kepada pasukan kami. Manakala untuk Teenager Heroes, ia kini dimiliki oleh Teenager Heroes creator, Jst Tan dan pasukan. Wira Remaja adalah semua hak terpelihara oleh pencipta dan penulis.</p>
+<br>
+<hr>
+<br>
+<h1>Dasar Privasi</h1>
+<p>Di JstMStudio, boleh diakses daripada tapak web, aplikasi, perisian dan projek kami, salah satu keutamaan utama kami ialah privasi pelawat dan pengguna kami. Dokumen Dasar Privasi ini mengandungi setiap jenis maklumat yang dikumpul dan direkodkan oleh JstMStudio dan cara kami menggunakannya.</p>
+
+<p>Dasar Privasi ini hanya terpakai pada aktiviti dalam talian kami seperti acara dan sah kepada pelawat dan pengguna kami di tapak web, apl dan perisian kami berkenaan dengan maklumat yang mereka kongsi dan/atau kumpulkan dalam JstMStudio. Dasar ini tidak terpakai pada sebarang maklumat yang dikumpul di luar talian atau melalui saluran selain tapak web ini.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Maklumat yang Kami Kumpul</h2>
+<p>Maklumat peribadi yang anda diminta berikan, dan sebab mengapa anda diminta untuk memberikannya kepada kami, akan dijelaskan kepada anda pada masa dan masa apabila kami meminta anda memberikan maklumat peribadi anda.</p >
+
+<p>Jika anda melawat kami, kami akan mengumpulkan lokasi anda, nama halaman, masa, negara, bandar, bahasa, jenis peranti, jenis penyemak imbas, IP dan ISP. Semua maklumat yang dikumpul tidak boleh dikenal pasti oleh anda.</p>
+
+<p>Jika anda menghubungi kami secara terus, kami mungkin menerima maklumat tambahan maklumat tentang anda seperti nama, alamat e-mel, nombor telefon, kandungan mesej dan/atau lampiran yang mungkin anda hantar kepada kami dan sebarang maklumat lain yang anda boleh pilih untuk berikan kepada kami.</p>
+
+<p>Apabila anda mendaftar untuk Akaun, kami mungkin meminta maklumat hubungan anda, termasuk item seperti nama, nama syarikat, alamat, alamat e-mel dan nombor telefon.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Cara Kami Menggunakan Maklumat</h2>
+<p>JstMStudio menggunakan maklumat yang kami kumpulkan dalam pelbagai cara sambil melindungi privasi pengguna, termasuk untuk:</p>
+<ul style="text-align:left;">
+<li>Menyediakan, mengendalikan dan menyelenggara tapak web dan perkhidmatan kami</li>
+<li>Tingkatkan, peribadikan dan kembangkan tapak web dan perkhidmatan kami</li>
+<li>Fahami dan analisis cara anda menggunakan tapak web dan perkhidmatan kami</li>
+<li>Membangunkan produk, perkhidmatan, ciri dan fungsi baharu</li>
+<li>Berkomunikasi dengan anda, sama ada secara langsung atau melalui salah satu rakan kongsi kami, termasuk untuk perkhidmatan pelanggan, untuk memberikan anda kemas kini dan maklumat lain yang berkaitan dengan tapak web dan perkhidmatan, dan untuk tujuan pemasaran dan promosi</li>
+<li>Hantar e-mel kepada anda untuk kemas kini dan lain-lain</li>
+<li>Cari dan cegah penipuan pada perkhidmatan dan tapak web kami</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Fail Log</h2>
+<p>JstMStudio mengikut prosedur standard menggunakan fail log. Fail ini merekodkan pelawat apabila mereka melawat tapak web, perisian, aplikasi dan perkhidmatan. Semua syarikat pengehosan, tidak kira pengehosan berbayar atau percuma melakukan ini dan merupakan sebahagian daripada analisis perkhidmatan pengehosan. Maklumat yang dikumpul oleh fail log termasuk alamat protokol Internet (IP), jenis pelayar, Pembekal Perkhidmatan Internet (ISP), cap tarikh dan masa, halaman rujukan/keluar, jenis peranti, lokasi dan mungkin bilangan klik. Ini tidak dikaitkan dengan sebarang maklumat yang boleh dikenal pasti secara peribadi. Tujuan maklumat adalah untuk menganalisis arah aliran, mentadbir tapak, menjejak pergerakan pengguna di tapak web, menjejak tapak web, perisian, penggunaan apl dan perkhidmatan serta mengumpul maklumat demografi.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Kuki dan Suar Web</h2>
+<p>Seperti mana-mana tapak web lain, JstMStudio juga menggunakan 'kuki'. Kuki ini digunakan untuk menyimpan maklumat termasuk keutamaan dan maklumat pelawat, dan halaman di tapak web yang diakses atau dilawati oleh pelawat. Ia juga akan meningkatkan kelajuan memuatkan tapak web dan perkhidmatan kami. Maklumat ini digunakan untuk mengoptimumkan pengalaman pengguna dengan menyesuaikan dan memperibadikan kandungan halaman web kami berdasarkan jenis pelayar pelawat dan/atau maklumat lain.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Rakan Kongsi Pengiklanan Kami</h2>
+<p>Sesetengah pengiklan di tapak web dan perkhidmatan kami mungkin menggunakan kuki dan suar web. Rakan kongsi pengiklanan kami disenaraikan di bawah. Setiap rakan kongsi pengiklanan kami mempunyai Dasar Privasi dan syarat mereka sendiri untuk dasar mereka mengenai data pengguna. Untuk akses yang lebih mudah, kami memaut kepada Dasar Privasi mereka di bawah untuk anda lawati dan memahami tentang syarat amalan mereka dengan data pengguna. Anda boleh merujuk senarai yang disediakan di bawah ini untuk mencari Dasar Privasi bagi setiap rakan kongsi pengiklanan JstMStudio.</p>
+<p>Pelayan iklan pihak ketiga atau rangkaian iklan menggunakan teknologi seperti kuki, JavaScript atau Web Beacon yang digunakan dalam iklan dan pautan masing-masing yang dipaparkan pada perkhidmatan dan tapak web JstMStudio, yang dihantar terus ke penyemak imbas pengguna. Mereka secara automatik menerima alamat IP anda apabila ini berlaku. Teknologi ini digunakan untuk mengukur keberkesanan kempen pengiklanan mereka dan/atau untuk memperibadikan kandungan pengiklanan yang anda lihat di tapak web yang anda lawati. Harap maklum bahawa JstMStudio tidak mempunyai akses atau kawalan ke atas kuki ini yang digunakan oleh pengiklan pihak ketiga.</p>
+<ul style="text-align:left;">
+<li><a href="https://propellerads.com/privacy/">Propellerads</a></li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Dasar Privasi Pihak Ketiga</h2>
+<p>Dasar Privasi JstMStudio tidak terpakai kepada pengiklan atau tapak web lain. Oleh itu, kami menasihatkan anda untuk merujuk Dasar Privasi masing-masing bagi pelayan iklan pihak ketiga ini untuk mendapatkan maklumat yang lebih terperinci. Ia mungkin termasuk amalan dan arahan mereka tentang cara menarik diri daripada pilihan tertentu.</p>
+
+<p>Anda boleh memilih untuk melumpuhkan kuki melalui pilihan penyemak imbas individu anda. Untuk mengetahui maklumat lebih terperinci tentang pengurusan kuki dengan penyemak imbas web tertentu, ia boleh didapati di tapak web penyemak imbas masing-masing.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Hak Privasi CCPA ( Jangan Jual Data Peribadi Saya )</h2>
+<p>Di bawah undang-undang CCPA dan antara hak lain, pengguna California pada masa ini mempunyai hak untuk:</p>
+<ul style="text-align:left;">
+<li>Meminta kami yang mengumpul data peribadi pengguna mendedahkan kategori dan bahagian khusus data peribadi yang telah dikumpulkan oleh perniagaan tentang pengguna.</li>
+
+<li>Minta kami memadamkan sebarang data peribadi tentang pengguna yang telah dikumpulkan oleh perniagaan. </li>
+</ul>
+<p>Jika anda membuat permintaan kepada JstMStudio, kami mempunyai satu bulan untuk membalas kepada anda. Jika anda ingin melaksanakan mana-mana hak yang diberikan kepada anda sebagai pengguna California, sila hubungi kami secara terus.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Hak Perlindungan Data GDPR</h2>
+<p>Jika anda berada dalam zon berkesan GDPR, JstMStudio ingin memastikan anda mengetahui sepenuhnya semua hak perlindungan data anda yang diberikan di zon EU. Setiap pengguna berhak mendapat hak perlindungan data berikut:</p>
+<ul style="text-align:left;">
+<li>Hak untuk mengakses – Anda mempunyai hak untuk meminta salinan data peribadi anda. Kami mungkin mengenakan sedikit bayaran kepada anda untuk perkhidmatan ini.</li>
+<li>Hak untuk pembetulan – Anda mempunyai hak untuk meminta kami membetulkan sebarang maklumat yang kami kumpulkan yang anda percaya adalah tidak tepat. Anda juga mempunyai hak untuk meminta kami melengkapkan maklumat yang anda percaya tidak lengkap.</li>
+<li>Hak untuk memadam – Anda mempunyai hak untuk meminta kami memadamkan data peribadi anda, di bawah syarat tertentu.</li>
+<li>Hak untuk menyekat pemprosesan – Anda mempunyai hak untuk meminta kami menyekat pemprosesan mana-mana dan semua data peribadi anda, di bawah syarat tertentu yang dibincangkan.</li>
+<li>Hak untuk membantah pemprosesan – Anda mempunyai hak untuk membantah pemprosesan kami bagi mana-mana dan semua data peribadi anda, di bawah syarat tertentu yang dibincangkan dengan anda.</li>
+<li>Hak untuk mudah alih data – Anda mempunyai hak untuk meminta kami memindahkan data yang telah kami kumpulkan ke organisasi lain, atau terus kepada anda, di bawah syarat tertentu.</li>
+</ul>
+<p>Jika anda membuat permintaan kepada pasukan, kami mempunyai masa sebulan untuk membalas anda. Jika anda ingin menggunakan mana-mana hak ini, sila hubungi kami secara terus.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Maklumat Kanak-kanak</h2>
+<p>Satu lagi bahagian keutamaan JstMStudio ialah menambah perlindungan untuk kanak-kanak semasa menggunakan internet yang luas pada masa kini. Kami menggalakkan ibu bapa dan penjaga untuk memerhati, mengambil bahagian dalam dan/atau memantau serta membimbing aktiviti dalam talian mereka.</p>
+<p>JstMStudio bertujuan untuk menyediakan internet kepada setiap orang dalam semua peringkat umur termasuk kanak-kanak di seluruh dunia. Jika anak anda menggunakan perkhidmatan dan tapak web kami, sila pantau aktiviti mereka. Jika anak anda berminat dengan perkhidmatan kami, sila minta anak anda menggunakan tapak web versi kanak-kanak kami yang dipantau oleh pasukan setiap hari dan jangan menjejaki data anak anda.</p>
+<p>JstMStudio tidak secara sengaja mengumpul sebarang Maklumat Pengenalan Peribadi daripada kanak-kanak di bawah umur 13 tahun. Jika anda berpendapat bahawa anak anda memberikan maklumat seperti ini di laman web kami, kami amat menggalakkan anda untuk menghubungi kami dengan segera dan kami akan melakukan usaha yang terbaik untuk segera mengalih keluar maklumat tersebut daripada rekod kami. Jika anda berminat dengan laman web dan perkhidmatan kami, sila hubungi kami dan berikan kebenaran ibu bapa anda untuk anak anda menggunakan perkhidmatan dan tapak web kami. Kami amat menasihati anda untuk memantau dan mengambil bahagian dalam aktiviti anak anda di tapak web dan perkhidmatan kami jika anda bersetuju untuk membenarkan anak anda menggunakan perkhidmatan kami.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Perkhidmatan Pihak Ketiga</h2>
+<p>Kecuali untuk perkhidmatan iklan, JstMStudio juga menggunakan beberapa perkhidmatan dan apl pihak ketiga di tapak web dan perkhidmatan kami. Semua pihak ketiga yang digunakan dalam tapak web kami disenaraikan di bawah.</p>
+<ul style="text-align:left;">
+<li>Analitis Google</li>
+<li>Google Drive</li>
+<li>Subtimbunan</li>
+<li>Kotak kotak</li>
+<li>Statcounter</li>
+<li>Cloudflare</li>
+<li>VideoSDK</li>
+</ul>
+<hr>
+<h1>Garis Panduan Komuniti</h1>
+<p>Selamat datang ke Garis Panduan Komuniti rasmi JstMStudio. Semua garis panduan perlu dipatuhi dan diikuti oleh semua orang dalam tapak web JstMStudio dan komuniti kami seperti ulasan, pelayan komuniti, sembang dan lain-lain. Semua orang dikehendaki bersetuju dengan garis panduan ini semasa menggunakan komuniti tapak web kami juga.</p>
+<p>Garis Panduan Komuniti JstMStudio adalah untuk memastikan tapak web dan komuniti kami selamat, bersih dan mesra keluarga untuk digunakan oleh semua orang di setiap bahagian dunia. Semua orang perlu bekerjasama untuk memastikan ia selamat dan bersih. Gagal mengikuti garis panduan ini mungkin mengakibatkan akaun anda dilumpuhkan atau diharamkan daripada rangkaian kami. Semua orang dikehendaki mematuhi garis panduan ini. </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Hormat</h2>
+<p>Sila beri penghormatan kepada setiap dan semua pengguna dalam komuniti JstMStudio. Setiap orang berhak mendapat layanan yang sama di dalam dan di luar komuniti JstMStudio. Kami tidak membenarkan mana-mana orang yang tidak dihormati dalam komuniti kami.</p>
+<ul style="text-align:left;">
+<li>Sila ada cara dalam komuniti kami.</li>
+<li>Tolong jangan membahayakan atau mengganggu sesiapa dalam komuniti kami.</li>
+<li>Jangan kongsi kandungan imejan yang termasuk keganasan dalam kehidupan sebenar, keganasan atau kekejaman haiwan, menggalakkan kecederaan diri atau bunuh diri.</li>
+<li>Jangan dox sesiapa dalam komuniti seperti berkongsi maklumat peribadi pengguna termasuk IP, nama sebenar, lokasi, kewarganegaraan dan lain-lain.</li>
+<li>Bahasa yang menyinggung perasaan seperti kata-kata buruk dan kutukan tidak dibenarkan dalam komuniti kami.</li><li>Jangan perkauman terhadap mana-mana orang Asia (khususnya CINA) atau Afrika dalam komuniti kami.</li>
+<li>Hormati privasi semua orang.</li>
+<li>Jangan paksa sesiapa untuk memberi anda maklumat privasi mereka di tapak web dan komuniti kami.</li>
+<li>Jangan troll sesiapa di tapak web kami.</li>
+<li>Hormati semua kakitangan kami.</li>
+<li>Bossy pada sesiapa sahaja dalam JstMStudio, internet atau dalam kehidupan sebenar tidak dibenarkan.</li>
+<li>Eksploitasi manusia tidak dibenarkan. </li>
+<li>Menyamar sebagai seseorang dalam komuniti kami atau mengaku sebagai seseorang yang bukan anda.</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Menyalahguna Kuasa</h2>
+<p>Penyalahgunaan Kuasa adalah satu kes yang ketat dan pada masa ini ia merupakan kes yang serius dalam internet sejak zaman awal komuniti. Kami sama sekali tidak membenarkan sebarang tindakan penyalahgunaan kuasa pada komuniti dan tapak web kami. Penyalahgunaan kuasa tidak digalakkan oleh pasukan adalah dilarang sama sekali pada komuniti, perkhidmatan dan tapak web kami. Penyalahgunaan kuasa termasuk:</p>
+<ul style="text-align:left;">
+<li>Mengancam untuk menendang atau mengharamkan ahli daripada kumpulan anda.</li>
+<li>Mengancam untuk berkongsi barangan pengguna kepada orang lain.</li>
+<li>Mengancam untuk memotong akses pengguna daripada sesuatu yang dibina pada tapak web kami.</li>
+<li>Mengambil kelebihan pengguna.</li>
+<li>Untuk 21-, mengugut untuk mengadu perkara kepada ibu bapa mereka semasa menggunakan platform kami adalah tidak dibenarkan.</li>
+</ul>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>PG18</h2>
+<p>JstMStudio tidak membenarkan kandungan PG18 dibincangkan, dimuat naik dan tersedia di tapak kami. Kami tidak membenarkan sebarang kandungan keganasan di tapak kami. Kami juga tidak membenarkan sebarang kandungan penipuan, keganasan, grafik dan bunuh diri di tapak web kami. Kami juga tidak membenarkan sebarang eksploitasi seksual kanak-kanak dan kandungan eksploitasi seksual dewasa juga. Kami juga tidak membenarkan sebarang kandungan ucapan benci juga. </p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Privasi</h2>
+<p>Privasi ialah salah satu nilai yang paling penting dalam JstMStudio. Dalam JstMStudio, kami akan menghormati privasi setiap orang dan hak cipta masing-masing jadi dalam platform kami, kami ingin menguatkuasakan bahawa privasi semua orang dihormati. Kami tidak membenarkan maklumat sulit peribadi lain dikongsi tanpa kebenaran bertulis mereka. Maklumat peribadi termasuk maklumat kewangan, kediaman dan perubatan, serta maklumat peribadi.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Kakitangan</h2>
+<p>Kakitangan JstMStudio ialah orang yang membuat, menjana kuasa, menyelenggara JstMStudio supaya mereka layak dihormati kerana kerja keras mereka dalam projek pasukan. Pasukan Kakitangan JstMStudio mempunyai kata putus untuk memastikan platform dan perisian kami selamat daripada pelakon jahat. Sila hormati setiap kakitangan kami tidak kira dari mana mereka berasal dan berapa umur mereka, semua orang adalah sama di sini. Mengancam, membuli, mendedahkan ahli kakitangan kami tidak dibenarkan di luar atau dalam perisian kami. Kakitangan kami mempunyai hak untuk melumpuhkan dan menafikan akses anda kepada perkhidmatan kami juga jika dirasakan terancam.</p>
+<br>
+<hr style="width:50%;margin:auto">
+<br>
+<h2>Pukulan</h2>
+<p>Jika anda telah dilaporkan oleh mana-mana pengguna dalam tapak web dan perisian kami, kami akan membuka tiket penyiasatan untuk menyiasat kes tersebut. Jika kami mendapati anda melanggar garis panduan komuniti ini, kami mungkin memberikan anda bantahan yang tidak dapat dipulihkan. Sebaik sahaja anda mencapai sehingga 5 bantahan, kami akan melumpuhkan akaun anda. Anda boleh merayu jika anda fikir kami tersilap memberi anda bantahan tetapi jangan cuba merayu jika anda benar-benar melanggar garis panduan kami, kami tidak membatalkan bantahan anda jika ia adalah rayuan palsu. Sila hubungi kami secara terus.</p>
+  </div>
+</div>
+
+<div id="myNav10" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav10()">&times;</a>
+  <div class="overlay-content">
+<h1>Profil</h1>
+       <p>Profil JstMStudio ialah tapak rangkaian sosial berasaskan web. Pengguna boleh membuat dan membaca siaran yang dibuat oleh pencipta kandungan dari seluruh dunia. Anda boleh menggunakan Profil JstMStudio secara percuma, dengan kurang sekatan dan yang paling penting, tanpa sebarang iklan juga.</p>
+       <p>Profil JstMStudio ialah sumber terbuka sepenuhnya untuk dipelajari dan dilihat oleh semua orang. Anda juga boleh menyumbang kepada projek itu juga. Ia kini dikodkan menggunakan HTML, CSS dan JavaScript dan dilesenkan di bawah MIT. Profil JstMStudio juga merupakan platform mesra privasi. Kami tidak berkongsi maklumat pengguna kepada mana-mana pihak ketiga dan kami cuba sedaya upaya untuk menjejaki seberapa sedikit data yang mungkin. Kami ingin mengembalikan pengguna ke tangan mereka sendiri.</p>
+       <p>Profil JstMStudio ialah tempat yang menghormati kebebasan bersuara semua orang. Jika anda boleh mempunyai kebebasan bersuara dalam kehidupan sebenar, anda juga harus memilikinya di internet supaya kami ingin mewujudkannya. Anda boleh menyiarkan tentang apa sahaja di sini kecuali bahan yang menyalahi undang-undang atau NSFW.</p>
+       <br>
+       <hr>
+       <br>
+         <h2>Carian Profil</h2>
+       <p>Selamat datang ke Carian Profil JstMStudio! Tempat untuk mencari profil dalam Profil JstMStudio. Tempat untuk mencari dan mengetahui lebih lanjut tentang setiap profil dalam JstMStudio. </p>
+       <br>
+       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari nama pengguna profil" title="Taipkan nama">
+<ul id="myUL">
+   <li><button type="button" class="collapsible2">Jst Tan</button>
+<div class="content2">
+   <iframe src="Profile/jst-tan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+<li><button type="button" class="collapsible2">Kipas Topeng PJ</button>
+<div class="content2">
+<iframe src="Profile/pj-masks-fan.html" style="width:100%;height:300px;"></iframe>
+</div></li>
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p>
+</div></li>
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p>
+</div></li>
+   <li><button type="button" class="collapsible2">Tiada</button>
+<div class="content2">
+   <p>Tiada</p>
+</div></li>
+</ul>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script>
+<br>
+<hr>
+<br>
+<h2>Daftar</h2>
+       <p>Semua orang kini boleh mendaftar untuk akaun penulis di Profil JstMStudio untuk membuat profil dan menulis siaran. Akaun penulis boleh mempunyai profil, mengedit profil mereka sendiri, membuat siaran, menggunakan pemalam pada siaran mereka dan lain-lain. Akaun penulis akan mempunyai kebebasan sepenuhnya pada profil dan siaran mereka juga. Jika anda berminat, anda boleh mendaftar dan memohon dengan mengisi borang di bawah, ia terbuka untuk semua. Dengan menyerahkan, semua permohonan akan disemak tanpa 7 hari perniagaan oleh ahli JstMStudio.</p>
+       <br>
+       <button class="button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdlaiVNGbMk8Rlfdz7zsUeXTD0gNuJ2VXEnjAyK9Ss8Rs4vrA/viewform?fbzx=6439158439516"style>color Di Atas Sini </span></a></button>
+  </div>
+</div>
+
+<h1><i class='bx bx-info-circle'></i> Mengenai Kami</h1>
+<p>JstMStudio ialah sebuah studio kecil yang diasaskan oleh Jst Tan. JstMStudio memberi tumpuan kepada banyak perkara, daripada muzik, penulisan cerita, pembangunan laman web dan banyak lagi. JstMStudio ialah studio indie terpencil kecil yang memfokuskan pada banyak perkara untuk membina masa depan yang lebih baik. </p>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-contact' ></i> Hubungi Kami</h2>
+<p>Tidak seperti Facebook, Google dan syarikat teknologi besar lain, kami terbuka untuk semua orang menghubungi kami untuk sebarang dan semua tujuan. Anda boleh menghubungi JstMStudio untuk pelbagai tujuan, seperti sokongan, maklum balas, laporan pepijat, cadangan, derma, tajaan, membeli produk atau perkhidmatan kami, mengetahui lebih lanjut tentang kami dan lain-lain. Tolong jangan hubungi kami untuk promosi dan spam melalui, kami tidak akan hantar sebarang balasan kepada e-mel yang tidak berkaitan dalam peti mel kami dan akan mengalihkannya ke spam secepat mungkin. Kami telah menyediakan senarai akaun media sosial untuk anda menghubungi kami melalui mana-mana media sosial melalui siaran kepada kami atau menghantar mesej terus kepada kami.</p>
+<br>
+<li><a href="https://www.facebook.com/jstmstudio"><i class='bx bxl-facebook-circle' ></i> Facebook</a><br>
+Facebook ialah platform media sosial utama semasa JstMStudio. Kami menyiarkan kandungan seperti pengumuman, kemas kini dan berita dalam halaman Facebook rasmi kami sekali-sekala. Anda juga boleh menghubungi kami secara terus melalui Facebook Messenger ke halaman Facebook rasmi kami juga untuk mendapatkan sokongan, laporan pepijat, maklum balas dan cadangan dan juga menyemak kami.</li>
+<br>
+<hr>
+<br>
+<h2><i class='bx bxs-info-square' ></i> Maklumat</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav4()" id="teams">Pasukan & Perkhidmatan</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav2()" id="projects">Projek</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav5()" id="app">Apl</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav3()" id="news">Berita</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav7()" id="status">Status</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav8()" id="store">Kedai</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;"> <a href="https://jstmstudio.substack.com">Blog</a></div>
+<br>
+<hr>
+<br>
+<h2><i class='bx bx-group' ></i> Komuniti</h2>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav9()" id="terms">Syarat</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav()" id="community">Komuniti</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav1()" id="derma">Derma</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav6()" id="partner">Rakan Kongsi</div>
+<br>
+<div style="font-size:30px;background-color:cyan;width:90%;text-align:center;color:purple;padding:10px;font-weight: bold;border-style: solid;" onclick="openNav10()" id="profile">Profil</div>
+<br>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+
+function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
+}
+
+function openNav9() {
+  document.getElementById("myNav9").style.width = "100%";
+}
+
+function closeNav9() {
+  document.getElementById("myNav9").style.width = "0%";
+}
+
+function openNav10() {
+  document.getElementById("myNav10").style.width = "100%";
+}
+
+function closeNav10() {
+  document.getElementById("myNav10").style.width = "0%";
+}
+</script>
+<br><br>
+  <hr>
+  <br>
+<h1>Tema</h1>
+<p>Anda boleh menyesuaikan tema JstMStudio ke dalam warna yang anda suka. Pilih dan pilih daripada set warna di bawah untuk menjadikan UI JstMStudio menjadi pilihan warna anda.</p>
+<br>
+<div style="float:left;text-align:center;padding:10px;">
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+
+function myFunction5() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+  </script>
+
+</body>
+</html>
