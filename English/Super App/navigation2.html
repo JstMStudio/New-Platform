@@ -200,25 +200,6 @@
     display: none;
   }
 }
-.collapsible {
-  background-color: #f1f1f1;
-  color: red;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: center;
-  outline: none;
-  font-size: 15px;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  color: red;
-}
 
 .dark-mode .contentbox {
   background-color: black;
@@ -292,8 +273,8 @@
 }
       
 body {
-  min-height: 100vh;
-      background-image: url("https://github.com/JstMStudio/New-Platform/blob/main/English/Super%20App/background3.gif?raw=true");
+height: 100%;
+      background-image: url("https://github.com/JstMStudio/New-Platform/blob/main/English/Super%20App/background5.gif?raw=true");
 background-repeat: no-repeat;
 background-size: 100% auto;
     background-position: center top;
@@ -314,41 +295,49 @@ background-color: black;
 }
 
 div.sticky {
-bottom:0;
-    position:fixed;
-    z-index:150;
-    _position:absolute;
-    _top:expression(eval(document.documentElement.scrollTop+
-        (document.documentElement.clientHeight-this.offsetHeight)));
-  background-color: grey;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding: 10px;
-  font-size: 20px;
+  font-size: 16px;
+  margin-bottom:20px;
   text-align: center;
-  color: yellow;
+background-color: #03373d;
   float:center;
-  border-radius: 65px;
+  border-radius: 25px;
   display: inline-block;
+  width:80%;
+  color: cyan;
+  margin-right: auto;
+  margin-left: auto;
+    display: block;
 }
 
 .contentbox {
-background-color:rgba(228,233,247,255)
+background-color:rgba(228,233,247,255);
+border-radius: 25px;
 }
 
 .collapsible {
-  background-color: #777;
   cursor: pointer;
-  padding: 18px;
-  width: 100%;
   border: none;
+  padding:13px;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 11px;
 position: -webkit-sticky; /* Safari */
   position: sticky;
   bottom: 0;
-  background-color:rgba(228,233,247,255);
-  text-align: center;
-  color: red;
+  background-color:#033d0b;
+  color: cyan;
+    z-index:150;
+    position: fixed;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 5px;
+        box-shadow: 5px 5px grey;
+        margin-bottom:10px;
 }
 
 .content {
@@ -357,15 +346,23 @@ position: -webkit-sticky; /* Safari */
   overflow: hidden;
   background-color: silver;
   position: -webkit-sticky; /* Safari */
-  position: sticky;
-  bottom: 0;
-  background-color:rgba(228,233,247,255);
+  background-color:#03373d;
   text-align: center;
-  color: red;
+  color: cyan;
+      position:fixed;
+    z-index:150;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 0;
+        bottom: 0;
+        font-weight: bold;
 }
 
-.active, .collapsible:hover {
-  bottom:20px;
+.active {
+  bottom:150px;
+          box-shadow: none;
+          margin-bottom:0px;
   
 }
     </style>
@@ -413,10 +410,30 @@ position: -webkit-sticky; /* Safari */
     </ul>
   </div>
   <section class="home-section" style="padding:16px;">
-  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;" class="contentbox">
+  <div class="sticky">    
+  <h1 class="rainbow-text">News</h1>
+  <p class="rainbow-text">No news</p>
+</div>
+
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
   <h1>A</h1>
   </div>
-  <button type="button" class="collapsible" style="margin-top:60px;"><h3>Theme Customisation</h3></button>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <button type="button" class="collapsible" style="margin-top:60px;"><h3>&#9776; Theme Customisation</h3></button>
 <div class="content">
 <p>Text Color</p>
 <button onclick="myFunction11()" style="background-color: black;" class="button2"></button>
@@ -458,8 +475,6 @@ for (i = 0; i < coll.length; i++) {
 }
 </script>
   <br><br>
-<div class="sticky">    
-</div>
 <script>
 
 function myFunction() {
