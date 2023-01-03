@@ -170,17 +170,17 @@
   border-radius: 12px;
 }
 .home-section{
-  background: #E4E9F7;
+  background: transparent;
   min-height: 200vh;
   top: 0;
   margin-left: 85px;
   padding-right: 20px;
-  width: 90%;
   transition: all 0.5s ease;
   z-index: 2;
   text-align: center;
   color: green;
   height:100%;
+    width: 90%;
 }
 .sidebar.open ~ .home-section{
   left: 250px;
@@ -201,144 +201,84 @@
   }
 }
 
-body {
-background-color: #E4E9F7;
-} 
-.collapsible {
-  background-color: #f1f1f1;
-  color: red;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: center;
-  outline: none;
-  font-size: 15px;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  color: red;
-}
-
-body.dark-mode {
+.dark-mode .contentbox {
   background-color: black;
   color: cyan;
 }
 
-body.red-mode {
+.red-mode .contentbox {
   background-color: red;
-  color: white;
 }
 
-body.blue-mode {
+.blue-mode .contentbox {
   background-color: blue;
   color: cyan;
 }
 
-body.green-mode {
+.green-mode .contentbox {
   background-color: green;
   color: yellow;
 }
 
-body.yellow-mode {
+.yellow-mode .contentbox {
   background-color: yellow;
   color: green;
 }
 
-body.orange-mode {
+.orange-mode .contentbox {
   background-color: orange;
   color: blue;
 }
 
-body.purple-mode {
+.purple-mode .contentbox {
   background-color: purple;
   color: cyan;
 }
 
-body.magenta-mode {
-  background-color: magenta;
-  color: #1a2b22;
-}
-
-.dark-mode .home-section {
-  background-color: black;
-  color: cyan;
-}
-
-.red-mode .home-section {
-  background-color: red;
-  color: white;
-}
-
-.blue-mode .home-section {
-  background-color: blue;
-  color: cyan;
-}
-
-.green-mode .home-section {
-  background-color: green;
-  color: yellow;
-}
-
-.yellow-mode .home-section {
-  background-color: yellow;
-  color: green;
-}
-
-.orange-mode .home-section {
-  background-color: orange;
-  color: blue;
-}
-
-.purple-mode .home-section {
-  background-color: purple;
-  color: cyan;
-}
-
-.magenta-mode .home-section {
+.magenta-mode .contentbox {
   background-color: magenta;
   color: #1a2b22;
 }
   
-.text-black .home-section {
+.text-black .contentbox {
   color: black;
 }
 
-.text-red .home-section {
+.text-red .contentbox {
   color: red;
 }
 
-.text-blue .home-section {
+.text-blue .contentbox {
   color: blue;
 }
 
-.text-green .home-section {
+.text-green .contentbox {
   color: green;
 }
 
-.text-yellow .home-section {
+.text-yellow .contentbox {
   color: yellow;
 }
 
-.text-orange .home-section {
+.text-orange .contentbox {
   color: orange;
 }
 
-.text-purple .home-section {
+.text-purple .contentbox {
   color: purple;
 }
 
-.text-magenta .home-section {
+.text-magenta .contentbox {
   color: magenta;
 }
       
 body {
-  background: #E4E9F7;
-  min-height: 100vh;
+height: 100%;
+      background-image: url("https://github.com/JstMStudio/New-Platform/blob/main/English/Super%20App/background5.gif?raw=true");
+background-repeat: no-repeat;
+background-size: 100% auto;
+    background-position: center top;
+    background-attachment: fixed;
   }
   
 .button2 {
@@ -355,20 +295,75 @@ background-color: black;
 }
 
 div.sticky {
-bottom:0;
-    position:fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom:20px;
+  text-align: center;
+background-color: #03373d;
+  float:center;
+  border-radius: 25px;
+  display: inline-block;
+  width:80%;
+  color: cyan;
+  margin-right: auto;
+  margin-left: auto;
+    display: block;
+}
+
+.contentbox {
+background-color:rgba(228,233,247,255);
+border-radius: 25px;
+}
+
+.collapsible {
+  cursor: pointer;
+  border: none;
+  padding:13px;
+  text-align: left;
+  outline: none;
+  font-size: 11px;
+position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
+  background-color:#033d0b;
+  color: cyan;
+    z-index:150;
+    position: fixed;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 5px;
+        box-shadow: 5px 5px grey;
+        margin-bottom:10px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: silver;
+  position: -webkit-sticky; /* Safari */
+  background-color:#03373d;
+  text-align: center;
+  color: cyan;
+      position:fixed;
     z-index:150;
     _position:absolute;
     _top:expression(eval(document.documentElement.scrollTop+
         (document.documentElement.clientHeight-this.offsetHeight)));
-  background-color: yellow;
-  padding: 10px;
-  font-size: 20px;
-  text-align: center;
-  color: red;
-  float:center;
-  border-radius: 65px;
-  display: inline-block;
+        right: 0;
+        bottom: 0;
+        font-weight: bold;
+}
+
+.active {
+  bottom:150px;
+          box-shadow: none;
+          margin-bottom:0px;
+  
 }
     </style>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -415,10 +410,32 @@ bottom:0;
     </ul>
   </div>
   <section class="home-section" style="padding:16px;">
+  <div class="sticky">    
+  <h1 class="rainbow-text">News</h1>
+  <p class="rainbow-text">No news</p>
+</div>
+
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
   <h1>A</h1>
-  <br><br>
-<div class="sticky">    
-<h3>Text Color</h3>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <div style=";padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1>A</h1>
+  </div>
+  <button type="button" class="collapsible" style="margin-top:60px;"><h3>&#9776; Theme Customisation</h3></button>
+<div class="content">
+<p>Text Color</p>
 <button onclick="myFunction11()" style="background-color: black;" class="button2"></button>
 <button onclick="myFunction12()" style="background-color: red;" class="button2"></button>
 <button onclick="myFunction13()" style="background-color: blue;" class="button2"></button>
@@ -429,7 +446,7 @@ bottom:0;
 <button onclick="myFunction18()" style="background-color: magenta;" class="button2"></button>
 <br>
 <br>
-    <h3>Background Themes</h3>
+    <p>Background Themes</p>
 <button onclick="myFunction()" style="background-color: black;" class="button2"></button>
 <button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
 <button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
@@ -440,6 +457,24 @@ bottom:0;
 <button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
 </div>
 </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+  <br><br>
 <script>
 
 function myFunction() {
