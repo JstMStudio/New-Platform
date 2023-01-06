@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta name="robots" content="noindex">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM4LK5K0LJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM4LK5K0LJ');
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>Discover</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.home-section{
+  background: transparent;
+  min-height: 200vh;
+  top: 0;
+  margin-left: 85px;
+  padding-right: 20px;
+  transition: all 0.5s ease;
+  z-index: 2;
+  text-align: center;
+  color: green;
+  height:100%;
+    width: 90%;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+.dark-mode .contentbox {
+  background-color: black;
+  color: cyan;
+}
+
+.red-mode .contentbox {
+  background-color: red;
+}
+
+.blue-mode .contentbox {
+  background-color: blue;
+  color: cyan;
+}
+
+.green-mode .contentbox {
+  background-color: green;
+  color: yellow;
+}
+
+.yellow-mode .contentbox {
+  background-color: yellow;
+  color: green;
+}
+
+.orange-mode .contentbox {
+  background-color: orange;
+  color: blue;
+}
+
+.purple-mode .contentbox {
+  background-color: purple;
+  color: cyan;
+}
+
+.magenta-mode .contentbox {
+  background-color: magenta;
+  color: #1a2b22;
+}
+  
+.text-black .contentbox {
+  color: black;
+}
+
+.text-red .contentbox {
+  color: red;
+}
+
+.text-blue .contentbox {
+  color: blue;
+}
+
+.text-green .contentbox {
+  color: green;
+}
+
+.text-yellow .contentbox {
+  color: yellow;
+}
+
+.text-orange .contentbox {
+  color: orange;
+}
+
+.text-purple .contentbox {
+  color: purple;
+}
+
+.text-magenta .contentbox {
+  color: magenta;
+}
+      
+body {
+height: 100%;
+      background-image: url("https://github.com/JstMStudio/New-Platform/blob/main/English/Super%20App/background5.gif?raw=true");
+background-repeat: no-repeat;
+background-size: 100% auto;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+  
+.button2 {
+float:center;
+background-color: black;
+  color: red;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: yellow;
+}
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom:20px;
+  text-align: center;
+background-color: #03373d;
+  float:center;
+  border-radius: 25px;
+  display: inline-block;
+  width:80%;
+  color: cyan;
+  margin-right: auto;
+  margin-left: auto;
+    display: block;
+}
+
+.contentbox {
+background-color:rgba(228,233,247,255);
+border-radius: 25px;
+}
+
+.collapsible {
+  cursor: pointer;
+  border: none;
+  padding:13px;
+  text-align: left;
+  outline: none;
+  font-size: 11px;
+position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
+  background-color:#033d0b;
+  color: cyan;
+    z-index:150;
+    position: fixed;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 5px;
+        box-shadow: 5px 5px grey;
+        margin-bottom:10px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: silver;
+  position: -webkit-sticky; /* Safari */
+  background-color:#03373d;
+  text-align: center;
+  color: cyan;
+      position:fixed;
+    z-index:150;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        right: 0;
+        bottom: 0;
+        font-weight: bold;
+}
+
+.active {
+  bottom:150px;
+          box-shadow: none;
+          margin-bottom:0px;
+  
+}
+
+.overlay {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+    width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  background-color: #E4E9F7;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 8%;
+  width: 90%;
+  margin-top: 30px;
+  text-align: center;
+  color:green;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+  padding:10px;
+  left: 70px;
+}
+
+.overlay-content p{
+padding:16px;
+text-align: center;
+padding-right: 20px;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: green;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.overlaybutton {
+text-align: center;
+background: #E4E9F7;
+width:100%;
+height: 100%;
+colour: green;
+}
+
+.navi {
+text-align: center;
+border-radius: 30px;
+border-color: green;
+border-style: solid;
+border-width: 3px;
+padding: 8px;
+color: blue;
+font-size: 16px;
+background: yellow;
+width:100%;
+margin-left:0;
+margin-right:0;
+padding-left:0;
+padding-right:0;
+display:block;
+font-weight: bold;
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">JstMStudio</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="home.html">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip">Home</span>
+      </li>
+      <li>
+       <a href="account.html">
+         <i class='bx bx-user-circle'></i>
+         <span class="links_name">Account</span>
+       </a>
+       <span class="tooltip">Account</span>
+     </li>
+     <li>
+     <li>
+       <a href="discover.html">
+         <i class='bx bx-search-alt-2'></i>
+         <span class="links_name">Discover</span>
+       </a>
+       <span class="tooltip">Discover</span>
+     </li>
+     <li>
+     <li>
+       <a href="workplace.html">
+         <i class='bx bxs-briefcase-alt-2' ></i>
+         <span class="links_name">Workplace</span>
+       </a>
+       <span class="tooltip">Workplace</span>
+     </li>
+    </ul>
+  </div>
+  
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <div id="myNav8" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  </div>
+  </div>
+  
+  <section class="home-section" style="padding:16px;">
+  <div class="sticky">    
+  <h1 class="rainbow-text">News</h1>
+  <p class="rainbow-text">No news</p>
+</div>
+
+  <div style="padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <h1></h1>
+  <p></p>
+  </div>
+  <div style="padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
+  <button onclick="openNav()" id="video" class="navi"><h1>Videos</h1></button>
+  <button onclick="openNav1()" id="music" class="navi"><h1>Music</h1></button>
+  <button onclick="openNav2()" id="documentation" class="navi"><h1>Documentation</h1></button>
+  <button onclick="openNav3()" id="app-store" class="navi"><h1>App Store</h1></button>
+  <button onclick="openNav4()" id="audiobooks" class="navi"><h1>Audiobooks</h1></button>
+  <button onclick="openNav5()" id="business" class="navi"><h1>Business</h1></button>
+  <button onclick="openNav6()" id="discoserver" class="navi"><h1>Discoserver</h1></button>
+  <button onclick="openNav7()" id="reviews" class="navi"><h1>Reviews</h1></button>
+  <button onclick="openNav8()" id="project-library" class="navi"><h1>Repository</h1></button>
+  <button onclick="openNav9()" id="" class="navi"><h1></h1></button>
+  </div>
+  <button type="button" class="collapsible" style="margin-top:60px;"><h3>&#9776; Theme Customisation</h3></button>
+<div class="content">
+<p>Text Color</p>
+<button onclick="myFunction11()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction12()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction13()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction14()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction15()" style="background-color: yellow;" class="button2"></button>
+<button onclick="myFunction16()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction17()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction18()" style="background-color: magenta;" class="button2"></button>
+<br>
+<br>
+    <p>Background Themes</p>
+<button onclick="myFunction()" style="background-color: black;" class="button2"></button>
+<button onclick="myFunction2()" style="background-color: red;" class="button2"></button>
+<button onclick="myFunction3()" style="background-color: blue;" class="button2"></button>
+<button onclick="myFunction4()" style="background-color: green;" class="button2"></button>
+<button onclick="myFunction5()" style="background-color: yellow;" class="button2"></button> 
+<button onclick="myFunction6()" style="background-color: orange;" class="button2"></button>
+<button onclick="myFunction7()" style="background-color: purple;" class="button2"></button>
+<button onclick="myFunction8()" style="background-color: magenta;" class="button2"></button>
+</div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+  <br><br>
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function myFunction2() {
+   var element = document.body;
+   element.classList.toggle("red-mode");
+}
+
+function myFunction3() {
+   var element = document.body;
+   element.classList.toggle("blue-mode");
+}
+
+function myFunction4() {
+   var element = document.body;
+   element.classList.toggle("green-mode");
+}
+
+function myFunction5() {
+   var element = document.body;
+   element.classList.toggle("yellow-mode");
+}
+
+function myFunction6() {
+   var element = document.body;
+   element.classList.toggle("orange-mode");
+}
+
+function myFunction7() {
+   var element = document.body;
+   element.classList.toggle("purple-mode");
+}
+
+function myFunction8() {
+   var element = document.body;
+   element.classList.toggle("magenta-mode");
+}
+  
+function myFunction11() {
+   var element = document.body;
+   element.classList.toggle("text-black");
+}  
+
+function myFunction12() {
+   var element = document.body;
+   element.classList.toggle("text-red");
+}  
+
+function myFunction13() {
+   var element = document.body;
+   element.classList.toggle("text-blue");
+}  
+
+function myFunction14() {
+   var element = document.body;
+   element.classList.toggle("text-green");
+}  
+
+function myFunction15() {
+   var element = document.body;
+   element.classList.toggle("text-yellow");
+}  
+
+function myFunction16() {
+   var element = document.body;
+   element.classList.toggle("text-orange");
+}  
+
+function myFunction17() {
+   var element = document.body;
+   element.classList.toggle("text-purple");
+}  
+
+function myFunction18() {
+   var element = document.body;
+   element.classList.toggle("text-magenta");
+}  
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+function openNav1() {
+  document.getElementById("myNav1").style.width = "100%";
+}
+
+function closeNav1() {
+  document.getElementById("myNav1").style.width = "0%";
+}
+
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
+}
+
+function openNav3() {
+  document.getElementById("myNav3").style.width = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.width = "0%";
+}
+
+function openNav4() {
+  document.getElementById("myNav4").style.width = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+}
+
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+
+function openNav6() {
+  document.getElementById("myNav6").style.width = "100%";
+}
+
+function closeNav6() {
+  document.getElementById("myNav6").style.width = "0%";
+}
+
+function openNav7() {
+  document.getElementById("myNav7").style.width = "100%";
+}
+
+function closeNav7() {
+  document.getElementById("myNav7").style.width = "0%";
+}
+
+function openNav8() {
+  document.getElementById("myNav8").style.width = "100%";
+}
+
+function closeNav8() {
+  document.getElementById("myNav8").style.width = "0%";
+}
+</script>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search icons
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the icons class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the icons class
+ }
+}
+  </script>
+
+</body>
+</html>
