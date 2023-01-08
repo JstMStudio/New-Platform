@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  line-height: 2;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+input[type="button"] {
+  cursor: pointer;
+  padding: 10px;
+  width: 50px;
+}
+input[type="text"] {
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+#calculator {
+  background: white;
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 25px 10px;
+  width: 330px;
+  max-width: 600px;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 2px 7px 25px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+  width: 100%;
+}
+
+.display input {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  flex: 1;
+  text-align: right;
+  font-weight: 500;
+  background: transparent;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+.display .history {
+  color: #ccc;
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: -25px;
+  font-weight: 400;
+}
+
+.keys {
+  background: blueviolet;
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 22px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 4px;
+  grid-column-gap: 4px;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+input[type="button"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input[type="button"]:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+input[type="button"]:active {
+  transform: scale(0.95);
+}
+
+.highlight {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+/*media query mobile view  */
+
+@media (max-width: 550px) {
+  #calculator {
+    width: calc(100vw - 20px);
+    height: 100vh;
+    padding: 20px 0;
+  }
+  .display input {
+    font-size: 45px;
+  }
+  .keys {
+    margin-top: 17px;
+    height: calc(100vh - 180px);
+  }
+
+  .keys input[type="button"] {
+    font-size: 18px;
+    height: 70px;
+    width: 70px;
+  }
+}
+    </style>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+    <form
+      name="calculatorOne"
+      id="calculator"
+      onsubmit="event.preventDefault()"
+    >
+      <h6>Calculator</h6>
+      <div class="display">
+        <div class="history">&nbsp;</div>
+        <input
+          type="text"
+          name="display"
+          id="display"
+          placeholder="0"
+          readonly
+        />
+      </div>
+
+      <div class="keys">
+        <input type="button" value="1" name="btn1" onclick="valueGet(1)" />
+        <input type="button" value="2" name="btn2" onclick="valueGet(2)" />
+        <input type="button" value="3" name="btn3" onclick="valueGet(3)" />
+        <input
+          type="button"
+          value="+"
+          name="btnplus"
+          onclick="valueGet('+')"
+          class="highlight"
+        />
+        <input type="button" value="4" name="btn4" onclick="valueGet(4)" />
+        <input type="button" value="5" name="btn5" onclick="valueGet(5)" />
+        <input type="button" value="6" name="btn6" onclick="valueGet(6)" />
+        <input
+          type="button"
+          value="-"
+          name="btnminux"
+          onclick="valueGet('-')"
+          class="highlight"
+        />
+        <input type="button" value="7" name="btn7" onclick="valueGet(7)" />
+        <input type="button" value="8" name="btn8" onclick="valueGet(8)" />
+        <input type="button" value="9" name="btn9" onclick="valueGet(9)" />
+        <input
+          type="button"
+          value="*"
+          name="btnmulti"
+          onclick="valueGet('*')"
+          class="highlight"
+        />
+        <input type="button" value="0" name="btn0" onclick="valueGet(0)" />
+        <input type="button" value="00" name="btn0" onclick="valueGet('00')" />
+        <input type="button" value="." name="btn0" onclick="valueGet('.')" />
+        <input
+          type="button"
+          class="highlight"
+          value="/"
+          name="btndividess"
+          onclick="valueGet('/')"
+        />
+
+        <input
+          type="button"
+          class="highlight"
+          value="Ac"
+          name="val0"
+          onclick="zeroMama(0)"
+        />
+        <input
+          type="button"
+          class="highlight"
+          value="Del"
+          name="btndel"
+          onclick="aakKam()"
+        />
+
+        <input type="button" value="^2" name="squere" onclick="squareGar()" />
+        <input
+          class="highlight"
+          type="button"
+          value="="
+          name="btn0"
+          onclick="hisab('=')"
+        />
+        <input type="button" value="root" name="rootni" onclick="rootnikal()" />
+        <input type="button" value="sin" name="sinkik" onclick="sinnikal()" />
+        <input type="button" value="cos" name="cosnik" onclick="cosnikal()" />
+        <input type="button" value="tan" name="tannik" onclick="tannikal()" />
+      </div>
+    </form>
+      <script>
+    let calculatorOne = document.getElementById("display");
+
+let Calchistory = {
+  content: "",
+};
+
+valueGet = (a) => {
+  //check for any sign exists at last index
+  if (calculatorOne.value.length > 0) {
+    var lastValue = calculatorOne.value[calculatorOne.value.length - 1]; //return last digit or sign
+
+    if (
+      lastValue == "+" ||
+      lastValue == "-" ||
+      lastValue == "/" ||
+      lastValue == "*" ||
+      lastValue == "."
+    ) {
+      if (
+        a == lastValue ||
+        a == "+" ||
+        a == "-" ||
+        a == "*" ||
+        a == "/" ||
+        a == "."
+      ) {
+        var v = calculatorOne.value;
+        n = v.substring(0, v.length - 1);
+        calculatorOne.value = n + a;
+
+        return;
+      }
+    } else {
+      calculatorOne.value = calculatorOne.value + a;
+      return;
+    }
+  }
+  calculatorOne.value = calculatorOne.value + a;
+};
+
+hisab = () => {
+  try {
+    var old = calculatorOne.value;
+    if (old.length == 0 || old == null) {
+      return;
+    }
+    v = parseFloat(eval(old));
+    calculatorOne.value = v;
+    Calchistory.content = old;
+    showHistory();
+  } catch (e) {
+    calculatorOne.value = e;
+  }
+};
+
+function showHistory() {
+  document.querySelector(".history").textContent = Calchistory.content;
+}
+
+zeroMama = (zero) => {
+  calculatorOne.value = "";
+  Calchistory.content = "";
+  document.querySelector(".history").innerHTML = ` &nbsp;`;
+};
+
+aakKam = () => {
+  let target_val = calculatorOne.value;
+  calculatorOne.value = target_val.substr(0, target_val.length - 1);
+};
+
+squareGar = () => {
+  try {
+    calculatorOne.value = Math.pow(calculatorOne.value, 2);
+  } catch (e) {
+    calculatorOne.value = e;
+  }
+};
+
+rootnikal = () => {
+  try {
+    calculatorOne.value = Math.sqrt(calculatorOne.value);
+  } catch (e) {
+    calculatorOne.value = e;
+  }
+};
+
+sinnikal = () => {
+  try {
+    calculatorOne.value = Math.sin(calculatorOne.value);
+  } catch (e) {
+    calculatorOne.value = e;
+  }
+};
+cosnikal = () => {
+  try {
+    calculatorOne.value = Math.cos(calculatorOne.value);
+  } catch (e) {
+    calculatorOne.value = e;
+  }
+};
+tannikal = () => {
+  try {
+    calculatorOne.value = Math.tan(calculatorOne.value);
+  } catch (e) {
+    calculatorOne.value = e;
+  }
+};
+
+//keyboard input support
+document.addEventListener("keyup", function (e) {
+  let key = e.key;
+  let supportedKeys = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    0,
+    "+",
+    ".",
+    "-",
+    "*",
+    "/",
+    "Enter",
+    "Backspace",
+    "Escape",
+    "Delete",
+  ];
+  let isValidKey = supportedKeys.filter((item, index) => {
+    return item == key;
+  });
+  if (isValidKey.length == 1) {
+    //user typed valid key
+    if (key == "Enter") {
+      //sum all the value in field
+      hisab();
+      return;
+    }
+    if (key == "Backspace") {
+      aakKam();
+      return;
+    }
+    if (key == "Escape" || key == "Delete") {
+      zeroMama();
+      return;
+    }
+    //else othr value
+    valueGet(key);
+  }
+});
+    </script>
+  </section>
+
+</body>
+</html>
