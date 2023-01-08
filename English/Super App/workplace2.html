@@ -445,6 +445,57 @@ padding-right:0;
 display:block;
 font-weight: bold;
 }
+
+/* Meeting Link */
+body {
+        text-align: center;
+}
+      
+.button {
+  border-radius: 4px;
+  background-color: #14EF8D;
+  border: none;
+  color: blue;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  width:40%;
+  border: 2px solid black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+button:hover {
+box-shadow: none;
+}
     </style>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -493,14 +544,73 @@ font-weight: bold;
     <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
-  <iframe src="" style="width:100%;height:100vh;"></iframe>
+        <h1 style="padding-bottom:8px;">Stocks</h1>
+      <div class="tradingview-widget-container" style="width:100%;">
+  <div id="tradingview_866e0"></div>
+  <div class="tradingview-widget-copyright">
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": 980,
+  "height": 610,
+  "symbol": "NASDAQ:AAPL",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": true,
+  "withdateranges": true,
+  "range": "YTD",
+  "hide_side_toolbar": false,
+  "allow_symbol_change": true,
+  "details": true,
+  "hotlist": true,
+  "calendar": true,
+  "container_id": "tradingview_866e0"
+}
+  );
+  </script>
+  </div>
+  </div>
   </div>
   </div>
   
   <div id="myNav1" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
   <div class="overlay-content">
-  <iframe src="" style="width:100%;height:100vh;"></iframe>
+<h1 style="color:red;padding-bottom:8px;">Create A Meeting Room</h1>
+  <script>
+    // Function to create meeting ID
+    function createMeeting() {
+          let meetingId =  'xxxxyxxx'.replace(/[xy]/g, function(c) {
+              var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+              return v.toString(16);
+          });
+          console.log("http://"+ window.location.host + "?meetingId="+ meetingId)
+          document.getElementById("copyInput").value = "https://"+ window.location.host + "/services/host-meeting.html?meetingId="+ meetingId;
+    }
+
+    // Function to copy the link
+    function copyFunction() {
+      /* Get the text field */
+      var copyText = document.getElementById("copyInput");
+
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+    }
+  </script>
+    <div>
+    <button onclick="createMeeting()" class="button"><span>Create Meeting</span></button>
+    <br/>
+    <input type="text" id="copyInput" class="button" style="background-color:white;"><br>
+    <button onclick="myFunction()" class="button" style="padding:6px;background-color:red;color:cyan"><span>Copy Link</span></button>
+  </div>
   </div>
   </div>
   
@@ -565,8 +675,8 @@ font-weight: bold;
   </div>
   <div style="padding: 12px;width: 90%;text-align:center;margin-left:auto;margin-right: auto;margin-top:15px;" class="contentbox">
   <h1 style="font-size:30px;padding-bottom:8px;">Search Directory</h1>
-  <button onclick="openNav()" id="" class="navi"><h1></h1></button>
-  <button onclick="openNav1()" id="" class="navi"><h1></h1></button>
+  <button onclick="openNav()" id="stocks" class="navi"><h1>Stocks</h1></button>
+  <button onclick="openNav1()" id="meeting" class="navi"><h1>Meeting</h1></button>
   <button onclick="openNav2()" id="" class="navi"><h1></h1></button>
   <button onclick="openNav3()" id="" class="navi"><h1></h1></button>
   <button onclick="openNav4()" id="" class="navi"><h1></h1></button>
