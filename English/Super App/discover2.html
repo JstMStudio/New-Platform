@@ -479,6 +479,68 @@ form {
 .search-word{
   font-style:italic;
 }
+
+/* Community */
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL button {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: green;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.collapsible2 {
+  font-size: 15px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: yellow;
+  font-size: 18px;
+  padding: 12px;
+  color: green;
+  width: 100%
+}
+
+.active, .collapsible2:hover {
+  background-color: yellow;
+}
+
+.content2 {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: blue;
+  text-align:center;
+  color: yellow;
+}
     </style>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -600,7 +662,23 @@ form {
   <div id="myNav8" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
   <div class="overlay-content">
-  <iframe src="" style="width:100%;height:100vh;"></iframe>
+  <h1>Repositories</h1>
+        <p>Welcome to JstMStudio repository! A free place for everyone to find, read, view, upload and study source codes with no ads from open source websites by their respective developer. </p>
+      <br>
+      <hr>
+      <br>
+      <h2>Freedom</h2>
+      <p></p>
+      <br>
+      <hr>
+      <br>
+      <h2>Multiple Tab Repository</h2>
+      <p></p>
+      <br>
+      <hr>
+      <br>
+      <h2>Search Repository</h2>
+      <p></p>
   </div>
   </div>
   
@@ -660,8 +738,95 @@ form.addEventListener("submit", searchDict);
   </div>
   </div>
   
-  <div id="myNav8" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav8()">&times;</a>
+  <div id="myNav10" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav10()">&times;</a>
+  <div class="overlay-content">
+  <h1>Community</h1>
+        <p>JstMStudio Community is a place where existing and new community could built a community site inside JstMStudio platform with many awesome features and functionality found nowhere in the current social media world. A place to enjoy, discuss and chit-chat with your community and all members in JstMStudio.</p>
+        <br>
+        <hr>
+        <br>
+        <h2>Special Pages</h2>
+        <p>Each community have their own special pages on JstMStudio Community which is fully made for them. The page is leased to the community for free if terms is complied in all times. Community admin could do anything with their pages while following with our terms.</p>
+        <br>
+        <hr>
+        <br>
+        <h2>Special Pages</h2>
+        <p>Each community have their own special pages on JstMStudio Community which is fully made for them. The page is leased to the community for free if terms is complied in all times. Community admin could do anything with their pages while following with our terms.</p>
+        <br>
+        <hr>
+        <br>
+        <h2>Community Tabs</h2>
+        <p>Each community have their own special tabs on JstMStudio Community. Each community have multiple tabs which own serve their own purposes for the community administration. Community admin could use the tabs for their own usages for the benefits of the community while following by the terms.</p>
+        <br>
+        <hr>
+        <br>
+        <h2>Community Directory</h2>
+        <p>This is a directory of all communities in JstMStudio Community. A directory to search for each and all communities in JstMStudio together. </p>
+        <br>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for community group name" title="Type in a name">
+<ul id="myUL">
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+	<li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+  <li><button type="button" class="collapsible2">None</button>
+<div class="content2">
+  <p>None</p>
+</div></li>
+</ul>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("button")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.display === "block") {
+      content2.style.display = "none";
+    } else {
+      content2.style.display = "block";
+    }
+  });
+}
+</script> 
+  </div>
+  </div>
+  
+  <div id="myNav11" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav11()">&times;</a>
   <div class="overlay-content">
   <iframe src="" style="width:100%;height:100vh;"></iframe>
   </div>
@@ -689,6 +854,7 @@ form.addEventListener("submit", searchDict);
   <button onclick="openNav7()" id="reviews" class="navi"><h1>Reviews</h1></button>
   <button onclick="openNav8()" id="project-library" class="navi"><h1>Repository</h1></button>
   <button onclick="openNav9()" id="search" class="navi"><h1>Search</h1></button>
+  <button onclick="openNav10()" id="community" class="navi"><h1>Community</h1></button>
   </div>
   <button type="button" class="collapsible" style="margin-top:60px;"><h3>&#9776; Theme Customisation</h3></button>
 <div class="content">
@@ -892,6 +1058,14 @@ function openNav9() {
 
 function closeNav9() {
   document.getElementById("myNav9").style.width = "0%";
+}
+
+function openNav10() {
+  document.getElementById("myNav10").style.width = "100%";
+}
+
+function closeNav10() {
+  document.getElementById("myNav10").style.width = "0%";
 }
 </script>
   </section>
